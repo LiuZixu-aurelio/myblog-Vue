@@ -1,7 +1,7 @@
 <template>
-    <div id='prodiv' :style='urlcard'>
-        <div>{{ namecard }}</div>
-    </div>
+  <div id='prodiv' :style='urlcard'>
+      <div>{{na}}</div>
+  </div>
 </template>
 
 <script>
@@ -9,16 +9,16 @@ import scard from '../pages/zhihu.js'
 const namecard = scard.scard[0]
 const urlcard = '{background:url(' + scard.scard[1] + ')}'
 
-
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: 'cardcom',
-  props: [ 'title'] ,
+  name: 'CardCom',
+    props: {
+    na: String
+  },
   data: () => {
     return {
       namecard, urlcard,
     }
-  }
+  },
 }
 
 </script>
