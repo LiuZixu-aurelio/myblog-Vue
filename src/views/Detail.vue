@@ -1,17 +1,22 @@
 <template>
-    <div class='whoheigt color2'>
-        <div class="whocont">
-            <h2>zhihu</h2>
-            <div>
-                <img src="../assets/zhihu.png">
-            </div>
-        </div>
+    <div>
+        <DetailCom :na='a' :im='c'></DetailCom>
     </div>
 </template>
 
 <script>
+    import DetailCom from '../components/detailCom.vue'
+    import { scard1, scard3 } from '../pages/zhihu.js'
+
     export default {
         name: 'DetailView',
-        components: {}
+        data: () => {
+            return {
+                a:scard1, c:scard3,
+            }
+        },
+        components: {
+            DetailCom
+        }
     }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/home/Detail">
+  <router-link :to='lnk'>
     <div id='prodiv' :style='ur'>
         <div>{{na}}</div>
     </div>
@@ -11,10 +11,10 @@ export default {
   name: 'CardCom',
     props: {
     na: String,
-    ur: String
+    ur: String,
+    lnk: String
   }
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

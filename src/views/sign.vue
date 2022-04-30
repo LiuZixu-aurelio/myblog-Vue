@@ -2,7 +2,7 @@
     <div class='whoheigt color2'>
         <div class="whocont">
             <h2>笔记</h2>
-            <cardcom :title='scard'></cardcom>
+            <cardcom></cardcom>
         </div>
     </div>
 </template>

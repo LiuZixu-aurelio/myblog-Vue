@@ -43,7 +43,7 @@ const routes = [
         component: SignView
       },
       {
-        path: '/home/Detail',
+        path: '/home/:id',
         name: 'Detail',
         component: DetailView
       }
