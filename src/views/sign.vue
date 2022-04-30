@@ -1,7 +1,7 @@
 <template>
     <div class='whoheigt color2'>
         <div class="whocont">
-            <h2>杂谈</h2>
+            <h2>笔记</h2>
             <cardcom :title='scard'></cardcom>
         </div>
     </div>
@@ -11,7 +11,7 @@
 import cardcom from '../components/cardCom.vue'
 
 export default {
-  name: 'TalkView',
+  name: 'SignView',
   components: { cardcom }
 }
 </script>

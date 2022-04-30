@@ -4,7 +4,9 @@ import whoView from '../views/who.vue'
 import PreView from '../views/PreView.vue'
 import ProjectView from '../views/project.vue'
 import TalkView from '../views/talk.vue'
+import SignView from '../views/sign.vue'
 import testQ from '../views/test.vue'
+import DetailView from '../views/Detail.vue'
 
 const routes = [
   {
@@ -31,9 +33,19 @@ const routes = [
         component: ProjectView
       },
       {
-        path: '/home/Talk',
-        name: 'Talk',
+        path: '/home/talk',
+        name: 'talk',
         component: TalkView
+      },
+      {
+        path: '/home//sign',
+        name: 'sign',
+        component: SignView
+      },
+      {
+        path: '/home/Detail',
+        name: 'Detail',
+        component: DetailView
       }
     ]
   },

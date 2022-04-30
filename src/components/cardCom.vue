@@ -1,24 +1,18 @@
 <template>
-  <div id='prodiv' :style='urlcard'>
-      <div>{{na}}</div>
-  </div>
+  <router-link to="/home/Detail">
+    <div id='prodiv' :style='ur'>
+        <div>{{na}}</div>
+    </div>
+  </router-link>
 </template>
 
 <script>
-import scard from '../pages/zhihu.js'
-const namecard = scard.scard[0]
-const urlcard = '{background:url(' + scard.scard[1] + ')}'
-
 export default {
   name: 'CardCom',
     props: {
-    na: String
-  },
-  data: () => {
-    return {
-      namecard, urlcard,
-    }
-  },
+    na: String,
+    ur: String
+  }
 }
 
 </script>
