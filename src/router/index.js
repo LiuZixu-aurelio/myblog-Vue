@@ -38,7 +38,7 @@ const routes = [
         component: TalkView
       },
       {
-        path: '/home//sign',
+        path: '/home/sign',
         name: 'sign',
         component: SignView
       },

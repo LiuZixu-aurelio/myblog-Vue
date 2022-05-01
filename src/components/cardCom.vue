@@ -1,6 +1,6 @@
 <template>
   <router-link :to='lnk'>
-    <div id='prodiv' :style='ur'>
+    <div id='prodiv' :style="[ur]">
         <div>{{na}}</div>
     </div>
   </router-link>
@@ -11,7 +11,7 @@ export default {
   name: 'CardCom',
     props: {
     na: String,
-    ur: String,
+    ur: Object,
     lnk: String
   }
 }
@@ -20,7 +20,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 #prodiv {
-  background:url(../assets/zhihu.png);
   background-size: 100% 100%;
   border-radius: 8px;
   height: 279px;
