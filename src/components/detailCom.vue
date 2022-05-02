@@ -3,7 +3,6 @@
         <div class="whocont">
             <h2>{{na}}</h2>
             <div>
-                <img src="../assets/zhihu.png">  
                 <img v-for="item in im" :src='item'>              
             </div>
         </div>

@@ -13,7 +13,7 @@ const b = require('/src/assets/zhihu2.png')
 const scard3 = [a,b]
 /* ['../assets/zhihu.png','../assets/zhihu2.png'] */
 
-const scard4 = '/home/Detail'
+const scard4 ='/home/project/ZHIHU'
 
 
 export { scard1 } //名称

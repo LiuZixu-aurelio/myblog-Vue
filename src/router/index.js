@@ -6,7 +6,8 @@ import ProjectView from '../views/project.vue'
 import TalkView from '../views/talk.vue'
 import SignView from '../views/sign.vue'
 import testQ from '../views/test.vue'
-import DetailView from '../views/Detail.vue'
+import DetailViewYHTYQT from '../pages/Detail.vue'
+import DetailViewZH from '../pages/DetailZH.vue'
 
 const routes = [
   {
@@ -30,22 +31,27 @@ const routes = [
       {
         path: '/home/project',
         name: 'project',
-        component: ProjectView
+        component: ProjectView,
+      },
+      {
+        path: '/home/project/ZHIHU',
+        name: 'ZHIHU',
+        component: DetailViewZH
       },
       {
         path: '/home/talk',
         name: 'talk',
-        component: TalkView
+        component: TalkView,
+      },
+      {
+        path: '/home/talk/DetailYHTYQT',
+        name: 'Detail',
+        component: DetailViewYHTYQT
       },
       {
         path: '/home/sign',
         name: 'sign',
         component: SignView
-      },
-      {
-        path: '/home/:id',
-        name: 'Detail',
-        component: DetailView
       }
     ]
   },

@@ -1,18 +1,20 @@
 <template>
     <div>
+        <h2>{{id}}</h2>
         <DetailCom :na='a' :im='c'></DetailCom>
     </div>
 </template>
 
 <script>
     import DetailCom from '../components/detailCom.vue'
-    import { scard1, scard3 } from '../pages/zhihu.js'
+    import { scard1t, scard3t } from './zhihu2.js'
 
     export default {
-        name: 'DetailView',
+        name: 'DetailViewYHTYQT',
+        props:['id'],
         data: () => {
             return {
-                a:scard1, c:scard3,
+                a:scard1t, c:scard3t,
             }
         },
         components: {
