@@ -8,6 +8,7 @@ import SignView from '../views/sign.vue'
 import testQ from '../views/test.vue'
 import DetailViewYHTYQT from '../pages/Detail.vue'
 import DetailViewZH from '../pages/DetailZH.vue'
+import DetailViewTest from '../pages/DetailTest.vue'
 
 const routes = [
   {
@@ -37,6 +38,11 @@ const routes = [
         path: '/home/project/ZHIHU',
         name: 'ZHIHU',
         component: DetailViewZH
+      },
+      {
+        path: '/home/project/test',
+        name: 'testhub',
+        component: DetailViewTest,
       },
       {
         path: '/home/talk',
