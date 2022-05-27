@@ -9,7 +9,10 @@ body{
   margin: 0px;
   height: auto;
 }
-
+.hairlines{
+  padding: 0px;
+  margin: 0px;
+}
 #app{
   height: auto;
 }
@@ -66,12 +69,16 @@ body{
       margin: 0px 24px;
       color: rgba(255, 255, 255, 0.5);
       text-decoration: none;
+      &.router-link-exact-active{
+       color: rgba(255, 255, 255, 0.9);
+    }
     }
     .navkuaiu:hover{
       font-size: 16px;
       color: rgba(255, 255, 255, 0.9);
       font-weight: 500;
     }
+
   }
   .color1{
     background-color: #000

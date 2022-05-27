@@ -6,9 +6,13 @@ import ProjectView from '../views/project.vue'
 import TalkView from '../views/talk.vue'
 import SignView from '../views/sign.vue'
 import testQ from '../views/test.vue'
-import DetailViewYHTYQT from '../pages/Detail.vue'
-import DetailViewZH from '../pages/DetailZH.vue'
-import DetailViewTest from '../pages/DetailTest.vue'
+
+import DetailCom from '../components/detailCom.vue'
+
+import { scard1, scard3 } from '../pages/zhihu.js'
+import { scard1t, scard3t } from '../pages/talk-ux.js'
+import { scardInfor1, scardInfor3 } from '../pages/infor.js'
+import { extest1, extest3 } from '../pages/testhub.js'
 
 const routes = [
   {
@@ -37,12 +41,20 @@ const routes = [
       {
         path: '/home/project/ZHIHU',
         name: 'ZHIHU',
-        component: DetailViewZH
+        props: { na:scard1,im:scard3 },
+        component: DetailCom
       },
       {
         path: '/home/project/test',
         name: 'testhub',
-        component: DetailViewTest,
+        props: { na:extest1,im:extest3 },
+        component: DetailCom,
+      },
+      {
+        path: '/home/project/infor',
+        name: 'testhub',
+        props: { na:scardInfor1,im:scardInfor3 },
+        component: DetailCom,
       },
       {
         path: '/home/talk',
@@ -52,7 +64,8 @@ const routes = [
       {
         path: '/home/talk/DetailYHTYQT',
         name: 'Detail',
-        component: DetailViewYHTYQT
+        props: { na:scard1t,im:scard3t },
+        component: DetailCom
       },
       {
         path: '/home/sign',
@@ -66,11 +79,6 @@ const routes = [
     path: '/testQ',
     name: 'testQ',
     component: testQ
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   }
 ]
 
