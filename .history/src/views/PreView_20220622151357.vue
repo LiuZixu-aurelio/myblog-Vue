@@ -10,8 +10,7 @@
               <button id="start">Start</button>
             </router-link>
         </div>
-        <div class="test">试试在下方拖动背景</div>
-        <div class="test">⬇</div>
+        <div class="test">交互</div>
     </div>
 </template>
 

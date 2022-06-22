@@ -10,8 +10,7 @@
               <button id="start">Start</button>
             </router-link>
         </div>
-        <div class="test">试试在下方拖动背景</div>
-        <div class="test">⬇</div>
+        <span class="test">交互</span>
     </div>
 </template>
 
@@ -71,5 +70,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.test {
+  color: aliceblue;
+  background-color: #fff;
+}
 </style>

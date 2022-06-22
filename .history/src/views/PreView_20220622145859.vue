@@ -9,9 +9,8 @@
             <router-link to="/home/who">
               <button id="start">Start</button>
             </router-link>
+            <button id="start">交互</button>
         </div>
-        <div class="test">试试在下方拖动背景</div>
-        <div class="test">⬇</div>
     </div>
 </template>
 
@@ -70,6 +69,5 @@ export default {
 
 </script>
 
-<style scoped lang="scss">
-
+<style scoped>
 </style>

@@ -8,9 +8,9 @@
                 <br/>
                 是一名base在上海的设计师，同时是一名编程爱好者
                 <br/>
-                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                是一名base在上海的设计师，同时是一名编程爱好者
                 <br/>
-                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                是一名base在上海的设计师，同时是一名编程爱好者
                 </div>
             </div>
             <div class="whodiv">

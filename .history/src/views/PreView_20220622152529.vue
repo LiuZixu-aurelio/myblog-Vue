@@ -11,7 +11,7 @@
             </router-link>
         </div>
         <div class="test">试试在下方拖动背景</div>
-        <div class="test">⬇</div>
+        <div class="test">⬇️</div>
     </div>
 </template>
 

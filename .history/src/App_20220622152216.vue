@@ -43,8 +43,7 @@ body{
   bottom: -150px;
   width: auto;
   height: auto;
-  cursor: default;
-  font-size: 12px;
+  cursor: default
   }
 
   #start{

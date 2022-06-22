@@ -28,25 +28,12 @@ body{
 
   .cont{
     color: aliceblue;
-    width: 100%;
+    width: 90%;
     text-align: center;
     position: relative;
     top: 100px;
     z-index: 1;
   }
-
-  .test {
-  color:rgba(255, 255, 255, 0.5);
-  z-index: 1;
-  text-align: center;
-  position: relative;
-  bottom: -150px;
-  width: auto;
-  height: auto;
-  cursor: default;
-  font-size: 12px;
-  }
-
   #start{
     width: 74px;
     height: 36px;
@@ -63,6 +50,11 @@ body{
     color: rgb(0,0,0 );
     background: white;
   }
+
+  .test {
+  color: aliceblue;
+  background-color: #fff;
+}
 }
 
 .home{

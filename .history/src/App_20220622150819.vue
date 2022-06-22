@@ -28,7 +28,7 @@ body{
 
   .cont{
     color: aliceblue;
-    width: 100%;
+    width: 90%;
     text-align: center;
     position: relative;
     top: 100px;
@@ -36,17 +36,10 @@ body{
   }
 
   .test {
-  color:rgba(255, 255, 255, 0.5);
-  z-index: 1;
-  text-align: center;
-  position: relative;
-  bottom: -150px;
-  width: auto;
-  height: auto;
-  cursor: default;
-  font-size: 12px;
+  color:aliceblue;
+  background-color: #fff;
   }
-
+  
   #start{
     width: 74px;
     height: 36px;
