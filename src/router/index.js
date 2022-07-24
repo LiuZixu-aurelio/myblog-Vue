@@ -52,7 +52,7 @@ const routes = [
       },
       {
         path: '/home/project/infor',
-        name: 'testhub',
+        name: 'infor',
         props: { na:scardInfor1,im:scardInfor3 },
         component: DetailCom,
       },

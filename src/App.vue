@@ -102,20 +102,20 @@ body{
     background-color: rgb(244, 246, 255)
   }
 
-  .whoheigt{height:auto;
+  .whoheigt{height:94vh;
 
     .whocont{
       width: 92%;
       margin: auto;
-      height: auto;
+      height: 90%;
       text-align: center;
     }
 
     .whodiv{
       display: inline-block;
       margin: 24px 24px 0px 24px;
-      padding-bottom: 320px ;
-      max-width: 30%;
+      padding-bottom: 0px ;
+      max-width: 80%;
       text-align: left;
       color: rgba(255, 255, 255, 0.75)
     }

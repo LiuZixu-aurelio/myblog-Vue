@@ -10,13 +10,11 @@
               <button id="start">Start</button>
             </router-link>
         </div>
-        <div class="test">试试在下方拖动背景</div>
-        <div class="test">⬇</div>
     </div>
 </template>
 
 <script>
-import * as THREE from 'three'
+/* import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
@@ -25,11 +23,6 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
-
-/* const geometry = new THREE.BoxGeometry( 3, 3, 3 );
-const material = new THREE.MeshBasicMaterial( { color: "rgb(20,20,20)" } );
-const cube = new THREE.Mesh( geometry, material );
-scene.add( cube ); */
 
 const controls = new OrbitControls(camera, renderer.domElement)
 controls.update()
@@ -66,7 +59,7 @@ export default {
   console.log(renderer.domElement)
 
   }
-}
+} */
 
 </script>
 
