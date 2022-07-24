@@ -13,6 +13,7 @@
           擅长UI交互逻辑、产品逻辑、视觉效果实现的探索
 
           <button id="start2" @click="chufa">我的能力</button>
+          <button id="start2" @click="chenguo">我的成果</button>
           <div class="text2" v-bind:style="{ display: state1 }">
             <div class="title1">设计工具</div>
             figma, sketch, AE, AI, PS, PR, Blender, rhino
@@ -22,6 +23,10 @@
             elementUI, Antd, Bootstrap, threejs, EChart, p5js, unity(c#)
             <div class="title1">其他工具</div>
             git, nodeJs, MockJs, webGUP
+          </div>
+          <div class="text2" v-bind:style="{ display: state2 }">
+            <div class="title1">插件</div>
+            figma, sketch, AE, AI, PS, PR, Blender, rhino
           </div>
         </div>
       </div>
@@ -46,11 +51,20 @@ export default {
         this.state1 = 'inline'
         console.log(this.state1)
       }
+    },
+    chenguo() {
+      if (this.state1 === 'inline') {
+        this.state1 = 'none';
+      } else {
+        this.state1 = 'inline'
+        console.log(this.state1)
+      }
     }
   },
   data() {
     return {
-      state1: 'none'
+      state1: 'none',
+      state2: 'none'
     }
   },
 }
@@ -87,7 +101,7 @@ export default {
   position: relative;
 }
 
-#start:hover {
+#start2:hover {
   color: rgb(0, 0, 0);
   background: white;
 }
