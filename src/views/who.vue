@@ -13,8 +13,9 @@
           擅长UI交互逻辑、产品逻辑、视觉效果实现的探索
           <div>
             <button class="start2" @click="chufa">我的能力</button>
-            <button class="start2" @click="rongyu">我的荣誉</button>
-            <button class="start2" @click="chenguo">我的成果</button>
+            <button class="start2" @click="rongyu">我的成就</button>
+            <button class="start2" @click="chenguo">我的项目</button>
+            <button class="start2" @click="lianxi">联系方式</button>
           </div>
           <div class="text2" v-bind:style="{ display: state1 }">
             <div class="title0">我的能力</div>
@@ -28,21 +29,27 @@
             git, nodeJs, MockJs, webGUP
           </div>
           <div class="text2" v-bind:style="{ display: state2 }">
-            <div class="title0">我的荣誉</div>
+            <div class="title0">我的成就</div>
             <div class="title1">产品设计大赛一等奖</div>
             2020年获得知群x知乎举办的产品设计大赛，300+个团队中获得前三
             <div class="title1">开发插件</div>
             为figma、即时设计等设计工具，开发数十个插件，拥有万名使用者
           </div>
-            <div class="text2" v-bind:style="{ display: state3 }">
-            <div class="title0">我的成果</div>
+          <div class="text2" v-bind:style="{ display: state3 }">
+            <div class="title0">我的项目</div>
             <div class="title1">后台系统</div>
-            物联网行业中多种海量设备控制、设备管理，设备监控。
-            不同设备类控制、管理有着不一样使用场景
+            广告屏信息发布系统、高速提示信息系统、路灯光控制系统
             <div class="title1">智能控制</div>
-            智能家具、智能民用、智能大型海量设备等控制系统，使用场景有远程控制、实物带屏的直接控制
+            智能家居系列（APP、小程序、平板端）、农业用灯、医疗用灯
             <div class="title1">可视化大屏</div>
-            道路流量监控、全球多种设备管理、自然环境监控
+            交通道路监控、全球设备管理、自然环境监控
+            <div class="title1">搭建设计系统</div>
+            为团队搭建设计系统，并参与组件开发
+          </div>
+          <div class="text2" v-bind:style="{ display: state4 }">
+            <div class="title0">联系方式</div>
+            <div class="title1">微信：398488080</div>
+            <div class="title1">邮箱：liuzixu@gmail.com</div>            
           </div>
         </div>
       </div>
@@ -65,6 +72,7 @@ export default {
       } else {
         this.state2 = 'none';
         this.state3 = 'none';
+        this.state4 = 'none';
         this.state1 = 'inline'
       }
     },
@@ -74,6 +82,7 @@ export default {
       } else {
         this.state1 = 'none';
         this.state3 = 'none';
+        this.state4 = 'none';
         this.state2 = 'inline'
       }
     },
@@ -83,7 +92,18 @@ export default {
       } else {
         this.state1 = 'none';
         this.state2 = 'none'
+        this.state4 = 'none';
         this.state3 = 'inline'
+      }
+    },
+    lianxi() {
+      if (this.state4 === 'inline') {
+        this.state4 = 'none';
+      } else {
+        this.state1 = 'none';
+        this.state2 = 'none'
+        this.state3 = 'none';
+        this.state4 = 'inline'
       }
     }
   },
@@ -92,6 +112,7 @@ export default {
       state1: 'none',
       state2: 'none',
       state3: 'none',
+      state4: 'none',
     }
   },
 }
@@ -129,7 +150,7 @@ export default {
   color: white;
   background: none;
   font-size: 16px;
-  margin: 16px 0px 16px 56px;
+  margin: 32px 0px 32px 56px;
   position: relative;
 }
 
