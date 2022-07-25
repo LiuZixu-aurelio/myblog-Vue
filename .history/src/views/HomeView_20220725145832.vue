@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+        <img id='cursor' src="../../public/Frame9.png" alt="" />
         <div class="nav">
             <router-link to="/" class="navkuaiu">
               <img src="../assets/smal-logo.png">
@@ -16,7 +17,12 @@
 </template>
 
 <script>
-
+window.onmousemove = function (e) {
+       // e是事件对象
+       console.log(document.querySelector('img').style.left)
+       document.querySelector('img').style.left = e.pageX + 'px'
+       document.querySelector('img').style.top = e.pageY + 'px'
+     }
 export default {
   name: 'HomeView',
   components: {}
@@ -24,5 +30,13 @@ export default {
 </script>
 
 <style>
+  #cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 
+  * {
+    cursor:url('../../public/Frame9.png');
+  }
 </style>

@@ -1,30 +1,26 @@
 <template>
   <div>
-    <!-- <img id='cursor' src="../public/Frame9.png" alt="" /> -->
+    <img id='cursor' src="../public/Frame9.png" alt="" />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-/* window.onmousemove = function (e) {
+window.onmousemove = function (e) {
   // e是事件对象
   console.log(document.querySelector('img').style.left)
-  document.querySelector('img').style.left = e.pageX + 20 + 'px'
-  document.querySelector('img').style.top = e.pageY + 20 + 'px'
-} */
+  document.querySelector('img').style.left = e.pageX + 'px'
+  document.querySelector('img').style.top = e.pageY + 'px'
+}
 </script>
 
 
 <style lang="scss">
-* {
-    cursor:url('../public/Frame9.svg'), auto;;
-  }
-
-/* #cursor {
+#cursor {
     position: absolute;
     left: 0;
     top: 0;
-} */
+  }
 
 body{
   padding: 0px;

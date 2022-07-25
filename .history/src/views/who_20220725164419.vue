@@ -36,13 +36,10 @@
           </div>
             <div class="text2" v-bind:style="{ display: state3 }">
             <div class="title0">我的成果</div>
-            <div class="title1">后台系统</div>
-            物联网行业中多种海量设备控制、设备管理，设备监控。
-            不同设备类控制、管理有着不一样使用场景
-            <div class="title1">智能控制</div>
-            智能家具、智能民用、智能大型海量设备等控制系统，使用场景有远程控制、实物带屏的直接控制
-            <div class="title1">可视化大屏</div>
-            道路流量监控、全球多种设备管理、自然环境监控
+            <div class="title1">产品设计大赛一等奖</div>
+            2020年获得知群x知乎举办的产品设计大赛，300+个团队中获得前三
+            <div class="title1">开发插件</div>
+            为figma、即时设计等设计工具，开发数十个插件，拥有万名使用者
           </div>
         </div>
       </div>

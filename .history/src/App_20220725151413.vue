@@ -17,7 +17,7 @@
 
 <style lang="scss">
 * {
-    cursor:url('../public/Frame9.svg'), auto;;
+    cursor:url('../public/Frame9.png'), auto;;
   }
 
 /* #cursor {
