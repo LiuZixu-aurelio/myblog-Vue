@@ -27,7 +27,8 @@
               <div class="title1">其他工具</div>
               git, nodeJs, MockJs, webGUP
             </div>
-            <div class="text2" v-bind:style="{ display: state2 }">
+          </div>
+          <div class="text2" v-bind:style="{ display: state2 }">
               <div class="title0">我的荣誉</div>
               <div class="title1">产品设计大赛一等奖</div>
               2020年获得知群x知乎举办的产品设计大赛，300+个团队中获得前三
@@ -44,8 +45,6 @@
               <div class="title1">可视化大屏</div>
               道路流量监控、全球多种设备管理、自然环境监控
             </div>
-          </div>
-          
         </div>
             
         
@@ -92,7 +91,7 @@ export default {
   },
   data() {
     return {
-      state1: "inline",
+      state1: "none",
       state2: "none",
       state3: "none",
     };

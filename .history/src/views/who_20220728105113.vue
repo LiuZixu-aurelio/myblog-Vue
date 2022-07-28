@@ -15,7 +15,6 @@
             <button class="start2" @click="rongyu">我的荣誉</button>
             <button class="start2" @click="chenguo">我的成果</button>
           </div>
-          <div class="view">
             <div class="text2" v-bind:style="{ display: state1 }">
               <div class="title0">我的能力</div>
               <div class="title1">设计工具</div>
@@ -27,6 +26,7 @@
               <div class="title1">其他工具</div>
               git, nodeJs, MockJs, webGUP
             </div>
+        </div>
             <div class="text2" v-bind:style="{ display: state2 }">
               <div class="title0">我的荣誉</div>
               <div class="title1">产品设计大赛一等奖</div>
@@ -44,10 +44,6 @@
               <div class="title1">可视化大屏</div>
               道路流量监控、全球多种设备管理、自然环境监控
             </div>
-          </div>
-          
-        </div>
-            
         
       </div>
     </div>
@@ -92,7 +88,7 @@ export default {
   },
   data() {
     return {
-      state1: "inline",
+      state1: "none",
       state2: "none",
       state3: "none",
     };

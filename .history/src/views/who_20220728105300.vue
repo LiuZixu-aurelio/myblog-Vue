@@ -92,7 +92,7 @@ export default {
   },
   data() {
     return {
-      state1: "inline",
+      state1: "none",
       state2: "none",
       state3: "none",
     };

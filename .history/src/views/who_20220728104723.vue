@@ -3,7 +3,7 @@
     <div class="whocont">
       <div class="whodiv">
         <h2>Hello，我是刘子煦</h2>
-        <div class="text">
+        <div class="text">  
           <br />
           一名base在上海的设计师
           <br />
@@ -15,8 +15,8 @@
             <button class="start2" @click="rongyu">我的荣誉</button>
             <button class="start2" @click="chenguo">我的成果</button>
           </div>
-          <div class="view">
-            <div class="text2" v-bind:style="{ display: state1 }">
+          <div class="view" v-bind:style="{ display: state1 }">
+            <div class="text2">
               <div class="title0">我的能力</div>
               <div class="title1">设计工具</div>
               figma, sketch, AE, AI, PS, PR, Blender, rhino
@@ -27,6 +27,7 @@
               <div class="title1">其他工具</div>
               git, nodeJs, MockJs, webGUP
             </div>
+          
             <div class="text2" v-bind:style="{ display: state2 }">
               <div class="title0">我的荣誉</div>
               <div class="title1">产品设计大赛一等奖</div>
@@ -35,7 +36,7 @@
               为figma、即时设计等设计工具，开发数十个插件，拥有万名使用者
             </div>
             <div class="text2" v-bind:style="{ display: state3 }">
-              <div class="title0">我的成果</div>
+            <div class="title0">我的成果</div>
               <div class="title1">后台系统</div>
               物联网行业中多种海量设备控制、设备管理，设备监控。
               不同设备类控制、管理有着不一样使用场景
@@ -43,18 +44,16 @@
               智能家具、智能民用、智能大型海量设备等控制系统，使用场景有远程控制、实物带屏的直接控制
               <div class="title1">可视化大屏</div>
               道路流量监控、全球多种设备管理、自然环境监控
-            </div>
           </div>
-          
         </div>
-            
-        
+        </div>
       </div>
     </div>
-    <!-- <div class="whodiv">
+      <!-- <div class="whodiv">
                 <img src='../assets/img1.png' alt='200px'>
             </div> -->
-  </div>
+    </div>
+
 </template>
 
 <script>
@@ -92,7 +91,7 @@ export default {
   },
   data() {
     return {
-      state1: "inline",
+      state1: "none",
       state2: "none",
       state3: "none",
     };
