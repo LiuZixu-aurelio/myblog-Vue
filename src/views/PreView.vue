@@ -55,8 +55,7 @@ export default {
   document.getElementById("pre").appendChild(renderer.domElement);
   const root = document.getElementsByTagName("canvas")
   root[0].attributes.style.nodeValue = "display: block; width: auto; height: 800px; position:absolute; top: 0px;"
-  console.log(document.getElementsByTagName("canvas"))
-  console.log(renderer.domElement)
+  console.log(document)
 
   }
 } */

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Apple Pro Display XDR
+* source:	https://sketchfab.com/3d-models/apple-pro-display-xdr-d1df9f232006487c90be4adbf9e61bf4
+* author:	CG Asura (https://sketchfab.com/CG.Asura)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Apple Pro Display XDR" (https://sketchfab.com/3d-models/apple-pro-display-xdr-d1df9f232006487c90be4adbf9e61bf4) by CG Asura (https://sketchfab.com/CG.Asura) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

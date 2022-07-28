@@ -1,7 +1,7 @@
 <template>
-  <div class="whoheigt color3">
+  <div class="whoheigt color3" >
     <div class="whocont">
-      <div class="whodiv">
+      <div class="whodiv" id="pre1">
         <h2>Hello，我是刘子煦</h2>
         <div class="text">
           <br />
@@ -58,16 +58,65 @@
         
       </div>
     </div>
-    <!-- <div class="whodiv">
-                <img src='../assets/img1.png' alt='200px'>
-            </div> -->
   </div>
 </template>
 
 <script>
+import * as THREE from 'three'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera( 50, 1, 0.1, 1000 );
+scene.background = new THREE.Color("rgb(0, 0, 0)")
+
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize( window.innerWidth, window.innerHeight );
+
+const controls = new OrbitControls(camera, renderer.domElement)
+controls.update()
+
+const loader = new GLTFLoader(); 
+loader.load('shiba/scene.gltf',function( gltf ){
+  scene.add( gltf.scene )
+},undefined,function( error ){ console.error( error );});
+
+camera.position.z = 3;
+camera.rotation.x = -0.02
+/* camera.position.y = -1; */
+/* camera.position.x = -0.2; */
+
+
+
+let b = 1
+function animate() {
+  /* console.log(window.event.clientX) */
+  requestAnimationFrame( animate );
+  renderer.render( scene, camera );
+  /* camera.rotation.x -= 0.1 */
+  
+  b += 0.1
+
+  /* camera.rotation.y = Math.cos(b)*0.1 */
+  camera.rotation.z = Math.sin(b)*0.5
+
+
+  /* camera.rotation.z += 0.02 */
+  /* camera.position.z += 0.001  */
+  /* console.log(scene.children[0]) */
+  
+};
+
+animate();
+
+
 export default {
   name: "whoView",
   components: {},
+  mounted(){
+    document.getElementById("pre1").appendChild(renderer.domElement)
+    document.getElementsByTagName('canvas')[0].attributes.style.nodeValue = "display: inline-block; width: 200px; height: 200px; position:relative; top: -660px; left:355px;"
+  },
   methods: {
     chufa() {
       if (this.state1 === "inline") {
@@ -123,7 +172,7 @@ export default {
 
 <style>
 .color3 {
-  background: linear-gradient(109.17deg, #181818 8.55%, #000000 96.12%);
+  background: #000000 ;
 }
 .text {
   line-height: 32px;
