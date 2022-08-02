@@ -49,7 +49,7 @@
           <div class="text2" v-bind:style="{ display: state4 }">
             <div class="title0">联系方式</div>
             <div class="title1">微信：398488080</div>
-            <div class="title1">邮箱：liuzixuitalia@163.com</div>            
+            <div class="title1">邮箱：liuzixu@gmail.com</div>            
           </div>
         </div>
           
@@ -115,7 +115,7 @@ export default {
   components: {},
   mounted(){
     document.getElementById("pre1").appendChild(renderer.domElement)
-    document.getElementsByTagName('canvas')[0].attributes.style.nodeValue = "display: inline-block; width: 200px; height: 200px; position:relative; top: -200px; left:-200px;"
+    document.getElementsByTagName('canvas')[0].attributes.style.nodeValue = "display: inline-block; width: 200px; height: 200px; position:relative; top: -150px; left:-200px;"
   },
   methods: {
     chufa() {
@@ -172,7 +172,7 @@ export default {
 
 <style>
 #pre1 {
-height:100px;
+height:120px;
 }
 
 .color3 {
@@ -207,7 +207,8 @@ height:100px;
 
 .start2 {
   display: inline-block;
-  top: -150px;
+  right: 56px;
+  top: -120px;
   width: 90px;
   height: 36px;
   border-radius: 4px;
@@ -215,7 +216,7 @@ height:100px;
   color: rgba(255, 255, 255, 0.5);
   background: none;
   font-size: 16px;
-  margin: 32px 56px 32px 0px;
+  margin: 32px 0px 32px 56px;
   position: relative;
 }
 

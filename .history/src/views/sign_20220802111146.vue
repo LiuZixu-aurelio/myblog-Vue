@@ -18,6 +18,7 @@ export default {
   name: 'SignView',
   data:()=>{
     return{
+        a:scard1,b:scard2,c:scard4,
         asp:signProduct1,bsp:signProduct2,csp:signProduct4,
         asb:signBlender1,bsb:signBlender2,csb:signBlender4,
         }

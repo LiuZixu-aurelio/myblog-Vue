@@ -49,7 +49,7 @@
           <div class="text2" v-bind:style="{ display: state4 }">
             <div class="title0">联系方式</div>
             <div class="title1">微信：398488080</div>
-            <div class="title1">邮箱：liuzixuitalia@163.com</div>            
+            <div class="title1">邮箱：liuzixu@gmail.com</div>            
           </div>
         </div>
           
@@ -207,6 +207,7 @@ height:100px;
 
 .start2 {
   display: inline-block;
+  right: 56px;
   top: -150px;
   width: 90px;
   height: 36px;

@@ -4,7 +4,7 @@
             <h2>杂谈</h2>
             <CardCom :na='at' :ur='bt' :lnk='ct'></CardCom>
             <CardCom :na='abutton' :ur='bbutton' :lnk='cbutton'></CardCom>
-            <CardCom :na='aResponsive' :ur='bResponsive' :lnk='cResponsive'></CardCom>
+            <CardCom :na='aResponsive' :ur='baResponsive' :lnk='caResponsive'></CardCom>
             <CardCom :na='at' :ur='bt' :lnk='ct'></CardCom>
         </div>
     </div>

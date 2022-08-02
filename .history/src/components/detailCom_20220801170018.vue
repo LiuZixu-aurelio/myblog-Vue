@@ -3,7 +3,7 @@
         <div class="whocont">
             <h2>{{na}}</h2>
             <div>
-                <img v-for="item in im" :src='item' v-bind:key='item.id'>              
+                <img v-for="item in im" :src='item'>              
             </div>
         </div>
     </div>

@@ -14,12 +14,6 @@ import { scard1t, scard3t } from '../pages/talk-ux.js'
 import { scardInfor1, scardInfor3 } from '../pages/infor.js'
 import { extest1, extest3 } from '../pages/testhub.js'
 import { button1, button3 } from '../pages/c-button'
-import { signProduct1, signProduct3 } from '../pages/sign-product.js'
-import { signBlender1, signBlender3 } from '../pages/sign-blender.js'
-import { talkResponsive1, talkResponsive3 } from '../pages/talk-responsive.js'
-
-
-
 
 
 const routes = [
@@ -82,27 +76,9 @@ const routes = [
         component: DetailCom
       },
       {
-        path: '/home/talk/talk-responsive',
-        name: 'talk-responsive',
-        props: { na:talkResponsive1,im:talkResponsive3 },
-        component: DetailCom
-      },
-      {
         path: '/home/sign',
         name: 'sign',
         component: SignView
-      },
-      {
-        path: '/home/sign/sign-product',
-        name: 'sign-product',
-        props: { na:signProduct1,im:signProduct3 },
-        component: DetailCom
-      },
-      {
-        path: '/home/sign/sign-blender',
-        name: 'sign-blender',
-        props: { na:signBlender1,im:signBlender3 },
-        component: DetailCom
       }
     ]
   },
