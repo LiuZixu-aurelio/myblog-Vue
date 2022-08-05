@@ -18,8 +18,6 @@ import { signProduct1, signProduct3 } from '../pages/sign-product.js'
 import { signBlender1, signBlender3 } from '../pages/sign-blender.js'
 import { talkResponsive1, talkResponsive3 } from '../pages/talk-responsive.js'
 import { signSAP1, signSAP3 } from '../pages/sign-sap.js'
-import { signSalesforce1, signSalesforce3 } from '../pages/sign-salesforce.js'
-
 
 
 
@@ -98,13 +96,6 @@ const routes = [
       {
         path: '/home/sign/sign-sap',
         name: 'sign-sap',
-        props: { na:signSAP1,im:signSAP3 },
-        component: DetailCom
-      },
-      {
-        path: '/home/sign/sign-salesforce',
-        name: 'sign-salesforce',
-        props: { na:signSalesforce1,im:signSalesforce3 },
         component: DetailCom
       },
       {
