@@ -1,0 +1,151 @@
+<template>
+<div id="who">
+  <div class="title">
+    Hello，我是刘子煦
+    <div>在上海的设计师to b 物联网行业设计师</div>
+  </div>
+  <div id="character">
+    <div id="a1"></div>
+    <div id="b1"></div>
+    <div id="c1"></div>
+  </div>
+  <div id="project">
+    <div>
+      <div id="a2"></div>
+      <div id="b2"></div>
+    </div>
+    <div>
+      <div id="a3"></div>
+      <div id="b3"></div>
+    </div>
+    <div>
+      <div id="a4"></div>
+      <div id="b4"></div>
+    </div>
+  </div>
+  <div id="tedian">
+    <div class="title">与众不同</div>
+    <div id="tedian2">
+      <div class="tedian3"></div>
+      <div class="tedian3"></div>
+    </div>
+  </div>
+</div>
+
+</template>
+
+<script>
+
+
+export default {
+  name: "whoView",
+  components: {},
+  mounted(){
+
+  },
+  methods: {
+  },
+  data() {
+  },
+};
+</script>
+
+<style>
+#who {
+  background-color: rgb(0, 0, 0);
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column
+}
+.title {
+  display: block;
+  color: aliceblue;
+  justify-content: center;
+  align-items: center;
+  margin: 48px 0px 0px 0px;
+  font-size: 24px;
+  flex-wrap: wrap
+
+}
+.title>div{
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#character {
+  display: flex;
+  margin: 48px 0px;
+}
+
+#character>div {
+  background-color: #fff;
+  width: 240px;
+  height: 240px;
+  margin: 0px 12px;
+}
+
+#project {
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 48px 0px;
+  margin: 48px 0px;
+}
+
+#project>div {
+  height: auto;
+  margin: 24px 0px;
+  display: flex;
+  justify-content: center;
+}
+#a2 {
+  background-color: #fff;
+  width: 500px;
+  height: 240px;
+}
+#b2 {
+  margin-left: 24px;
+  background-color: #fff;
+  width: 250px;
+  height: 240px;
+}
+#a3 {
+  background-color: #fff;
+  width: 375px;
+  height: 240px;
+}
+#b3 {
+  margin-left: 24px;
+  background-color: #fff;
+  width: 375px;
+  height: 240px;
+}
+#a4 {
+  background-color: #fff;
+  width: 250px;
+  height: 240px;
+}
+#b4 {
+  margin-left: 24px;
+  background-color: #fff;
+  width: 500px;
+  height: 240px;
+}
+
+#tedian {
+    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+}
+#tedian2 {
+
+}
+.tedian3 {
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+}
+</style>

@@ -156,7 +156,7 @@ export default {
 
 .project>div {
   height: auto;
-  margin: 12px 0px;
+  margin: 24px 0px;
   display: flex;
   justify-content: center;
 }

@@ -156,7 +156,7 @@ export default {
 
 .project>div {
   height: auto;
-  margin: 12px 0px;
+  margin: 24px 0px;
   display: flex;
   justify-content: center;
 }
@@ -172,14 +172,12 @@ export default {
   margin-left: 24px;
   background-image: url('../assets/who/p2.png');
   background-size: 580px 300px;
-  border-radius: 4px;
   width: 580px;
   height: 300px;
 }
 #a3 {
   background-image: url('../assets/who/p3.png');
   background-size: 435px 300px;
-  border-radius: 4px;
   width: 435px;
   height: 300px;
 }
@@ -187,7 +185,6 @@ export default {
   margin-left: 24px;
   background-image: url('../assets/who/p3.png');
   background-size: 435px 300px;
-  border-radius: 4px;
   width: 435px;
   height: 300px;
 }

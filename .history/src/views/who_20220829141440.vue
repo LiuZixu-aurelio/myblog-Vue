@@ -156,51 +156,43 @@ export default {
 
 .project>div {
   height: auto;
-  margin: 12px 0px;
+  margin: 24px 0px;
   display: flex;
   justify-content: center;
 }
 
 #a2 {
-  background-image: url('../assets/who/p1.png');
-  background-size: 290px 300px;
-  border-radius: 4px;
-  width: 290px;
-  height: 300px;
+  background-color: #fff;
+  width: 500px;
+  height: 240px;
 }
 #b2 {
   margin-left: 24px;
-  background-image: url('../assets/who/p2.png');
-  background-size: 580px 300px;
-  border-radius: 4px;
-  width: 580px;
-  height: 300px;
+  background-color: #fff;
+  width: 250px;
+  height: 240px;
 }
 #a3 {
-  background-image: url('../assets/who/p3.png');
-  background-size: 435px 300px;
-  border-radius: 4px;
-  width: 435px;
-  height: 300px;
+  background-color: #fff;
+  width: 375px;
+  height: 240px;
 }
 #b3 {
   margin-left: 24px;
-  background-image: url('../assets/who/p3.png');
-  background-size: 435px 300px;
-  border-radius: 4px;
-  width: 435px;
-  height: 300px;
+  background-color: #fff;
+  width: 375px;
+  height: 240px;
 }
 #a4 {
-    background-color: #fff;
-  width: 580px;
-  height: 300px;
+  background-color: #fff;
+  width: 250px;
+  height: 240px;
 }
 #b4 {
-    margin-left: 24px;
+  margin-left: 24px;
   background-color: #fff;
-  width: 290px;
-  height: 300px;
+  width: 500px;
+  height: 240px;
 }
 
 #tedian {

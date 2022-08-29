@@ -2,7 +2,7 @@
 <div id="who">
   <div class="title">
     Hello，我是刘子煦
-    <div>在上海, to b 物联网行业的设计师</div>
+    <div>在上海的设计师to b 物联网行业设计师</div>
   </div>
   <div id="character">
     <div>
@@ -126,23 +126,20 @@ export default {
 #a1 {
   width: 280px;
   height: 280px;
-  background-image: url('../assets/who/c2.png');
+  background-image: url('../assets/who/c1.png');
   background-size: 300px 300px;
-  border-radius: 4px;
 }
 #b1 {
   width: 280px;
   height: 280px;
-  background-image: url('../assets/who/c3.png');
+  background-image: url('../assets/who/c2.png');
   background-size: 300px 300px;
-  border-radius: 4px;
 }
 #c1 {
   width: 280px;
   height: 280px;
-  background-image: url('../assets/who/c1.png');
+  background-image: url('../assets/who/c3.png');
   background-size: 300px 300px;
-  border-radius: 4px;
 }
 
 .project {
@@ -156,51 +153,43 @@ export default {
 
 .project>div {
   height: auto;
-  margin: 12px 0px;
+  margin: 24px 0px;
   display: flex;
   justify-content: center;
 }
 
 #a2 {
-  background-image: url('../assets/who/p1.png');
-  background-size: 290px 300px;
-  border-radius: 4px;
-  width: 290px;
-  height: 300px;
+  background-color: #fff;
+  width: 500px;
+  height: 240px;
 }
 #b2 {
   margin-left: 24px;
-  background-image: url('../assets/who/p2.png');
-  background-size: 580px 300px;
-  border-radius: 4px;
-  width: 580px;
-  height: 300px;
+  background-color: #fff;
+  width: 250px;
+  height: 240px;
 }
 #a3 {
-  background-image: url('../assets/who/p3.png');
-  background-size: 435px 300px;
-  border-radius: 4px;
-  width: 435px;
-  height: 300px;
+  background-color: #fff;
+  width: 375px;
+  height: 240px;
 }
 #b3 {
   margin-left: 24px;
-  background-image: url('../assets/who/p3.png');
-  background-size: 435px 300px;
-  border-radius: 4px;
-  width: 435px;
-  height: 300px;
+  background-color: #fff;
+  width: 375px;
+  height: 240px;
 }
 #a4 {
-    background-color: #fff;
-  width: 580px;
-  height: 300px;
+  background-color: #fff;
+  width: 250px;
+  height: 240px;
 }
 #b4 {
-    margin-left: 24px;
+  margin-left: 24px;
   background-color: #fff;
-  width: 290px;
-  height: 300px;
+  width: 500px;
+  height: 240px;
 }
 
 #tedian {

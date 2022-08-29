@@ -1,0 +1,43 @@
+<template>
+<div id="who">
+  <div id="title">
+    Hello，我是刘子煦
+    <span>在上海的设计师to b 物联网行业设计师</span>
+  </div>
+</div>
+
+</template>
+
+<script>
+
+
+export default {
+  name: "whoView",
+  components: {},
+  mounted(){
+
+  },
+  methods: {
+  },
+  data() {
+  },
+};
+</script>
+
+<style>
+#who {
+  background-color: rgb(0, 0, 0);
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#title {
+  color: aliceblue;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+  font-size: 24px;
+
+}
+</style>
