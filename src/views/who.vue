@@ -31,16 +31,20 @@
       <div id="a4"></div>
       <div id="b4"></div>
     </div>
+    <div>
+      <div id="a5"></div>
+    </div>
   </div>
   <div id="tedian">
     <div class="title">与众不同</div>
     <div id="tedian2">
-      <div class="tedian3">
+      <div class="tedian4">
         <div>左手设计</div>
         <ul>1.asdasd</ul>
         <ul>2.asdasd</ul>
         <ul>3.asdasd</ul>
       </div>
+      <div class="divline"></div>
       <div class="tedian3">
         <div>右手技术</div>
         <ul>1.asdasd</ul>
@@ -52,11 +56,12 @@
   <div class="project">
     <div class="title">联系方式</div>
     <div id="tedian2">
-      <div class="tedian3">
-        <div>email：liuzixuitalia@163.com</div>
-        <div>email：liuzixuitalia@163.com</div>
-        <div>email：liuzixuitalia@163.com</div>
+      <div class="tedian4">
+        <div>Email：liuzixuitalia@163.com</div>
+        <div>Wechat：398488080</div>
+        <div>phone：17621616651</div>
       </div>
+      <div class="divline"></div>
       <div class="tedian3">
         <div id="erweima"></div>
       </div>
@@ -185,21 +190,26 @@ export default {
 }
 #b3 {
   margin-left: 24px;
-  background-image: url('../assets/who/p3.png');
+  background-image: url('../assets/who/p4.png');
   background-size: 435px 300px;
   border-radius: 4px;
   width: 435px;
   height: 300px;
 }
 #a4 {
-    background-color: #fff;
+  background-image: url('../assets/who/p5.png');
   width: 580px;
   height: 300px;
 }
 #b4 {
     margin-left: 24px;
-  background-color: #fff;
+    background-image: url('../assets/who/p6.png');
   width: 290px;
+  height: 300px;
+}
+#a5 {
+    background-image: url('../assets/who/p7.png');
+  width: 894px;
   height: 300px;
 }
 
@@ -216,22 +226,48 @@ export default {
 .tedian3 {
   /* border: 1px solid red; */
   width: 380px;
-  margin: 24px 12px;
+  margin: 0px 32px;
 }
 .tedian3>div {
   color: #fff;
   font-size: 16px;
-  margin-top: 16px;
+  margin: 8px 16px 24px 16px;
 }
 .tedian3>ul {
   color: rgba(255, 255, 255, 0.5);
   padding: 0px;
+  margin: 16px 16px;
+}
+.divline {
+  width: 1px;
+  height: 10rem;
+  margin: 0px 0px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.tedian4 {
+  /* border: 1px solid red; */
+  width: 380px;
+  margin: 0px 32px;
+}
+.tedian4>div {
+  color: #fff;
+  font-size: 16px;
+  margin: 8px 16px 24px 16px;
+  text-align: right;
+}
+.tedian4>ul {
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0px;
+  margin: 16px 16px;
+  text-align: right;
 }
 
+
+
 #erweima {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   background-image: url('../assets/who/wc.png');
-  background-size: 100px 100px
+  background-size: 150px 150px
 }
 </style>
