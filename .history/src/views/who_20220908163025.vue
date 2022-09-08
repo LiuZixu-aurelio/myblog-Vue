@@ -53,7 +53,7 @@
       </div>
     </div>
   </div>
-  <div class="project2">
+  <div class="project">
     <div class="title">联系方式</div>
     <div id="tedian2">
       <div class="tedian4">
@@ -163,7 +163,7 @@ export default {
 }
 
 .project {
-    background-image: url('../assets/who/bg.png');
+    background-image: url('../assets/who/c3h.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
@@ -175,33 +175,12 @@ export default {
   margin: 48px 0px;
 }
 
-.project2 {
-    background-image: url('../assets/who/bg.png');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center;
-  /* background-color: rgba(255, 255, 255, 0.1); */
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 48px 0px;
-  margin: 48px 0px;
-}
-
-.project>div{
+.project>div {
   height: auto;
   margin: 12px 0px;
   display: flex;
   justify-content: center;
 }
-
-.project2>div{
-  height: auto;
-  margin: 12px 0px;
-  display: flex;
-  justify-content: center;
-}
-
 
 #a2 {
   background-image: url('../assets/who/p1.png');

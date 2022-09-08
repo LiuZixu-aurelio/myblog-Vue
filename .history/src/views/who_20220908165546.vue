@@ -188,14 +188,7 @@ export default {
   margin: 48px 0px;
 }
 
-.project>div{
-  height: auto;
-  margin: 12px 0px;
-  display: flex;
-  justify-content: center;
-}
-
-.project2>div{
+.project>div .project2>div {
   height: auto;
   margin: 12px 0px;
   display: flex;

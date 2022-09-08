@@ -40,20 +40,21 @@
     <div id="tedian2">
       <div class="tedian4">
         <div>左手设计</div>
-        <ul>企业级设计系统方法</ul>
-        <ul>数据驱动的增长设计实践</ul>
-        <ul>深度理解 SAP、Salesforce、Google 等设计体系</ul>
+        <ul>1.有企业级设计实践与系统方法</ul>
+        <ul>2.有数据驱动的增长设计实践与系统方法</ul>
+        <ul>3.深度理解 SAP、Salesforce、Google 等设计体系</ul>
       </div>
       <div class="divline"></div>
       <div class="tedian3">
         <div>右手技术</div>
-        <ul>基础技术：html、css、js、TS</ul>
-        <ul>工程：jQuery、Vue、React、小程序</ul>
-        <ul>图形：threejs、echart、webGPU、各类ui库</ul>
+        <ul>1.基础技术：html、css、js、TS</ul>
+        <ul>2.工程：jQuery、Vue、React、小程序</ul>
+        <ul>3.图形：threejs、echart、webGPU、webGL、各类ui库</ul>
+        <ul>3.协作：git</ul>
       </div>
     </div>
   </div>
-  <div class="project2">
+  <div class="project">
     <div class="title">联系方式</div>
     <div id="tedian2">
       <div class="tedian4">
@@ -130,26 +131,21 @@ export default {
   
 }
 
-#a1{
+#a1 {
   width: 280px;
   height: 280px;
   background-image: url('../assets/who/c1.png');
   background-size: 300px 300px;
+  
 }
-#a1:hover {
-  background-image: url('../assets/who/c1h.png');
-}
-
-
 #b1 {
   width: 280px;
   height: 280px;
   background-image: url('../assets/who/c2.png');
   background-size: 300px 300px;
   border-radius: 4px;
-}
-#b1:hover {
-  background-image: url('../assets/who/c2h.png');
+  /* opacity:0.5; */
+  
 }
 #c1 {
   width: 280px;
@@ -158,16 +154,9 @@ export default {
   background-size: 300px 300px;
   border-radius: 4px;
 }
-#c1:hover {
-  background-image: url('../assets/who/c3h.png');
-}
 
 .project {
-    background-image: url('../assets/who/bg.png');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center;
-  /* background-color: rgba(255, 255, 255, 0.1); */
+  background-color: rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -175,33 +164,12 @@ export default {
   margin: 48px 0px;
 }
 
-.project2 {
-    background-image: url('../assets/who/bg.png');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center;
-  /* background-color: rgba(255, 255, 255, 0.1); */
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 48px 0px;
-  margin: 48px 0px;
-}
-
-.project>div{
+.project>div {
   height: auto;
   margin: 12px 0px;
   display: flex;
   justify-content: center;
 }
-
-.project2>div{
-  height: auto;
-  margin: 12px 0px;
-  display: flex;
-  justify-content: center;
-}
-
 
 #a2 {
   background-image: url('../assets/who/p1.png');

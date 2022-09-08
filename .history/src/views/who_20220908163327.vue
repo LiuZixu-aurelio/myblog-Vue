@@ -163,7 +163,7 @@ export default {
 }
 
 .project {
-    background-image: url('../assets/who/bg.png');
+    background-image: url('../assets/who/c3h.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
@@ -174,9 +174,8 @@ export default {
   padding: 48px 0px;
   margin: 48px 0px;
 }
-
 .project2 {
-    background-image: url('../assets/who/bg.png');
+    background-image: url('../assets/who/c2h.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
@@ -188,20 +187,12 @@ export default {
   margin: 48px 0px;
 }
 
-.project>div{
+.project>div {
   height: auto;
   margin: 12px 0px;
   display: flex;
   justify-content: center;
 }
-
-.project2>div{
-  height: auto;
-  margin: 12px 0px;
-  display: flex;
-  justify-content: center;
-}
-
 
 #a2 {
   background-image: url('../assets/who/p1.png');
