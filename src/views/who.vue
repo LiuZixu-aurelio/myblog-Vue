@@ -36,7 +36,7 @@
     </div>
   </div>
   <div id="tedian">
-    <div class="title">与众不同</div>
+    <div class="title2">与众不同</div>
     <div id="tedian2">
       <div class="tedian4">
         <div>左手设计</div>
@@ -54,7 +54,7 @@
     </div>
   </div>
   <div class="project2">
-    <div class="title">联系方式</div>
+    <div class="title2">联系方式</div>
     <div id="tedian2">
       <div class="tedian4">
         <div>Email：liuzixuitalia@163.com</div>
@@ -95,9 +95,23 @@ export default {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  flex-direction: column
+  flex-direction: column;
 }
 .title {
+  display: block;
+  color: aliceblue;
+  justify-content: center;
+  align-items: center;
+  margin: 120px 0px 0px 0px;
+  font-size: 24px;
+  flex-wrap: wrap
+}
+.title>div{
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.title2 {
   display: block;
   color: aliceblue;
   justify-content: center;
@@ -105,16 +119,13 @@ export default {
   margin: 48px 0px 0px 0px;
   font-size: 24px;
   flex-wrap: wrap
+}
 
-}
-.title>div{
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.5);
-}
+
 
 #character {
   display: flex;
-  margin: 48px 0px;
+  margin: 60px 0px;
 }
 
 #character>div {
@@ -163,24 +174,20 @@ export default {
 }
 
 .project {
-    background-image: url('../assets/who/bg.png');
+  background-image: url('../assets/who/bg.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
-  /* background-color: rgba(255, 255, 255, 0.1); */
+  /* background-color: rgb(26, 26, 26); */
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 48px 0px;
+  padding: 120px 0px 48px 0px;
   margin: 48px 0px;
 }
 
 .project2 {
-    background-image: url('../assets/who/bg.png');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center;
-  /* background-color: rgba(255, 255, 255, 0.1); */
+  background-color: rgb(26, 26, 26);
   display: flex;
   flex-direction: column;
   width: 100%;

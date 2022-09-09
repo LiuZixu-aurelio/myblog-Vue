@@ -10,7 +10,7 @@ const signProduct3 = [
     require('/src/assets/sign/sign-product.png'),
     require('/src/assets/sign/sign-product1.png'),
     require('/src/assets/sign/sign-product2.png'),
-    require('/src/assets/sign/sign-product3.png')
+    equire('/src/assets/sign/sign-product3.png')
 ]
 
 export { signProduct1 } // 标题

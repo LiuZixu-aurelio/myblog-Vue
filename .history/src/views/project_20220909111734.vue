@@ -1,5 +1,5 @@
 <template>
-    <div class='whoheigt'>
+    <div class='project1'>
         <div class="whocont">
             <h2>作品</h2>
             <CardCom :na='a' :ur='b' :lnk='c'></CardCom>
@@ -34,4 +34,40 @@
 
 <style lang="scss">
 
+.project1 {
+    background-color: rgb(244, 246, 255);
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-top: 80px;
+    
+    .whocont{
+            width: 92%;
+            margin: auto;
+            height: 90%;
+            text-align: center;
+        }
+
+    .whodiv{
+      display: inline-block;
+      margin: 24px 24px 0px 24px;
+      padding-bottom: 0px ;
+      max-width: 80%;
+      text-align: left;
+      color: rgba(255, 255, 255, 0.75)
+    }
+
+    img{
+      margin: 0px 24px;
+      position: relative;
+      top: 32px;
+    }
+    }
+.whoheigt{
+    /* height:94vh; */
+
+
+  }
 </style>

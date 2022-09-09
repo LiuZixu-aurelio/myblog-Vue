@@ -22,6 +22,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+#qqq {
+  /* background:url(../assets/zhihu.png); */
+  background-size: 100% 100%;
+  height: 800px;
+  width: 1080px;
+  display: inline-block;
+  margin: 24px;
+}
 
 
 </style>

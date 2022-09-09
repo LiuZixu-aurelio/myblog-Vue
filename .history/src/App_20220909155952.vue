@@ -122,7 +122,7 @@ body{
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
-    padding-top: 100px;
+    padding-top: 120px;
 
     .whocont{
       width: 92%;
