@@ -4,7 +4,7 @@
             <h2>笔记</h2>
             <CardCom :na='asp' :ur='bsp' :lnk='csp'></CardCom>
             <CardCom :na='asb' :ur='bsb' :lnk='csb'></CardCom>
-            <CardCom :na='asap' :ur='bsap' :lnk='csap'></CardCom>
+            <CardCom :na='asb' :ur='bsb' :lnk='csb'></CardCom>
             <CardCom :na='asalesforce' :ur='bsalesforce' :lnk='csalesforce'></CardCom>
         </div>
     </div>

@@ -19,8 +19,6 @@ import { signBlender1, signBlender3 } from '../pages/sign-blender.js'
 import { talkResponsive1, talkResponsive3 } from '../pages/talk-responsive.js'
 import { signSAP1, signSAP3 } from '../pages/sign-sap.js'
 import { signSalesforce1, signSalesforce3 } from '../pages/sign-salesforce.js'
-import { pPlant1, pPlant3 } from '../pages/project-plant.js'
-
 
 
 
@@ -67,12 +65,6 @@ const routes = [
         path: '/home/project/infor',
         name: 'infor',
         props: { na:scardInfor1,im:scardInfor3 },
-        component: DetailCom,
-      },
-      {
-        path: '/home/project/plantlight',
-        name: 'plantlight',
-        props: { na:pPlant1,im:pPlant3 },
         component: DetailCom,
       },
       {

@@ -81,7 +81,7 @@ body{
 
   .nav {
       background-color: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(8px);
       height: 67px;
       line-height: 67px;
       position: fixed;

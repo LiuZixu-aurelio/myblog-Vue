@@ -1,7 +1,7 @@
 <template>
   <router-link :to='lnk'>
     <div id='prodiv' :style="[ur]">
-        <!-- <div>{{na}}</div> -->
+        <div>{{na}}</div>
     </div>
   </router-link>
 </template>
