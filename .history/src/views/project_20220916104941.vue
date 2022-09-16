@@ -7,7 +7,6 @@
             <CardCom :na='atest' :ur='btest' :lnk='ctest'></CardCom>
             <CardCom :na='ainfor' :ur='binfor' :lnk='cinfor'></CardCom>
             <CardCom :na='aconfig' :ur='bconfig' :lnk='cconfig'></CardCom>
-            <CardCom :na='aconfig' :ur='bconfig' :lnk='cconfig'></CardCom>
 
         </div>
     </div>
