@@ -5,7 +5,7 @@
             <CardCom :na='signProduct1' :ur='signProduct2' :lnk='signProduct4'></CardCom>
             <CardCom :na='signBlender1' :ur='signBlender2' :lnk='signBlender4'></CardCom>
             <CardCom :na='signSAP1' :ur='signSAP2' :lnk='signSAP4'></CardCom>
-            <CardCom :na='signSalesforce1' :ur='signSalesforce2' :lnk='signSalesforce4'></CardCom>
+            <CardCom :na='signSalesforce1' :ur='ignSalesforce2' :lnk='signSalesforce4'></CardCom>
         </div>
     </div>
 </template>
@@ -27,7 +27,7 @@ export default {
         signProduct1,signProduct2,signProduct4,
         signBlender1,signBlender2,signBlender4,
         signSAP1,signSAP2,signSAP4,
-        signSalesforce1,signSalesforce2,signSalesforce4,
+        signSalesforce1,ignSalesforce2,signSalesforce4,
 
         }
     },

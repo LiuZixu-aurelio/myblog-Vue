@@ -4,7 +4,7 @@
 
 const talkResponsive1 = '组件-布局响应式'
 
-const aa = require("/src/assets/talk/talk-responsive0.png")
+const aa = require("/src/assets/talk/talk-responsive.png")
 const talkResponsive2 = {backgroundImage: 'url(' + aa +')'}
 
 const talkResponsive3 =[

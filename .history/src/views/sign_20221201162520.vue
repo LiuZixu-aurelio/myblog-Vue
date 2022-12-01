@@ -27,7 +27,7 @@ export default {
         signProduct1,signProduct2,signProduct4,
         signBlender1,signBlender2,signBlender4,
         signSAP1,signSAP2,signSAP4,
-        signSalesforce1,signSalesforce2,signSalesforce4,
+        signSalesforce1,ignSalesforce2,signSalesforce4,
 
         }
     },

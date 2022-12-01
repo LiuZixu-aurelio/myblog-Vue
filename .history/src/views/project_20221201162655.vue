@@ -2,12 +2,13 @@
     <div class='whoheigt'>
         <div class="whocont">
             <h2>作品</h2>
-            <CardCom :na='scard1' :ur='scard2' :lnk='scard4'></CardCom>
-            <CardCom :na='extest1' :ur='extest2' :lnk='extest4'></CardCom>
-            <CardCom :na='scardInfor1' :ur='scardInfor2' :lnk='scardInfor4'></CardCom>
-            <CardCom :na='pPlant1' :ur='pPlant2' :lnk='pPlant4'></CardCom>
-            <CardCom :na='pConfig1' :ur='pConfig2' :lnk='pConfig4'></CardCom>
-            <CardCom :na='pConfig1' :ur='pConfig2' :lnk='pConfig4'></CardCom>
+            <CardCom :na='a' :ur='b' :lnk='c'></CardCom>
+            <CardCom :na='aplant' :ur='bplant' :lnk='cplant'></CardCom>
+            <CardCom :na='atest' :ur='btest' :lnk='ctest'></CardCom>
+            <CardCom :na='ainfor' :ur='binfor' :lnk='cinfor'></CardCom>
+            <CardCom :na='aconfig' :ur='bconfig' :lnk='cconfig'></CardCom>
+            <CardCom :na='aconfig' :ur='bconfig' :lnk='cconfig'></CardCom>
+
         </div>
     </div>
 </template>
