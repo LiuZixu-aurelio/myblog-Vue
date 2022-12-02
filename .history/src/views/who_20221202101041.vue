@@ -20,23 +20,17 @@
   </div>
   <div class="project">
     <div>
-      <a href="https://www.figma.com/@liuzixu" target="_blank">
+      <router-link :to='"/home/sign/sign-blender"'>
         <div id="a2"></div>
-      </a>
-      <router-link :to='"/home/project/ZHIHU"'>
-        <div id="b2"></div>
       </router-link>
+      <div id="b2"></div>
     </div>
     <div>
-      <router-link :to='"/home/project/plantlight"'>
-        <div id="a3"></div>
-      </router-link>
+      <div id="a3"></div>
       <div id="b3"></div>
     </div>
     <div>
-      <router-link :to='"/home/project/test"'>
-        <div id="a4"></div>
-      </router-link>
+      <div id="a4"></div>
       <div id="b4"></div>
     </div>
     <div>
@@ -50,12 +44,12 @@
         <div>左手设计</div>
         <ul>企业级设计系统方法</ul>
         <ul>数据驱动的增长设计实践</ul>
-        <ul>深度理解SAP、Salesforce、Google等设计体系</ul>
+        <ul>深度理解 SAP、Salesforce、Google 等设计体系</ul>
       </div>
       <div class="divline"></div>
       <div class="tedian3">
         <div>右手技术</div>
-        <ul>基础技术：HTML、CSS、JS、TS</ul>
+        <ul>基础技术：html、css、js、TS</ul>
         <ul>工程：jQuery、Vue、React、小程序</ul>
         <ul>图形：threejs、echart、webGPU、各类ui库</ul>
       </div>

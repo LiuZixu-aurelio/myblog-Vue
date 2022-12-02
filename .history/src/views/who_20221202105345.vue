@@ -55,7 +55,7 @@
       <div class="divline"></div>
       <div class="tedian3">
         <div>右手技术</div>
-        <ul>基础技术：HTML、CSS、JS、TS</ul>
+        <ul>基础技术：html、css、js、TS</ul>
         <ul>工程：jQuery、Vue、React、小程序</ul>
         <ul>图形：threejs、echart、webGPU、各类ui库</ul>
       </div>
