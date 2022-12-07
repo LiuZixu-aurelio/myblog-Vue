@@ -145,7 +145,7 @@ body{
     }
 
     img{
-      margin: 0px 24px;
+      margin: auto;
       position: relative;
       top: 32px;
     }

@@ -1,46 +1,46 @@
 <template>
 <div id="who">
   <div class="title">
-    Hello，我是刘子煦
-    <div>在上海, to b 物联网行业的设计师</div>
+    Hello，I'm Liu Zixu
+    <div>Product designer / Creator, Shanghai</div>
   </div>
   <div id="character">
     <div>
-      <div id="a1" class="mb-4 transition hover:-translate-y-2"></div>
+      <div id="a1" class="mb-4 transition hover:-translate-y-4"></div>
       <p>深度</p>
     </div>
     <div>
-      <div id="b1" class="mb-4 transition hover:-translate-y-2"></div>
+      <div id="b1" class="mb-4 transition hover:-translate-y-4"></div>
       <p>创新</p>
     </div>
     <div>
-      <div id="c1" class="mb-4 transition hover:-translate-y-2"></div>
+      <div id="c1" class="mb-4 transition hover:-translate-y-4"></div>
       <p>效率</p>
     </div>
   </div>
   <div class="project">
     <div>
-      <a href="https://www.figma.com/@liuzixu" target="_blank" class="transition transform hover:scale-95">
+      <a href="https://www.figma.com/@liuzixu" target="_blank" class="transition transform hover:scale-98">
         <div id="a2"></div>
       </a>
-      <router-link :to='"/home/project/ZHIHU"' class="transition transform hover:scale-95">
+      <router-link :to='"/home/project/ZHIHU"' class="transition transform hover:scale-98">
         <div id="b2"></div>
       </router-link>
     </div>
     <div>
-      <router-link :to='"/home/project/plantlight"' class="transition transform hover:scale-95">
+      <router-link :to='"/home/project/plantlight"' class="transition transform hover:scale-98">
         <div id="a3"></div>
       </router-link>
-      <div id="b3" class="transition transform hover:scale-95"></div>
+      <div id="b3" class="transition transform hover:scale-98"></div>
     </div>
     <div>
-      <router-link :to='"/home/project/test"' class="transition transform hover:scale-95">
+      <router-link :to='"/home/project/test"' class="transition transform hover:scale-98">
         <div id="a4"></div>
       </router-link>
-      <div id="b4" class="transition transform hover:scale-95"></div>
+      <div id="b4" class="transition transform hover:scale-98"></div>
     </div>
     <div>
-      <router-link :to='"/home/project/data"' class="transition transform hover:scale-95">
+      <router-link :to='"/home/project/data"' class="transition transform hover:scale-98">
         <div id="a5"></div>
       </router-link>
     </div>
@@ -118,6 +118,7 @@ export default {
   flex-wrap: wrap
 }
 .title>div{
+  margin-top: 8px;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -157,6 +158,7 @@ export default {
   height: 280px;
   background-image: url('../assets/who/c1.png');
   background-size: 300px 300px;
+  border-radius: 4px;
 }
 #a1:hover {
   background-image: url('../assets/who/c1h.png');
@@ -255,17 +257,22 @@ export default {
   background-image: url('../assets/who/p5.png');
   width: 580px;
   height: 300px;
+  border-radius: 4px;
 }
 #b4 {
     margin-left: 24px;
     background-image: url('../assets/who/p6.png');
   width: 290px;
   height: 300px;
+  border-radius: 4px;
+
 }
 #a5 {
     background-image: url('../assets/who/p7.png');
   width: 894px;
   height: 300px;
+  border-radius: 4px;
+
 }
 
 #tedian {

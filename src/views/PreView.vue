@@ -4,7 +4,7 @@
         <div class="liuzixu">design by LiuZixu</div>
         <div class="cont">
             <img src="../assets/logo.png">
-            <p class="zi">Hello，我是刘子煦</p>
+            <p class="zi">Hello, I'm Liu Zixu</p>
             <router-link to="/home/who">
               <button class="start transition transform hover:scale-90">Start</button>
             </router-link>
