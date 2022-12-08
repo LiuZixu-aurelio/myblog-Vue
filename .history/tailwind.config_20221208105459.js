@@ -3,12 +3,7 @@ module.exports = {
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   content: [],
   theme: {
-    extend: {
-      transitionDuration: {
-        '0': '0ms',
-        '5000': '5000ms',
-       }
-    },
+    extend: {},
     scale: {
       '0': '0',
      '25': '.25',
@@ -34,8 +29,7 @@ module.exports = {
       '135': '135deg',
        '180': '180deg',
       '270': '270deg',
-      '1080': '1080deg',
-      '-1080': '-1080deg',
+      '1800': '1800deg',
      }
   },
   plugins: [],

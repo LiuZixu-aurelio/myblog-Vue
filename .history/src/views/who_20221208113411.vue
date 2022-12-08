@@ -48,10 +48,6 @@
   <div id="tedian">
     <WhoCom :Title="T1" :Text='t1'></WhoCom>
     <WhoCom :Title="T2" :Text='t2'></WhoCom>
-    <WhoCom :Title="T3" :Text='t3'></WhoCom>
-    <WhoCom :Title="T4" :Text='t4'></WhoCom>
-
-
   </div>
   <div class="project2">
     <div class="title2">联系方式</div>
@@ -81,11 +77,7 @@ export default {
       T1:"Design",
       t1:["企业级设计系统方法","数据驱动的增长设计实践","深度理解SAP、Salesforce、Google等设计体系"],
       T2:"Code",
-      t2:["基础技术：HTML、CSS、JS、TS","工程：jQuery、Vue、React、小程序","图形：threejs、echart、webGPU、各类ui库"],
-      T3:"Honor",
-      t3:['2020年中国产品设计大赛优秀奖','即时设计联合优秀插件开发者','意大利-本科-全额奖学金'],
-      T4:"Interest",
-      t4:["Design: 交互、用户体验、设计策略",'Pro: 工程化、图形化、Code','Characteristics: 探索、创新、逻辑']
+      t2:["基础技术：HTML、CSS、JS、TS","工程：jQuery、Vue、React、小程序","图形：threejs、echart、webGPU、各类ui库"]
       }
   },
   components: {
@@ -267,18 +259,13 @@ export default {
   width: 894px;
   height: 300px;
   border-radius: 4px;
-  
 
 }
 
 #tedian {
-  margin: 0px 48px;
+  margin-bottom: 48px;
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: auto;
-  justify-content: center;
-  max-width: 1000px
+  align-items: center
 }
 .divline {
   width: 1px;
@@ -287,6 +274,8 @@ export default {
   background-color: rgba(255, 255, 255, 0.15);
 }
 .tedian4 {
+  /* border: 1px solid red; */
+  width: 380px;
   margin: 0px 32px;
 }
 .tedian4>div {

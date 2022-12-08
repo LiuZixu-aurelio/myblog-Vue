@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       transitionDuration: {
         '0': '0ms',
-        '5000': '5000ms',
+        '50000': '50000ms',
        }
     },
     scale: {
@@ -34,8 +34,7 @@ module.exports = {
       '135': '135deg',
        '180': '180deg',
       '270': '270deg',
-      '1080': '1080deg',
-      '-1080': '-1080deg',
+      '1800': '1800deg',
      }
   },
   plugins: [],

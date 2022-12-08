@@ -7,7 +7,7 @@
                 <CardCom :na='extest1' :ur='extest2' :lnk='extest4'></CardCom>
                 <CardCom :na='scardInfor1' :ur='scardInfor2' :lnk='scardInfor4'></CardCom>
                 <CardCom :na='pPlant1' :ur='pPlant2' :lnk='pPlant4'></CardCom>
-                <CardCom :na='pConfig1' :ur='pConfig2' :lnk='pConfig4'></CardCom>
+                <!-- <CardCom :na='pConfig1' :ur='pConfig2' :lnk='pConfig4'></CardCom> -->
                 <CardCom :na='data1' :ur='data2' :lnk='data4'></CardCom>
             </div>
         </div>

@@ -44,8 +44,6 @@
 <style lang="scss">
 .list{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 </style>
