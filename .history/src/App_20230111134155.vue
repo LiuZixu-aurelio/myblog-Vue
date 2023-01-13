@@ -6,7 +6,9 @@
 </template>
 
 <script>
-
+metaInfo: {
+  title: 'sheji'
+}
 </script>
 
 
