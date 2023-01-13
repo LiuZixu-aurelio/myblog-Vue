@@ -24,6 +24,12 @@ import { pPlant1, pPlant3 } from '../pages/project-plant.js'
 import { pConfig1, pConfig3 } from '../pages/project-config.js'
 import { talkrule1, talkrule3 } from '../pages/talk-rule.js'
 import { data1, data3 } from '../pages/project-data.js'
+import { talkResearch1, talkResearch3 } from '../pages/talk-research.js'
+import { talkShadow1, talkShadow3 } from '../pages/talk-shadow.js'
+import { signMaterialdesign1, signMaterialdesign3 } from '../pages/sign-MaterialDesign.js'
+
+
+
 
 
 
@@ -61,32 +67,13 @@ const routes = [
         name: 'project',
         component: ProjectView,
       },
-      {
-        path: '/home/project/ZHIHU',
-        name: 'ZHIHU',
-        props: { na:scard1,im:scard3 },
-        component: DetailCom
-      },
-      {
-        path: '/home/project/test',
-        name: 'testhub',
-        props: { na:extest1,im:extest3 },
-        component: DetailCom,
-      },
-      {
-        path: '/home/project/infor',
-        name: 'infor',
-        props: { na:scardInfor1,im:scardInfor3 },
-        component: DetailCom,
-      },
-      {
-        path: '/home/project/plantlight',
-        name: 'plantlight',
-        props: { na:pPlant1,im:pPlant3 },
-        component: DetailCom,
-      },
+      new luyou("project","ZHIHU",scard1,scard3),
+      new luyou("project","test",extest1,extest3),
+      new luyou("project","infor",scardInfor1,scardInfor3),
+      new luyou("project","plantlight",pPlant1,pPlant3),
       new luyou("project","configtool",pConfig1,pConfig3),
       new luyou("project","data",data1,data3),
+
       {
         path: '/home/talk',
         name: 'talk',
@@ -96,6 +83,9 @@ const routes = [
       new luyou("talk","cbutton",button1,button3),
       new luyou("talk","talk-responsive",talkResponsive1,talkResponsive3),
       new luyou("talk","talk-rule",talkrule1,talkrule3),
+      new luyou("talk","research",talkResearch1,talkResearch3),
+      new luyou("talk","shadow",talkShadow1,talkShadow3),
+      
       {
         path: '/home/sign',
         name: 'sign',
@@ -104,7 +94,8 @@ const routes = [
       new luyou("sign","sign-sap",signSAP1,signSAP3),
       new luyou("sign","sign-salesforce",signSalesforce1,signSalesforce3),
       new luyou("sign","sign-product",signProduct1,signProduct3),
-      new luyou("sign","sign-blender",signBlender1,signBlender3)
+      new luyou("sign","sign-blender",signBlender1,signBlender3),
+      new luyou("sign","sign-MaterialDesign",signMaterialdesign1,signMaterialdesign3)
     ]
   },
 

@@ -26,6 +26,8 @@ import { talkrule1, talkrule3 } from '../pages/talk-rule.js'
 import { data1, data3 } from '../pages/project-data.js'
 import { talkResearch1, talkResearch3 } from '../pages/talk-research.js'
 import { talkShadow1, talkShadow3 } from '../pages/talk-shadow.js'
+import { signMaterialdesign1, signMaterialdesign3 } from '../pages/sign-MaterialDesign.js'
+
 
 
 
@@ -92,7 +94,8 @@ const routes = [
       new luyou("sign","sign-sap",signSAP1,signSAP3),
       new luyou("sign","sign-salesforce",signSalesforce1,signSalesforce3),
       new luyou("sign","sign-product",signProduct1,signProduct3),
-      new luyou("sign","sign-blender",signBlender1,signBlender3)
+      new luyou("sign","sign-blender",signBlender1,signBlender3),
+      new luyou("sign","sign-MaterialDesign",signMaterialdesign1,signMaterialdesign3)
     ]
   },
 
