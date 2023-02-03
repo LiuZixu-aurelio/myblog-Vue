@@ -200,10 +200,8 @@ export default {
   left: 511px;
   top: 3172px;
   background: #000000;
-  border-radius: 8px;
-}
-.name:hover {
   box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
 }
 .name>.t1{
   position: relative;
