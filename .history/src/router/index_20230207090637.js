@@ -6,7 +6,7 @@ import PreView from '../views/PreView.vue'
 import ProjectView from '../views/project.vue'
 import TalkView from '../views/talk.vue'
 import SignView from '../views/sign.vue'
-import Testq from '../views/test.vue'
+import Test from '../views/test.vue'
 
 import DetailCom from '../components/detailCom.vue'
 
@@ -29,6 +29,12 @@ import { talkShadow1, talkShadow3 } from '../pages/talk-shadow.js'
 import { signMaterialdesign1, signMaterialdesign3 } from '../pages/sign-MaterialDesign.js'
 import { pChristie1, pChristie3 } from '../pages/project-christie.js'
 
+
+
+
+
+
+
 class luyou {
   constructor(type,path,name,img) {
     this.path = "/home/" + type + "/" + path
@@ -49,11 +55,6 @@ const routes = [
     component: PreView
   },
   {
-    path: '/testq',
-    name: 'testq',
-    component: Testq
-  },
-  {
     path: '/home',
     name: 'home',
     component: HomeView,
@@ -61,6 +62,11 @@ const routes = [
       {
         path: '/home/who',
         name: 'homewho',
+        component: whoView
+      },
+      {
+        path: '/home/test',
+        name: 'test',
         component: whoView
       },
       {
@@ -75,7 +81,8 @@ const routes = [
       new luyou("project","configtool",pConfig1,pConfig3),
       new luyou("project","data",data1,data3),
       new luyou("project","christie",pChristie1,pChristie3),
-      
+
+
       {
         path: '/home/talk',
         name: 'talk',

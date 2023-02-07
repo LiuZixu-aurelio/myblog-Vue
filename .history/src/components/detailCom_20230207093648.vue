@@ -16,9 +16,11 @@ export default {
     na: String,
     im: Array
   },
-  beforeUnmount(){
+    beforeUnmount(){
+    console.log(`beforeUnmount.`)
   },
   unmounted(){
+    console.log(`unmounted.`)
   }
   
 }

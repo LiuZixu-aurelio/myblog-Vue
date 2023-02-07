@@ -6,10 +6,6 @@
 <script>
 export default {
   name: 'test',
-  beforeCreate(){
-    console.log('beforeCreate')
-
-  },
   created(){
     console.log('created')
 
@@ -19,13 +15,7 @@ export default {
   },
 
   mounted() {
-    console.log(`mounted.`)
-  },
-  beforeUnmount(){
-    console.log(`beforeUnmount.`)
-  },
-  unmounted(){
-    console.log(`unmounted.`)
+    console.log(`the component is now mounted.`)
   }
 
 }

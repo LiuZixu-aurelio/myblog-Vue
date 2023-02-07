@@ -15,12 +15,8 @@ export default {
     props: {
     na: String,
     im: Array
-  },
-  beforeUnmount(){
-  },
-  unmounted(){
   }
-  
+  this.$destroy()
 }
 
 

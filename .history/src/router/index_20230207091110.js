@@ -49,11 +49,6 @@ const routes = [
     component: PreView
   },
   {
-    path: '/testq',
-    name: 'testq',
-    component: Testq
-  },
-  {
     path: '/home',
     name: 'home',
     component: HomeView,
@@ -62,6 +57,11 @@ const routes = [
         path: '/home/who',
         name: 'homewho',
         component: whoView
+      },
+      {
+        path: '/home/testq',
+        name: 'testq',
+        component: Testq
       },
       {
         path: '/home/project',

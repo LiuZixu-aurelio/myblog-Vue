@@ -6,7 +6,7 @@ import PreView from '../views/PreView.vue'
 import ProjectView from '../views/project.vue'
 import TalkView from '../views/talk.vue'
 import SignView from '../views/sign.vue'
-import Testq from '../views/test.vue'
+import Test from '../views/test.vue'
 
 import DetailCom from '../components/detailCom.vue'
 
@@ -49,11 +49,6 @@ const routes = [
     component: PreView
   },
   {
-    path: '/testq',
-    name: 'testq',
-    component: Testq
-  },
-  {
     path: '/home',
     name: 'home',
     component: HomeView,
@@ -61,6 +56,11 @@ const routes = [
       {
         path: '/home/who',
         name: 'homewho',
+        component: whoView
+      },
+      {
+        path: '/home/teatq',
+        name: 'testq',
         component: whoView
       },
       {

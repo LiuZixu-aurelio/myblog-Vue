@@ -20,12 +20,6 @@ export default {
 
   mounted() {
     console.log(`mounted.`)
-  },
-  beforeUnmount(){
-    console.log(`beforeUnmount.`)
-  },
-  unmounted(){
-    console.log(`unmounted.`)
   }
 
 }
