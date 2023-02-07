@@ -31,6 +31,7 @@ const scardInfor3  =
         require("/src/assets/project/infor/infor17.png"),
         require("/src/assets/project/infor/infor18.png"),
         require("/src/assets/project/infor/infor19.png"),
+        require("/src/assets/project/infor/infor20.png"),
     ]
 
 
