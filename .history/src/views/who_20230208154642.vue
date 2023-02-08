@@ -47,11 +47,7 @@
         <div class="t3 b"></div>
         <div class="t4">微信</div>
         <div class="t4">公众号</div>
-        <div class="t5">
-          <a :href='cv' download="刘子煦-UX设计-热那亚大学.png">下载简历</a>
-        </div>
-        
-        <div class="t6">/ Liu Zixu</div>
+        <div class="t5">简历详情</div>
     </div>
   </div>
 </div>
@@ -67,8 +63,6 @@ export default {
   name: "whoView",
   data:()=>{
     return{
-      cv:require("../assets/who/cv.png"),
-
       w1:"290px",url1:require("../assets/who/p1.png"),link1:'/home/who',
       w2:"580px",url2:require("../assets/who/p2.png"),link2:'/home/project/ZHIHU',
       w3:"435px",url3:require("../assets/who/p3.png"),link3:'/home/project/plantlight',
@@ -206,7 +200,7 @@ export default {
 .name {
   margin: auto;
   width: 894px;
-  height: 280px;
+  height: 293px;
   left: 511px;
   top: 3172px;
   background: #000000;
@@ -243,7 +237,7 @@ export default {
 .name>.a{
   background-image: url('../assets/who/wc.png');
   top: -50px;
-  right: -490px;
+  right: -500px;
 }
 .name>.b{
   background-image: url('../assets/who/wc2.png');
@@ -258,7 +252,7 @@ export default {
   line-height: 32px;
   color: rgba(255, 255, 255, 0.4);
   top: -195px;
-  left: 550px;
+  left: 510px;
   margin-right: 167px;
   display: inline-block;
 }
@@ -277,13 +271,6 @@ export default {
 .name>.t5:hover{
   color: rgba(0, 0, 0, 0.9);
   background-color: #fff;
-}
-.name>.t6{
-  position: relative;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 16px;
-  right: -160px;
-  top: -408px;
 }
 
 

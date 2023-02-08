@@ -48,7 +48,7 @@
         <div class="t4">微信</div>
         <div class="t4">公众号</div>
         <div class="t5">
-          <a :href='cv' download="刘子煦-UX设计-热那亚大学.png">下载简历</a>
+          <a :href='cv' download="刘子煦-UX/交互-热那亚大学.png">下载简历</a>
         </div>
         
         <div class="t6">/ Liu Zixu</div>

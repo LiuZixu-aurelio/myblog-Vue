@@ -47,9 +47,13 @@
         <div class="t3 b"></div>
         <div class="t4">微信</div>
         <div class="t4">公众号</div>
-        <div class="t5">
-          <a :href='cv' download="刘子煦-UX设计-热那亚大学.png">下载简历</a>
-        </div>
+        
+          <div class="t5">
+            <router-link :to='"/img/wc.b3efbdb3.png"'>简历详情</router-link>
+          </div>
+          <div class="t5">
+            <a href="https://liuzixu-aurelio.github.io/designcollection/">简历详情</a>
+          </div>
         
         <div class="t6">/ Liu Zixu</div>
     </div>
@@ -67,7 +71,7 @@ export default {
   name: "whoView",
   data:()=>{
     return{
-      cv:require("../assets/who/cv.png"),
+      cv:require("../assets/who/p7.png"),
 
       w1:"290px",url1:require("../assets/who/p1.png"),link1:'/home/who',
       w2:"580px",url2:require("../assets/who/p2.png"),link2:'/home/project/ZHIHU',
