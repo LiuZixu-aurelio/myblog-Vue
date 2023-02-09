@@ -45,15 +45,14 @@
         <div class="t6">/ Liu Zixu</div>
         <div class="t2">17621616651</div>
         <div class="t2">liuziixuitalia@163.com</div>
-        <div class="t5">
-          <a :href='cv' download="刘子煦-UX设计-热那亚大学.png">下载简历</a>
-        </div>
+        <a :href='cv' download="刘子煦-UX设计-热那亚大学.png">下载简历</a>
+        <div class="t5"></div>
       </div>
       <div id="right">>
-        <div class="t3 a"></div>
+<!--         <div class="t3 a"></div>
         <div class="t3 b"></div>
         <div class="t4">微信</div>
-        <div class="t4">公众号</div>
+        <div class="t4">公众号</div> -->
       </div>
       
     </div>
@@ -245,7 +244,7 @@ export default {
   font-size: 14px;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.4);
-  top: 48px;
+  top: 70px;
   right: -60px;
 }
 .t3{
@@ -256,13 +255,13 @@ export default {
 }
 .a{
   background-image: url('../assets/who/wc.png');
-  top: 24px;
-  right: -70px;
+  top: -50px;
+  right: -490px;
 }
 .b{
   background-image: url('../assets/who/wc2.png');
-  top: -126px;
-  right: -270px;
+  top: -200px;
+  right: -690px;
 }
 .t4{
   position: relative;
@@ -271,8 +270,8 @@ export default {
   font-size: 14px;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.4);
-  top: -120px;
-  left: 130px;
+  top: -195px;
+  left: 550px;
   margin-right: 167px;
   display: inline-block;
 }
@@ -283,7 +282,7 @@ export default {
   font-size: 14px;
   border-radius: 4px;
   right: -60px;
-  top: 70px;
+  top: -240px;
   width: 100px;
   height: 40px;
   padding: 8px 20px;
@@ -297,7 +296,7 @@ export default {
   color: rgba(255, 255, 255, 0.4);
   font-size: 16px;
   right: -160px;
-  top: 28px;
+  top: -28px;
 }
 
 

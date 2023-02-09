@@ -271,8 +271,8 @@ export default {
   font-size: 14px;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.4);
-  top: -120px;
-  left: 130px;
+  top: -195px;
+  left: 550px;
   margin-right: 167px;
   display: inline-block;
 }

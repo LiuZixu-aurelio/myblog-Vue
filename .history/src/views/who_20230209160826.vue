@@ -40,22 +40,18 @@
   </div>
   <div class="project2">
     <div class="name">
-      <div id="left">
         <div class="t1">刘子煦</div>
-        <div class="t6">/ Liu Zixu</div>
         <div class="t2">17621616651</div>
         <div class="t2">liuziixuitalia@163.com</div>
-        <div class="t5">
-          <a :href='cv' download="刘子煦-UX设计-热那亚大学.png">下载简历</a>
-        </div>
-      </div>
-      <div id="right">>
         <div class="t3 a"></div>
         <div class="t3 b"></div>
         <div class="t4">微信</div>
         <div class="t4">公众号</div>
-      </div>
-      
+        <div class="t5">
+          <a :href='cv' download="刘子煦-UX设计-热那亚大学.png">下载简历</a>
+        </div>
+        
+        <div class="t6">/ Liu Zixu</div>
     </div>
   </div>
 </div>
@@ -208,7 +204,6 @@ export default {
 }
 
 .name {
-  display: flex;
   margin: auto;
   width: 894px;
   height: 280px;
@@ -220,15 +215,7 @@ export default {
 .name:hover {
   box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.1);
 }
-.name>#left {
-  width: 50%;
-}
-.name>#right {
-  width: 500px;
-
-
-}
-.t1{
+.name>.t1{
   position: relative;
   font-weight: 700;
   font-size: 28px;
@@ -237,67 +224,67 @@ export default {
   top: 50px;
   right: -60px;
 }
-.t2{
-  display: block;
+.name>.t2{
+  display: inline-flex;
   position: relative;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.4);
-  top: 48px;
+  top: 70px;
   right: -60px;
 }
-.t3{
+.name>.t3{
   width: 150px;
   height: 150px;
   position: relative;
   background-size: 150px 150px;
 }
-.a{
+.name>.a{
   background-image: url('../assets/who/wc.png');
-  top: 24px;
-  right: -70px;
+  top: -50px;
+  right: -490px;
 }
-.b{
+.name>.b{
   background-image: url('../assets/who/wc2.png');
-  top: -126px;
-  right: -270px;
+  top: -200px;
+  right: -690px;
 }
-.t4{
+.name>.t4{
   position: relative;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.4);
-  top: -120px;
-  left: 130px;
+  top: -195px;
+  left: 550px;
   margin-right: 167px;
   display: inline-block;
 }
-.t5{
+.name>.t5{
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.5);
   color: rgba(255, 255, 255, 0.4);
   font-size: 14px;
   border-radius: 4px;
   right: -60px;
-  top: 70px;
+  top: -240px;
   width: 100px;
   height: 40px;
   padding: 8px 20px;
 }
-.t5:hover{
+.name>.t5:hover{
   color: rgba(0, 0, 0, 0.9);
   background-color: #fff;
 }
-.t6{
+.name>.t6{
   position: relative;
   color: rgba(255, 255, 255, 0.4);
   font-size: 16px;
   right: -160px;
-  top: 28px;
+  top: -408px;
 }
 
 

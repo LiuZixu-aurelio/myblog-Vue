@@ -257,12 +257,12 @@ export default {
 .a{
   background-image: url('../assets/who/wc.png');
   top: 24px;
-  right: -70px;
+  right: 0px;
 }
 .b{
   background-image: url('../assets/who/wc2.png');
   top: -126px;
-  right: -270px;
+  right: -200px;
 }
 .t4{
   position: relative;
@@ -271,8 +271,8 @@ export default {
   font-size: 14px;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.4);
-  top: -120px;
-  left: 130px;
+  top: -195px;
+  left: 550px;
   margin-right: 167px;
   display: inline-block;
 }
