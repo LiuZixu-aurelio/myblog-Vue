@@ -98,12 +98,11 @@ export default {
       }
       var sWord = ""  
       sWord = prompt("输入正确密码才能下载!")  
-      if (sWord == 'liuzixu'){
-        window.open(this.cv)
+      if (sWord){
+        /* window.open(this.cv) */
+        console.log('sWord')
       }
-      if (sWord !== 'liuzixu'){
-        alert('取消下载')
-      }
+      console.log('sWord2')
     }
   },
   components: {

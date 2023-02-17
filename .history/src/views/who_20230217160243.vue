@@ -98,11 +98,8 @@ export default {
       }
       var sWord = ""  
       sWord = prompt("输入正确密码才能下载!")  
-      if (sWord == 'liuzixu'){
+      if(sWord= "liuzixu"){
         window.open(this.cv)
-      }
-      if (sWord !== 'liuzixu'){
-        alert('取消下载')
       }
     }
   },

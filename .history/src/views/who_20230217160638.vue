@@ -101,9 +101,6 @@ export default {
       if (sWord == 'liuzixu'){
         window.open(this.cv)
       }
-      if (sWord !== 'liuzixu'){
-        alert('取消下载')
-      }
     }
   },
   components: {

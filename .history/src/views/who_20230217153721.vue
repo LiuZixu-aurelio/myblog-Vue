@@ -46,6 +46,7 @@
         <div class="t2">17621616651</div>
         <div class="t2">liuziixuitalia@163.com</div>
         <div class="t5" v-on:click=dowm()>
+          <!-- <a :href='cv' download="刘子煦-UX设计-热那亚大学.png">下载简历</a> -->
           <a>下载简历</a>
         </div>
       </div>
@@ -93,17 +94,12 @@ export default {
   },
   methods: {
     dowm(){
-      window.onload = function(){
-        document.getElementById("left").focus()
-      }
-      var sWord = ""  
-      sWord = prompt("输入正确密码才能下载!")  
-      if (sWord == 'liuzixu'){
-        window.open(this.cv)
-      }
-      if (sWord !== 'liuzixu'){
-        alert('取消下载')
-      }
+      console.log(123);
+      var sWord =""  
+      while (sWord != "123") {//设置密码
+        sWord = prompt("输入正确密码才能登陆!")   
+      } 
+      window.open(this.cv,'_blank')
     }
   },
   components: {

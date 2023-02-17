@@ -96,14 +96,18 @@ export default {
       window.onload = function(){
         document.getElementById("left").focus()
       }
-      var sWord = ""  
-      sWord = prompt("输入正确密码才能下载!")  
-      if (sWord == 'liuzixu'){
-        window.open(this.cv)
+
+      var sWord =""  
+      while (sWord != "liuzixu") {
+        sWord = prompt("输入正确密码才能下载!")  
+        window.open(this.cv) 
+      } 
+      if (sWord=''){
+        alert('ok')
       }
-      if (sWord !== 'liuzixu'){
-        alert('取消下载')
-      }
+
+      
+
     }
   },
   components: {
