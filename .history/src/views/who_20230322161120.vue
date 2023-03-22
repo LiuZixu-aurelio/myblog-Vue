@@ -76,9 +76,9 @@ export default {
       w1:"290px",url1:require("../assets/who/p1.png"),link1:'/home/who',
       w2:"580px",url2:require("../assets/who/p2.png"),link2:'/home/project/ZHIHU',
       w3:"435px",url3:require("../assets/who/p3.png"),link3:'/home/project/plantlight',
-      w4:"435px",url4:require("../assets/who/p4.png"),link4:'/home/project/test',
+      w4:"435px",url4:require("../assets/who/p4.png"),link4:'/home/project/christie',
       w5:"580px",url5:require("../assets/who/p5.png"),link5:'/home/project/infor',
-      w6:"290px",url6:require("../assets/who/p6.png"),link6:'/home/project/christie',
+      w6:"290px",url6:require("../assets/who/p6.png"),link6:'/home/project/test',
       w7:"894px",url7:require("../assets/who/p7.png"),link7:'/home/project/data',
 
       T1:"Design",
