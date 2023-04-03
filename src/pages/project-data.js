@@ -16,6 +16,7 @@ const data3  =
         require('/src/assets/project/data/data2.png'),
         require('/src/assets/project/data/data3.png'),
         require('/src/assets/project/data/data4.png'),
+        require('/src/assets/project/data/data5.png'),
         require('/src/assets/project/data/datag.gif'),
     ]
 

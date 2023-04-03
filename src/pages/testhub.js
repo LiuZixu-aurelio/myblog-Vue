@@ -24,6 +24,7 @@ const extest3 =
     require('/src/assets/project/test/test13.png'),
     require('/src/assets/project/test/test14.png'),
     require('/src/assets/project/test/test15.png'),
+    require('/src/assets/project/test/test16.png'),
 ]
 
 export { extest1 }

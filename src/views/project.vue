@@ -10,7 +10,6 @@
                 <CardCom :na='pConfig1' :ur='pConfig2' :lnk='pConfig4'></CardCom>
                 <CardCom :na='data1' :ur='data2' :lnk='data4'></CardCom>
                 <CardCom :na='pChristie1' :ur='pChristie2' :lnk='pChristie4'></CardCom>
-                <CardCom :na='pChristie1' :ur='pChristie2' :lnk='pChristie4'></CardCom>
             </div>
         </div>
     </div>
