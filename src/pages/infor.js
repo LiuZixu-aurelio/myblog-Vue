@@ -6,6 +6,7 @@ const aa = require("/src/assets/project/infor/infor0.png")
 const ab = 'url(' + aa +')'
 const scardInfor2 = {backgroundImage: ab}
 
+// test
 
 const scardInfor4 = '/home/project/infor'
 
