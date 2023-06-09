@@ -49,11 +49,13 @@
           <a>下载简历</a>
         </div>
       </div>
-      <div id="right">>
-        <div class="t3 a"></div>
+      <div id="right">
+        <!--  <div class="t3 a"></div>
         <div class="t3 b"></div>
         <div class="t4">微信</div>
-        <div class="t4">公众号</div>
+        <div class="t4">公众号</div> -->
+        <div class="t4">苏ICP备2023000172号-1</div>
+        <div class="t4">www.liuzixu.xyz</div>
       </div>
       
     </div>
@@ -76,9 +78,9 @@ export default {
       w1:"290px",url1:require("../assets/who/p1.png"),link1:'/home/who',
       w2:"580px",url2:require("../assets/who/p2.png"),link2:'/home/project/ZHIHU',
       w3:"435px",url3:require("../assets/who/p3.png"),link3:'/home/project/plantlight',
-      w4:"435px",url4:require("../assets/who/p4.png"),link4:'/home/project/christie',
+      w4:"435px",url4:require("../assets/who/p4.png"),link4:'/home/project/test',
       w5:"580px",url5:require("../assets/who/p5.png"),link5:'/home/project/infor',
-      w6:"290px",url6:require("../assets/who/p6.png"),link6:'/home/project/test',
+      w6:"290px",url6:require("../assets/who/p6.png"),link6:'/home/project/christie',
       w7:"894px",url7:require("../assets/who/p7.png"),link7:'/home/project/data',
 
       T1:"Design",
@@ -286,7 +288,8 @@ export default {
   font-size: 14px;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.4);
-  top: -116px;
+  /* top: -116px; */
+  top: -105px;
   left: 130px;
   margin-right: 167px;
   display: inline-block;

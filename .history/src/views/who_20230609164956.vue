@@ -49,7 +49,7 @@
           <a>下载简历</a>
         </div>
       </div>
-      <div id="right">
+      <div id="right">>
         <!--  <div class="t3 a"></div>
         <div class="t3 b"></div>
         <div class="t4">微信</div>
@@ -288,8 +288,7 @@ export default {
   font-size: 14px;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.4);
-  /* top: -116px; */
-  top: 105px;
+  top: -116px;
   left: 130px;
   margin-right: 167px;
   display: inline-block;
