@@ -54,8 +54,8 @@
         <div class="t3 b"></div>
         <div class="t4">微信</div>
         <div class="t4">公众号</div> -->
-        <div class="t4"><a target="_blank" href="https://beian.miit.gov.cn " >苏ICP备2023000172号-1</a></div>
-        <div class="t4">beian.miit.gov.cn</div>
+        <div class="t4"><a href="https://beian.miit.gov.cn ">苏ICP备2023000172号-1</a></div>
+        <div class="t4">www.liuzixu.xyz</div>
       </div>
       
     </div>
