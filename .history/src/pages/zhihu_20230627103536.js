@@ -30,7 +30,12 @@ const scard3 = [
     require('/src/assets/project/zhihu/zhihu20.png'),
     require('/src/assets/project/zhihu/zhihu21.png'),
     require('/src/assets/project/zhihu/zhihu22.png'),
-    require('/src/assets/project/zhihu/zhihu23.png')
+    require('/src/assets/project/zhihu/zhihu23.png'),
+    require('/src/assets/project/zhihu/zhihu24.png'),
+    require('/src/assets/project/zhihu/zhihu25.png'),
+    require('/src/assets/project/zhihu/zhihu26.png'),
+    require('/src/assets/project/zhihu/zhihu27.png'),
+    require('/src/assets/project/zhihu/zhihu28.png')
     ]
 
 const scard4 ='/home/project/ZHIHU'
