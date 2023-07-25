@@ -9,8 +9,9 @@
                 <CardCom :na='extest1' :ur='extest2' :lnk='extest4'></CardCom>
                 <CardCom :na='pConfig1' :ur='pConfig2' :lnk='pConfig4'></CardCom>
                 <CardCom :na='data1' :ur='data2' :lnk='data4'></CardCom>
-                <CardCom :na='data1' :ur='data2' :lnk='data4'></CardCom>
                 <CardCom :na='pChristie1' :ur='pChristie2' :lnk='pChristie4'></CardCom>
+                <CardCom :na='pOther1' :ur='pOther2' :lnk='pOther4'></CardCom>
+
             </div>
         </div>
     </div>
@@ -25,6 +26,8 @@
     import {pConfig1, pConfig2, pConfig4} from '../pages/project-config.js'
     import {data1, data2, data4} from '../pages/project-data.js'
     import {pChristie1, pChristie2, pChristie4} from '../pages/project-christie.js'
+    import {pOther1, pOther2, pOther4} from '../pages/project-other.js'
+
 
 
     export default {
@@ -37,7 +40,8 @@
                 pPlant1,pPlant2,pPlant4,
                 pConfig1,pConfig2,pConfig4,
                 data1,data2,data4,
-                pChristie1, pChristie2, pChristie4
+                pChristie1, pChristie2, pChristie4,
+                pOther1, pOther2, pOther4
                 }
         },
         components: {

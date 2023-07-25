@@ -28,6 +28,8 @@ import { talkResearch1, talkResearch3 } from '../pages/talk-research.js'
 import { talkShadow1, talkShadow3 } from '../pages/talk-shadow.js'
 import { signMaterialdesign1, signMaterialdesign3 } from '../pages/sign-MaterialDesign.js'
 import { pChristie1, pChristie3 } from '../pages/project-christie.js'
+import { pOther1, pOther3 } from '../pages/project-other.js'
+
 
 class luyou {
   constructor(type,path,name,img) {
@@ -75,6 +77,8 @@ const routes = [
       new luyou("project","configtool",pConfig1,pConfig3),
       new luyou("project","data",data1,data3),
       new luyou("project","christie",pChristie1,pChristie3),
+      new luyou("project","other",pOther1,pOther3),
+
       
       {
         path: '/home/talk',
@@ -86,7 +90,7 @@ const routes = [
       new luyou("talk","talk-responsive",talkResponsive1,talkResponsive3),
       new luyou("talk","talk-rule",talkrule1,talkrule3),
       new luyou("talk","research",talkResearch1,talkResearch3),
-      new luyou("talk","shadow",talkShadow1,talkShadow3),
+      new luyou("talk","shadow",pOther1,pOther3),
       
       {
         path: '/home/sign',

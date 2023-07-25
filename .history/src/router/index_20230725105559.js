@@ -6,7 +6,7 @@ import PreView from '../views/PreView.vue'
 import ProjectView from '../views/project.vue'
 import TalkView from '../views/talk.vue'
 import SignView from '../views/sign.vue'
-import test from '../views/test.vue'
+import Testq from '../views/test.vue'
 
 import DetailCom from '../components/detailCom.vue'
 
@@ -28,11 +28,7 @@ import { talkResearch1, talkResearch3 } from '../pages/talk-research.js'
 import { talkShadow1, talkShadow3 } from '../pages/talk-shadow.js'
 import { signMaterialdesign1, signMaterialdesign3 } from '../pages/sign-MaterialDesign.js'
 import { pChristie1, pChristie3 } from '../pages/project-christie.js'
-
-
-
-
-
+import { pOther1, pOther3 } from '../pages/project-other.js'
 
 
 class luyou {
@@ -55,9 +51,9 @@ const routes = [
     component: PreView
   },
   {
-    path: '/test',
-    name: 'test',
-    component: test
+    path: '/testq',
+    name: 'testq',
+    component: Testq
   },
   {
     path: '/home',
@@ -81,8 +77,9 @@ const routes = [
       new luyou("project","configtool",pConfig1,pConfig3),
       new luyou("project","data",data1,data3),
       new luyou("project","christie",pChristie1,pChristie3),
+      new luyou("project","other",pChristie1,pChristie3),
 
-
+      
       {
         path: '/home/talk',
         name: 'talk',
@@ -93,7 +90,7 @@ const routes = [
       new luyou("talk","talk-responsive",talkResponsive1,talkResponsive3),
       new luyou("talk","talk-rule",talkrule1,talkrule3),
       new luyou("talk","research",talkResearch1,talkResearch3),
-      new luyou("talk","shadow",talkShadow1,talkShadow3),
+      new luyou("talk","shadow",pOther1,pOther3),
       
       {
         path: '/home/sign',
