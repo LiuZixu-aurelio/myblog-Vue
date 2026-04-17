@@ -1,8 +1,9 @@
+import { asset } from '../utils/asset.js'
 const data1 = '可视化大屏'
   
 
 
-const aa = require("/src/assets/project/data/data0.png")
+const aa = asset("/src/assets/project/data/data0.png")
 const ab = 'url(' + aa +')'
 const data2 = {backgroundImage: ab}
 
@@ -11,13 +12,13 @@ const data4 = '/home/project/data'
 
 const data3  = 
     [
-        require('/src/assets/project/data/data.png'),
-        require('/src/assets/project/data/data1.png'),
-        require('/src/assets/project/data/data2.png'),
-        require('/src/assets/project/data/data3.png'),
-        require('/src/assets/project/data/data4.png'),
-        require('/src/assets/project/data/data5.png'),
-        require('/src/assets/project/data/datag.gif'),
+        asset('/src/assets/project/data/data.png'),
+        asset('/src/assets/project/data/data1.png'),
+        asset('/src/assets/project/data/data2.png'),
+        asset('/src/assets/project/data/data3.png'),
+        asset('/src/assets/project/data/data4.png'),
+        asset('/src/assets/project/data/data5.png'),
+        asset('/src/assets/project/data/datag.gif'),
     ]
 
 

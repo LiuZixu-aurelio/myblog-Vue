@@ -65,28 +65,45 @@
 </template>
 
 <script>
+import { nextTick } from 'vue'
+import { gsap } from 'gsap'
 import WhoCom from '../components/whoCom.vue'
 import WhocubeCom from '../components/whocubeCom.vue'
+import { asset } from '../utils/asset.js'
 
 
 export default {
-  name: "whoView",
-  data:()=>{
-    return{
-      cv:require("../assets/who/cv.png"),
+  name: 'whoView',
+  async mounted() {
+    await nextTick()
+    this.animation = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
 
-      w1:"290px",url1:require("../assets/who/p1.png"),link1:'/home/who',
-      w2:"580px",url2:require("../assets/who/p2.png"),link2:'/home/project/ZHIHU',
-      w3:"435px",url3:require("../assets/who/p3.png"),link3:'/home/project/plantlight',
-      w4:"435px",url4:require("../assets/who/p4.png"),link4:'/home/project/test',
-      w5:"580px",url5:require("../assets/who/p5.png"),link5:'/home/project/infor',
-      w6:"290px",url6:require("../assets/who/p6.png"),link6:'/home/project/christie',
-      w7:"894px",url7:require("../assets/who/p7.png"),link7:'/home/project/data',
+      tl.fromTo('.title', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.6 })
+        .fromTo('#character > div', { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, stagger: 0.12, duration: 0.4 }, '-=0.1')
+        .fromTo('.project-n .cube', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, stagger: 0.08, duration: 0.45 }, '-=0.08')
+        .fromTo('#tedian > *', { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, stagger: 0.1, duration: 0.42 }, '-=0.06')
+    }, this.$el)
+  },
+  beforeUnmount() {
+    this.animation && this.animation.revert()
+  },
+  data: () => {
+    return {
+      cv: asset('/src/assets/who/cv.png'),
 
-      T1:"Design",
-      t1:["企业级设计系统方法","数据驱动的增长设计实践","深度理解SAP、Salesforce、Google等设计体系"],
-      T2:"Code",
-      t2:["基础技术：HTML、CSS、JS、TS","工程：jQuery、Vue、React、小程序","图形：threejs、echart、webGPU、各类ui库"],
+      w1: '290px', url1: asset('/src/assets/who/p1.png'), link1: '/home/who',
+      w2: '580px', url2: asset('/src/assets/who/p2.png'), link2: '/home/project/ZHIHU',
+      w3: '435px', url3: asset('/src/assets/who/p3.png'), link3: '/home/project/plantlight',
+      w4: '435px', url4: asset('/src/assets/who/p4.png'), link4: '/home/project/test',
+      w5: '580px', url5: asset('/src/assets/who/p5.png'), link5: '/home/project/infor',
+      w6: '290px', url6: asset('/src/assets/who/p6.png'), link6: '/home/project/christie',
+      w7: '894px', url7: asset('/src/assets/who/p7.png'), link7: '/home/project/data',
+
+      T1: 'Design',
+      t1: ['企业级设计系统方法', '数据驱动的增长设计实践', '深度理解SAP、Salesforce、Google等设计体系'],
+      T2: 'Code',
+      t2: ['基础技术：HTML、CSS、JS、TS', '工程：jQuery、Vue、React、小程序', '图形：threejs、echart、webGPU、各类ui库'],
       T3:"Honor",
       t3:['2020年中国产品设计大赛优秀奖','即时设计联合优秀插件开发者','意大利-本科-全额奖学金'],
       T4:"Interest",

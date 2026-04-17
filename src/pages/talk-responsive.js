@@ -1,18 +1,19 @@
+import { asset } from '../utils/asset.js'
 // 1.设置本页
 // 2.配置路由
 // 3.放入列表页
 
 const talkResponsive1 = '组件-布局响应式'
 
-const aa = require("/src/assets/talk/talk-responsive0.png")
+const aa = asset("/src/assets/talk/talk-responsive0.png")
 const talkResponsive2 = {backgroundImage: 'url(' + aa +')'}
 
 const talkResponsive3 =[
-    require('/src/assets/talk/talk-responsive.png'),
-    require('/src/assets/talk/talk-responsive1.png'),
-    require('/src/assets/talk/talk-responsive2.png'),
-    require('/src/assets/talk/talk-responsive3.png'),
-    require('/src/assets/talk/talk-responsive4.png')
+    asset('/src/assets/talk/talk-responsive.png'),
+    asset('/src/assets/talk/talk-responsive1.png'),
+    asset('/src/assets/talk/talk-responsive2.png'),
+    asset('/src/assets/talk/talk-responsive3.png'),
+    asset('/src/assets/talk/talk-responsive4.png')
 ]
 
 const talkResponsive4 = '/home/talk/talk-responsive'

@@ -1,8 +1,9 @@
+import { asset } from '../utils/asset.js'
 const talkResearch1 = '用户研究方法'
   
 
 
-const aa = require("/src/assets/talk/research/talk-research0.png")
+const aa = asset("/src/assets/talk/research/talk-research0.png")
 const ab = 'url(' + aa +')'
 const talkResearch2 = {backgroundImage: ab}
 
@@ -11,11 +12,11 @@ const talkResearch4 = '/home/talk/research'
 
 const talkResearch3 = 
 [
-    require('/src/assets/talk/research/talk-research.png'),
-    require('/src/assets/talk/research/talk-research1.png'),
-    require('/src/assets/talk/research/talk-research2.png'),
-    require('/src/assets/talk/research/talk-research3.png'),
-    require('/src/assets/talk/research/talk-research4.png'),
+    asset('/src/assets/talk/research/talk-research.png'),
+    asset('/src/assets/talk/research/talk-research1.png'),
+    asset('/src/assets/talk/research/talk-research2.png'),
+    asset('/src/assets/talk/research/talk-research3.png'),
+    asset('/src/assets/talk/research/talk-research4.png'),
     ]
 
 export { talkResearch1 }

@@ -1,7 +1,7 @@
 <template>
-  <router-link :to='lnk'>
-    <div id='prodiv' :style="[ur]" class="transition transform hover:scale-95" >
-        <!-- <div>{{na}}</div> -->
+  <router-link :to="lnk" class="card-link" :aria-label="na">
+    <div class="card" :style="ur">
+      <div class="card__footer">{{ na }}</div>
     </div>
   </router-link>
 </template>
@@ -9,41 +9,54 @@
 <script>
 export default {
   name: 'CardCom',
-    props: {
-    na: String,
-    ur: Object,
-    lnk: String
-  }
+  props: {
+    na: {
+      type: String,
+      default: '',
+    },
+    ur: {
+      type: Object,
+      default: () => ({}),
+    },
+    lnk: {
+      type: String,
+      required: true,
+    },
+  },
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-#prodiv {
-  background-size: 100% 100%;
-  border-radius: 8px;
-  height: 279px;
-  width: 496px;
+.card-link {
   display: inline-block;
   margin: 24px;
-  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.2));
-
-  div{
-    background-color: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(8px);
-    border-radius: 8px;
-    text-align: left;
-    position: relative;
-    height: 50px;
-    line-height: 50px;
-    top: 82.08%;
-    padding: 0px 16px;
-    color: rgba(0, 0, 0, 0.9);
-  }
 }
 
-#prodiv:hover{
-    filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.2));
+.card {
+  width: 496px;
+  height: 279px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-size: 100% 100%;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
+.card:hover {
+  transform: scale(0.98);
+  filter: drop-shadow(0 0 16px rgba(0, 0, 0, 0.2));
+}
+
+.card__footer {
+  position: relative;
+  top: 82.08%;
+  height: 50px;
+  padding: 0 16px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 50px;
+  text-align: left;
+}
 </style>
