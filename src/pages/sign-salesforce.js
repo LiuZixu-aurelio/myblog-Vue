@@ -1,27 +1,15 @@
 import { asset } from '../utils/asset.js'
-// 1.设置本页
-// 2.配置路由
-// 3.放入列表页
 
-const signSalesforce1 = '设计系统-salesforce'
-
-const aa = asset("/src/assets/sign/sign-salesforce.png")
-const signSalesforce2 = {backgroundImage: 'url(' + aa +')'}
-
-const signSalesforce3 =[
+export const signSalesforce = {
+  id: 'sign-salesforce',
+  title: 'Salesforce 作品',
+  cover: {
+    backgroundImage: `url(${asset('/src/assets/sign/sign-salesforce.png')})`,
+  },
+  path: '/home/sign/sign-salesforce',
+  images: [
     asset('/src/assets/sign/sign-salesforce.png'),
     asset('/src/assets/sign/sign-salesforce1.png'),
     asset('/src/assets/sign/sign-salesforce2.png'),
-    asset('/src/assets/sign/sign-salesforce3.png'),
-    asset('/src/assets/sign/sign-salesforce4.png'),
-    asset('/src/assets/sign/sign-salesforce5.png'),
-    asset('/src/assets/sign/sign-salesforce6.png'),
-    asset('/src/assets/sign/sign-salesforce7.png')
-]
-
-const signSalesforce4 = '/home/sign/sign-salesforce'
-
-export { signSalesforce1 } // 标题
-export { signSalesforce2 } // 卡片背景
-export { signSalesforce3 } // 页面内容
-export { signSalesforce4 } // 路径
+  ],
+}

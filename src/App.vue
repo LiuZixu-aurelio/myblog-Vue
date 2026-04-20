@@ -166,7 +166,7 @@ body {
     color: white;
     background: none;
     font-size: 16px;
-    margin: 16px 0;
+    margin: 32px 0;
     position: static;
   }
 

@@ -1,43 +1,38 @@
 <template>
-    <div class='whoheigt color2'>
-        <div class="whocont">
-            <h2>思考</h2>
-            <CardCom :na='scard1t' :ur='scard2t' :lnk='scard4t'></CardCom>
-            <CardCom :na='button1' :ur='button2' :lnk='button4'></CardCom>
-            <CardCom :na='talkResponsive1' :ur='talkResponsive2' :lnk='talkResponsive4'></CardCom>
-            <CardCom :na='talkrule1' :ur='talkrule2' :lnk='talkrule4'></CardCom>
-            <CardCom :na='talkResearch1' :ur='talkResearch2' :lnk='talkResearch4'></CardCom>
-            <CardCom :na='talkShadow1' :ur='talkShadow2' :lnk='talkShadow4'></CardCom>
-        </div>
+  <div class='whoheigt color2'>
+    <div class="whocont">
+      <h2>思考</h2>
+      <CardCom :na='talkUx.title' :ur='talkUx.cover' :lnk='talkUx.path'></CardCom>
+      <CardCom :na='cButton.title' :ur='cButton.cover' :lnk='cButton.path'></CardCom>
+      <CardCom :na='talkResponsive.title' :ur='talkResponsive.cover' :lnk='talkResponsive.path'></CardCom>
+      <CardCom :na='talkRule.title' :ur='talkRule.cover' :lnk='talkRule.path'></CardCom>
+      <CardCom :na='talkResearch.title' :ur='talkResearch.cover' :lnk='talkResearch.path'></CardCom>
+      <CardCom :na='talkShadow.title' :ur='talkShadow.cover' :lnk='talkShadow.path'></CardCom>
     </div>
+  </div>
 </template>
 
 <script>
 import CardCom from '../components/cardCom.vue'
-import {scard1t, scard2t, scard4t} from '../pages/talk-ux.js'
-import {button1, button2, button4} from '../pages/c-button'
-import {talkResponsive1, talkResponsive2, talkResponsive4} from '../pages/talk-responsive'
-import {talkrule1, talkrule2, talkrule4} from '../pages/talk-rule'
-import {talkResearch1, talkResearch2, talkResearch4} from '../pages/talk-research'
-import {talkShadow1, talkShadow2, talkShadow4} from '../pages/talk-shadow'
-
-
-
-
-
+import { talkUx } from '../pages/talk-ux.js'
+import { cButton } from '../pages/c-button.js'
+import { talkResponsive } from '../pages/talk-responsive.js'
+import { talkRule } from '../pages/talk-rule.js'
+import { talkResearch } from '../pages/talk-research.js'
+import { talkShadow } from '../pages/talk-shadow.js'
 
 export default {
-    name: 'TalkView',
-    data:()=>{
-    return{
-        scard1t,scard2t,scard4t,
-        button1,button2,button4,
-        talkResponsive1,talkResponsive2,talkResponsive4,
-        talkrule1,talkrule2,talkrule4,
-        talkResearch1, talkResearch2, talkResearch4,
-        talkShadow1, talkShadow2, talkShadow4
-        }
-    },
-  components: { CardCom}
+  name: 'TalkView',
+  components: { CardCom },
+  data() {
+    return {
+      talkUx,
+      cButton,
+      talkResponsive,
+      talkRule,
+      talkResearch,
+      talkShadow,
+    }
+  },
 }
 </script>

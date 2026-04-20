@@ -1,14 +1,13 @@
 import { asset } from '../utils/asset.js'
-const scard1 = '知乎直播升级 - 2021'
-  
-/* const scard2 = '{background:url(asset("/src/assets/zhihu.png")}' */
-/* const scard2 = 'url( require("./src/assets/zhihu.png"))' */
-const aa = asset("/src/assets/project/zhihu/zhihu.png")
-const ab = 'url(' + aa +')'
-const scard2 = {backgroundImage: ab}
 
-
-const scard3 = [
+export const zhihu = {
+  id: 'zhihu',
+  title: '知乎直播升级 - 2021',
+  cover: {
+    backgroundImage: `url(${asset('/src/assets/project/zhihu/zhihu.png')})`,
+  },
+  path: '/home/project/ZHIHU',
+  images: [
     asset('/src/assets/project/zhihu/zhihu.png'),
     asset('/src/assets/project/zhihu/zhihu2.png'),
     asset('/src/assets/project/zhihu/zhihu3.png'),
@@ -36,13 +35,6 @@ const scard3 = [
     asset('/src/assets/project/zhihu/zhihu25.png'),
     asset('/src/assets/project/zhihu/zhihu26.png'),
     asset('/src/assets/project/zhihu/zhihu27.png'),
-    asset('/src/assets/project/zhihu/zhihu28.png')
-    ]
-
-const scard4 ='/home/project/ZHIHU'
-
-
-export { scard1 } //名称
-export { scard2 } //卡片背景
-export { scard3 } //内容
-export { scard4 } //页面地址
+    asset('/src/assets/project/zhihu/zhihu28.png'),
+  ],
+}

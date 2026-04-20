@@ -1,24 +1,15 @@
 import { asset } from '../utils/asset.js'
-const signMaterialdesign1 = 'MaterialDesign3'
-  
-const aa = asset("/src/assets/sign/MaterialDesign/sign-MaterialDesign0.png")
-const ab = 'url(' + aa +')'
-const signMaterialdesign2 = {backgroundImage: ab}
 
-const signMaterialdesign4 = '/home/sign/sign-MaterialDesign'
-
-const signMaterialdesign3 = 
-[
+export const signMaterialdesign = {
+  id: 'sign-MaterialDesign',
+  title: 'Material Design 规范',
+  cover: {
+    backgroundImage: `url(${asset('/src/assets/sign/MaterialDesign/sign-MaterialDesign.png')})`,
+  },
+  path: '/home/sign/sign-MaterialDesign',
+  images: [
     asset('/src/assets/sign/MaterialDesign/sign-MaterialDesign.png'),
     asset('/src/assets/sign/MaterialDesign/sign-MaterialDesign1.png'),
     asset('/src/assets/sign/MaterialDesign/sign-MaterialDesign2.png'),
-    asset('/src/assets/sign/MaterialDesign/sign-MaterialDesign3.png'),
-    asset('/src/assets/sign/MaterialDesign/sign-MaterialDesign4.png'),
-    asset('/src/assets/sign/MaterialDesign/sign-MaterialDesign5.png'),
-]
-
-export { signMaterialdesign1 }
-export { signMaterialdesign2  }
-export { signMaterialdesign3  }
-export { signMaterialdesign4 }
-
+  ],
+}

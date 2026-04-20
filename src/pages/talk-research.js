@@ -1,25 +1,15 @@
 import { asset } from '../utils/asset.js'
-const talkResearch1 = '用户研究方法'
-  
 
-
-const aa = asset("/src/assets/talk/research/talk-research0.png")
-const ab = 'url(' + aa +')'
-const talkResearch2 = {backgroundImage: ab}
-
-
-const talkResearch4 = '/home/talk/research'
-
-const talkResearch3 = 
-[
+export const talkResearch = {
+  id: 'research',
+  title: '研究方法',
+  cover: {
+    backgroundImage: `url(${asset('/src/assets/talk/research/talk-research0.png')})`,
+  },
+  path: '/home/talk/research',
+  images: [
     asset('/src/assets/talk/research/talk-research.png'),
     asset('/src/assets/talk/research/talk-research1.png'),
     asset('/src/assets/talk/research/talk-research2.png'),
-    asset('/src/assets/talk/research/talk-research3.png'),
-    asset('/src/assets/talk/research/talk-research4.png'),
-    ]
-
-export { talkResearch1 }
-export { talkResearch2 }
-export { talkResearch3 }
-export { talkResearch4 }
+  ],
+}

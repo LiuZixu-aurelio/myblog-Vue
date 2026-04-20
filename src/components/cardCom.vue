@@ -37,7 +37,9 @@ export default {
   height: 279px;
   overflow: hidden;
   border-radius: 8px;
-  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
   transition: transform 0.2s ease, filter 0.2s ease;
 }

@@ -32,8 +32,12 @@ export default {
     min-height: 100vh;
 }
 
-.liuzixu {
+.liuzixu,
+.cont {
     color: aliceblue;
+}
+
+.liuzixu {
     padding: 24px;
 }
 
@@ -43,7 +47,6 @@ export default {
     z-index: 1;
     width: 100%;
     text-align: center;
-    color: aliceblue;
 }
 
 .cont :deep(a) {
@@ -52,8 +55,8 @@ export default {
 
 img {
     display: block;
-    margin: 0 auto;
     position: relative;
+    margin: 0 auto;
 }
 
 button.start {
@@ -62,30 +65,24 @@ button.start {
     justify-content: center;
     width: 74px;
     height: 36px;
-    min-width: 74px;
-    min-height: 36px;
+    margin: 32px 0;
     padding: 0;
-    border-radius: 18px;
     border: 1px solid rgba(255, 255, 255, 0.95);
-    color: #fff !important;
+    border-radius: 18px;
     background: rgba(0, 0, 0, 0.28) !important;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+    color: #fff !important;
     font-size: 16px;
     line-height: 1;
-    margin: 16px 0 0;
-    position: relative;
-    z-index: 5;
-    opacity: 1;
-    visibility: visible;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 button.start:hover {
-    color: rgb(0,0,0 ) !important;
-    background: white !important;
+    background: #fff !important;
+    color: #000 !important;
 }
 
 </style>

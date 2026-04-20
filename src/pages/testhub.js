@@ -1,14 +1,13 @@
 import { asset } from '../utils/asset.js'
-const extest1 = 'B端 - 0到1的测试平台'
-  
-const aa = asset("/src/assets/project/test/test0.png")
-const ab = 'url(' + aa +')'
-const extest2 = {backgroundImage: ab}
 
-const extest4 = '/home/project/test'
-
-const extest3 = 
-[
+export const testhub = {
+  id: 'testhub',
+  title: 'B端 - 0到1的测试平台',
+  cover: {
+    backgroundImage: `url(${asset('/src/assets/project/test/test0.png')})`,
+  },
+  path: '/home/project/test',
+  images: [
     asset('/src/assets/project/test/test.png'),
     asset('/src/assets/project/test/test01.png'),
     asset('/src/assets/project/test/test02.png'),
@@ -26,10 +25,5 @@ const extest3 =
     asset('/src/assets/project/test/test14.png'),
     asset('/src/assets/project/test/test15.png'),
     asset('/src/assets/project/test/test16.png'),
-]
-
-export { extest1 }
-export { extest2  }
-export { extest3  }
-export { extest4 }
-
+  ],
+}
