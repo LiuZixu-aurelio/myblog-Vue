@@ -186,7 +186,7 @@ body {
     width: 100%;
     height: 67px;
     line-height: 4px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 1);
     backdrop-filter: blur(12px);
 
     a {
@@ -229,13 +229,13 @@ body {
     align-items: center;
     flex-wrap: wrap;
     height: auto;
-    padding-top: 100px;
+    padding-top: 32px;
     background-color: #fafcfd;
 
     .whocont {
       width: 92%;
       height: 90%;
-      margin: auto;
+      margin-bottom:80px;
       text-align: center;
     }
 

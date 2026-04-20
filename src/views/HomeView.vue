@@ -10,7 +10,9 @@
       <router-link to="/home/sign" class="navkuaiu">笔记</router-link>
       <a href="https://liuzixu-aurelio.github.io/designcollection/" class="navkuaiu" target="_blank" rel="noreferrer">资料</a>
     </nav>
-    <router-view />
+    <div class="home__content">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -40,4 +42,17 @@ export default {
 </script>
 
 <style scoped>
+.home {
+  min-height: 100vh;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.home__content {
+  min-height: calc(100vh - 67px);
+}
 </style>

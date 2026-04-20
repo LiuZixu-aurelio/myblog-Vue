@@ -130,8 +130,8 @@ body{
 
     .whocont{
       width: 92%;
-      margin: auto;
-      height: 90%;
+      margin: 64px;
+      height: auto;
       text-align: center;
     }
 
