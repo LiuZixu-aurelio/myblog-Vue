@@ -159,9 +159,8 @@ body {
   }
 
   .start {
-    width: 74px;
-    height: 36px;
-    border-radius: 18px;
+    width: 160px;
+    height: 64pxpx;
     border: 1px solid white;
     color: white;
     background: none;
