@@ -1,16 +1,21 @@
 <template>
 <div id="who">
-  <div class="hero">
-    <div class="hero-main">
-      <div class="hero-face"></div>
-      <div class="hero-copy">Designer &amp; Developer</div>
-      <div class="hero-arrow">↘</div>
-      <div class="marquee">
-        <div class="marquee-track">
-          <span>— Liu ZiXU — Aurelio Liu </span>
-          <span>— Liu ZiXU — Aurelio Liu </span>
-        </div>
-      </div>
+  <div class="title">
+    Hello，I'm Liu Zixu
+    <div>Product designer / Creator, Shanghai</div>
+  </div>
+  <div id="character">
+    <div>
+      <div id="a1" class="mb-4 transition hover:-translate-y-4"></div>
+      <p>深度</p>
+    </div>
+    <div>
+      <div id="b1" class="mb-4 transition hover:-translate-y-4"></div>
+      <p>创新</p>
+    </div>
+    <div>
+      <div id="c1" class="mb-4 transition hover:-translate-y-4"></div>
+      <p>效率</p>
     </div>
   </div>
   <div class="project">
@@ -70,15 +75,14 @@ import { asset } from '../utils/asset.js'
 export default {
   name: 'whoView',
   async mounted() {
+    await nextTick()
     this.animation = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
 
-      tl.from('.hero-face', { y: 18, scale: 0.99, duration: 0.28 })
-        .from('.hero-copy', { y: 10, duration: 0.18 }, '-=0.12')
-        .from('.hero-arrow', { y: 8, duration: 0.14 }, '-=0.08')
-        .fromTo('.marquee-track', { xPercent: 0 }, { xPercent: -50, duration: 10, repeat: -1, ease: 'none' }, '-=0.02')
-        .from('.project-n .cube', { y: 14, stagger: 0.04, duration: 0.18 }, '-=0.02')
-        .from('#tedian > *', { y: 12, stagger: 0.05, duration: 0.18 }, '-=0.03')
+      tl.fromTo('.title', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.6 })
+        .fromTo('#character > div', { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, stagger: 0.12, duration: 0.4 }, '-=0.1')
+        .fromTo('.project-n .cube', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, stagger: 0.08, duration: 0.45 }, '-=0.08')
+        .fromTo('#tedian > *', { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, stagger: 0.1, duration: 0.42 }, '-=0.06')
     }, this.$el)
   },
   beforeUnmount() {
@@ -87,7 +91,6 @@ export default {
   data: () => {
     return {
       cv: asset('/src/assets/who/cv.png'),
-      heroImg: asset('/src/assets/aurelio.png'),
 
       w1: '290px', url1: asset('/src/assets/who/p1.png'), link1: '/home/who',
       w2: '580px', url2: asset('/src/assets/who/p2.png'), link2: '/home/project/ZHIHU',
@@ -137,83 +140,6 @@ export default {
   flex-wrap: wrap;
   flex-direction: column;
 }
-.hero {
-  width: 100%;
-  background: #000;
-  color: #fff;
-  overflow: hidden;
-}
-
-.hero-logo {
-  margin-right: 10px;
-  font-size: 20px;
-  color: #fff;
-}
-.hero-link.active,
-.hero-link:hover {
-  color: #fff;
-}
-.hero-main {
-  position: relative;
-  height: 85vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #000;
-  overflow: visible;
-}
-.hero-face {
-  position: relative;
-  z-index: 3;
-  width: 100%;
-  height: 100%;
-  background-image: url('../assets/aurelio.png');
-  background-repeat: no-repeat;
-  background-position: 40% 8px;
-  background-size: auto 100%;
-}
-.hero-copy {
-  position: absolute;
-  right: 25%;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 22px;
-  letter-spacing: 0.02em;
-  z-index: 1;
-}
-.hero-arrow {
-  position: absolute;
-  top: 25%;
-  left: 61%;
-  font-size: 34px;
-  color: rgba(255, 255, 255, 0.72);
-  z-index: 1;
-}
-.marquee {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0);
-  z-index: 4;
-}
-.marquee-track {
-  display: flex;
-  width: max-content;
-  white-space: nowrap;
-  padding: 16px 0;
-  font-size: clamp(54px, 8vw, 96px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0.01em;
-}
-.marquee-track span {
-  padding-right: 56px;
-}
-
 .title {
   display: block;
   color: aliceblue;
@@ -239,34 +165,37 @@ export default {
   flex-wrap: wrap
 }
 
+
+
 #character {
   display: flex;
   margin: 60px 0px;
 }
-#character > div {
+
+#character>div {
   width: 280px;
   height: 350px;
-  margin: 0 12px;
+  margin: 0px 12px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center
+}
+#character>div>p {
+  color:rgba(255, 255, 255, 0.75);
+  
 }
 
-#character > div > p {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-#a1 {
+#a1{
   width: 280px;
   height: 280px;
   background-image: url('../assets/who/c1.png');
   background-size: 300px 300px;
   border-radius: 4px;
 }
-
 #a1:hover {
   background-image: url('../assets/who/c1h.png');
 }
+
 
 #b1 {
   width: 280px;
@@ -275,11 +204,9 @@ export default {
   background-size: 300px 300px;
   border-radius: 4px;
 }
-
 #b1:hover {
   background-image: url('../assets/who/c2h.png');
 }
-
 #c1 {
   width: 280px;
   height: 280px;
@@ -287,167 +214,157 @@ export default {
   background-size: 300px 300px;
   border-radius: 4px;
 }
-
 #c1:hover {
   background-image: url('../assets/who/c3h.png');
 }
 
 .project {
-  width: 100%;
   background-image: url('../assets/who/bg.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
+  width: 100%;
 }
-
 .project-n {
   max-width: 1000px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: auto;
-  padding: 64px 0;
 }
-
 .project2 {
-  width: 100%;
-  margin: 48px 0;
-  padding: 48px 0;
+  background-color: rgb(26, 26, 26);
   display: flex;
   flex-direction: column;
-  background-color: rgb(26, 26, 26);
+  width: 100%;
+  padding: 48px 0px;
+  margin: 48px 0px;
 }
 
 .name {
   display: flex;
+  margin: auto;
   width: 894px;
   height: 280px;
-  margin: auto;
+  left: 511px;
+  top: 3172px;
   background: #000000;
   border-radius: 8px;
 }
-
 .name:hover {
-  box-shadow: 0 0 24px rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.1);
 }
-
-.name > #left {
+.name>#left {
   width: 50%;
 }
-
-.name > #right {
+.name>#right {
   width: 500px;
-}
 
-.t1 {
+
+}
+.t1{
   position: relative;
-  top: 50px;
-  right: -60px;
   font-weight: 700;
   font-size: 28px;
   line-height: 34px;
   color: rgba(255, 255, 255, 0.9);
+  top: 50px;
+  right: -60px;
 }
-
-.t2 {
+.t2{
   display: block;
   position: relative;
-  top: 48px;
-  right: -60px;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.4);
+  top: 48px;
+  right: -60px;
 }
-
-.t3 {
+.t3{
   width: 150px;
   height: 150px;
   position: relative;
   background-size: 150px 150px;
 }
-
-.a {
+.a{
+  background-image: url('../assets/who/wc.png');
   top: 24px;
   right: -70px;
-  background-image: url('../assets/who/wc.png');
 }
-
-.b {
+.b{
+  background-image: url('../assets/who/wc2.png');
   top: -126px;
   right: -270px;
-  background-image: url('../assets/who/wc2.png');
 }
-
-.t4 {
+.t4{
   position: relative;
-  top: 105px;
-  left: 130px;
-  display: inline-block;
-  margin-right: 167px;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.4);
+  /* top: -116px; */
+  top: 105px;
+  left: 130px;
+  margin-right: 167px;
+  display: inline-block;
 }
-
-:hover.t4 {
+:hover.t4{
   color: rgba(255, 255, 255, 0.7);
 }
-
-.t5 {
+.t5{
   position: relative;
-  top: 70px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  border-radius: 4px;
   right: -60px;
+  top: 70px;
   width: 100px;
   height: 40px;
   padding: 8px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 14px;
 }
-
-.t5:hover {
+.t5:hover{
   color: rgba(0, 0, 0, 0.9);
   background-color: #fff;
 }
-
-.t6 {
+.t6{
   position: relative;
-  top: 28px;
-  right: -160px;
   color: rgba(255, 255, 255, 0.4);
   font-size: 16px;
+  right: -160px;
+  top: 28px;
 }
 
+
 #tedian {
-  max-width: 1000px;
-  margin: auto;
+  margin: 0px 48px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  margin: auto;
   justify-content: center;
-  padding: 64px 0 ;
+  max-width: 1000px
 }
-
 .divline {
   width: 1px;
   height: 10rem;
-  margin: 0;
+  margin: 0px 0px;
   background-color: rgba(255, 255, 255, 0.15);
 }
-
 .tedian4 {
-  margin: 0 32px;
+  margin: 0px 32px;
 }
+
+
+
 
 #erweima {
   width: 150px;
   height: 150px;
   background-image: url('../assets/who/wc.png');
-  background-size: 150px 150px;
+  background-size: 150px 150px
 }
 </style>
