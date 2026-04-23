@@ -123,58 +123,6 @@ body {
   text-transform: uppercase;
 }
 
-#pre {
-  min-height: 100vh;
-  background: rgb(0, 0, 0);
-  background-attachment: fixed;
-
-  .liuzixu {
-    color: aliceblue;
-    padding: 24px;
-  }
-
-  .cont {
-    position: relative;
-    top: 100px;
-    z-index: 1;
-    width: 100%;
-    color: aliceblue;
-    text-align: center;
-  }
-
-  .cont img {
-    filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.18));
-  }
-
-  .test {
-    position: relative;
-    bottom: -150px;
-    z-index: 1;
-    width: auto;
-    height: auto;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 12px;
-    text-align: center;
-    cursor: default;
-  }
-
-  .start {
-    width: 160px;
-    height: 64pxpx;
-    border: 1px solid white;
-    color: white;
-    background: none;
-    font-size: 16px;
-    margin: 32px 0;
-    position: static;
-  }
-
-  .start:hover {
-    color: rgb(0, 0, 0);
-    background: white;
-  }
-}
-
 .home {
   min-height: 100vh;
   background-color: rgb(244, 246, 255);

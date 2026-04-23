@@ -2,37 +2,37 @@
 <div id="who">
   <div class="hero">
     <div class="hero-main">
-      <div class="hero-face"></div>
-      <div class="hero-copy">Designer &amp; Developer</div>
-      <div class="hero-arrow">↘</div>
+      <div ref="face" class="hero-face"></div>
+      <div ref="copy" class="hero-copy">Designer &amp; Developer</div>
+      <div ref="arrow" class="hero-arrow">↘</div>
       <div class="marquee">
-        <div class="marquee-track">
-          <span>— Liu ZiXU — Aurelio Liu </span>
-          <span>— Liu ZiXU — Aurelio Liu </span>
+        <div ref="marqueeTrack" class="marquee-track">
+          <span>— Liu ZiXU — Aurelio Liu — Liu ZiXU — Aurelio Liu </span>
+          <span>— Liu ZiXU — Aurelio Liu — Liu ZiXU — Aurelio Liu </span>
         </div>
       </div>
     </div>
   </div>
+
   <div class="project">
     <div class="project-n">
-      <WhocubeCom :Wid="w1" :Url="url1" :Link="link1"></WhocubeCom>
-      <WhocubeCom :Wid="w2" :Url="url2" :Link="link2"></WhocubeCom>
-
-      <WhocubeCom :Wid="w3" :Url="url3" :Link="link3"></WhocubeCom>
-      <WhocubeCom :Wid="w4" :Url="url4" :Link="link4"></WhocubeCom>
-
-      <WhocubeCom :Wid="w5" :Url="url5" :Link="link5"></WhocubeCom>
-      <WhocubeCom :Wid="w6" :Url="url6" :Link="link6"></WhocubeCom>
-
-      <WhocubeCom :Wid="w7" :Url="url7" :Link="link7"></WhocubeCom>
+      <WhocubeCom :Wid="w1" :Url="url1" :Link="link1" />
+      <WhocubeCom :Wid="w2" :Url="url2" :Link="link2" />
+      <WhocubeCom :Wid="w3" :Url="url3" :Link="link3" />
+      <WhocubeCom :Wid="w4" :Url="url4" :Link="link4" />
+      <WhocubeCom :Wid="w5" :Url="url5" :Link="link5" />
+      <WhocubeCom :Wid="w6" :Url="url6" :Link="link6" />
+      <WhocubeCom :Wid="w7" :Url="url7" :Link="link7" />
     </div>
   </div>
+
   <div id="tedian">
-    <WhoCom :Title="T1" :Text='t1'></WhoCom>
-    <WhoCom :Title="T2" :Text='t2'></WhoCom>
-    <WhoCom :Title="T3" :Text='t3'></WhoCom>
-    <WhoCom :Title="T4" :Text='t4'></WhoCom>
+    <WhoCom :Title="T1" :Text="t1" />
+    <WhoCom :Title="T2" :Text="t2" />
+    <WhoCom :Title="T3" :Text="t3" />
+    <WhoCom :Title="T4" :Text="t4" />
   </div>
+
   <div class="project2">
     <div class="name">
       <div id="left">
@@ -40,55 +40,42 @@
         <div class="t6">/ Liu Zixu</div>
         <div class="t2">17621616651</div>
         <div class="t2">liuziixuitalia@163.com</div>
-        <div class="t5" v-on:click=dowm()>
-          <a>下载简历</a>
-        </div>
+        <div class="t5" v-on:click="dowm()"><a>下载简历</a></div>
       </div>
       <div id="right">
-        <!--  <div class="t3 a"></div>
-        <div class="t3 b"></div>
-        <div class="t4">微信</div>
-        <div class="t4">公众号</div> -->
-        <div class="t4"><a target="_blank" href="https://beian.miit.gov.cn " >苏ICP备2023000172号-1</a></div>
+        <div class="t4"><a target="_blank" href="https://beian.miit.gov.cn">苏ICP备2023000172号-1</a></div>
         <div class="t4">beian.miit.gov.cn</div>
       </div>
-      
     </div>
   </div>
 </div>
-
 </template>
 
 <script>
-import { nextTick } from 'vue'
 import { gsap } from 'gsap'
 import WhoCom from '../components/whoCom.vue'
 import WhocubeCom from '../components/whocubeCom.vue'
 import { asset } from '../utils/asset.js'
 
-
 export default {
   name: 'whoView',
-  async mounted() {
+  mounted() {
     this.animation = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
-
-      tl.from('.hero-face', { y: 18, scale: 0.99, duration: 0.28 })
-        .from('.hero-copy', { y: 10, duration: 0.18 }, '-=0.12')
-        .from('.hero-arrow', { y: 8, duration: 0.14 }, '-=0.08')
-        .fromTo('.marquee-track', { xPercent: 0 }, { xPercent: -50, duration: 10, repeat: -1, ease: 'none' }, '-=0.02')
+      tl.from(this.$refs.face, { y: 18, scale: 0.99, duration: 0.28 })
+        .from(this.$refs.copy, { y: 10, duration: 0.18 }, '-=0.12')
+        .from(this.$refs.arrow, { y: 8, duration: 0.14 }, '-=0.08')
+        .fromTo(this.$refs.marqueeTrack, { xPercent: 0 }, { xPercent: -50, duration: 10, repeat: -1, ease: 'none' }, '-=0.02')
         .from('.project-n .cube', { y: 14, stagger: 0.04, duration: 0.18 }, '-=0.02')
         .from('#tedian > *', { y: 12, stagger: 0.05, duration: 0.18 }, '-=0.03')
     }, this.$el)
   },
   beforeUnmount() {
-    this.animation && this.animation.revert()
+    if (this.animation) this.animation.revert()
   },
-  data: () => {
+  data() {
     return {
       cv: asset('/src/assets/who/cv.png'),
-      heroImg: asset('/src/assets/aurelio.png'),
-
       w1: '290px', url1: asset('/src/assets/who/p1.png'), link1: '/home/who',
       w2: '580px', url2: asset('/src/assets/who/p2.png'), link2: '/home/project/ZHIHU',
       w3: '435px', url3: asset('/src/assets/who/p3.png'), link3: '/home/project/plantlight',
@@ -96,73 +83,57 @@ export default {
       w5: '580px', url5: asset('/src/assets/who/p5.png'), link5: '/home/project/infor',
       w6: '290px', url6: asset('/src/assets/who/p6.png'), link6: '/home/project/christie',
       w7: '894px', url7: asset('/src/assets/who/p7.png'), link7: '/home/project/data',
-
       T1: 'Design',
       t1: ['企业级设计系统方法', '数据驱动的增长设计实践', '深度理解SAP、Salesforce、Google等设计体系'],
       T2: 'Code',
       t2: ['基础技术：HTML、CSS、JS、TS', '工程：jQuery、Vue、React、小程序', '图形：threejs、echart、webGPU、各类ui库'],
-      T3:"Honor",
-      t3:['2020年中国产品设计大赛优秀奖','即时设计联合优秀插件开发者','意大利-本科-全额奖学金'],
-      T4:"Interest",
-      t4:["Design: 交互、用户体验、设计策略",'Pro: 工程化、图形化、Code','Characteristics: 探索、创新、逻辑'],
+      T3: 'Honor',
+      t3: ['2020年中国产品设计大赛优秀奖', '即时设计联合优秀插件开发者', '意大利-本科-全额奖学金'],
+      T4: 'Interest',
+      t4: ['Design: 交互、用户体验、设计策略', 'Pro: 工程化、图形化、Code', 'Characteristics: 探索、创新、逻辑'],
     }
   },
   methods: {
-    dowm(){
-      window.onload = function(){
-        document.getElementById("left").focus()
+    dowm() {
+      window.onload = function () {
+        document.getElementById('left').focus()
       }
-      var sWord = ""  
-      sWord = prompt("输入正确密码才能下载!")  
-      if (sWord == 'liuzixu'){
+      const sWord = prompt('输入正确密码才能下载!')
+      if (sWord == 'liuzixu') {
         window.open(this.cv)
       }
-      if (sWord !== 'liuzixu'){
+      if (sWord !== 'liuzixu') {
         alert('取消下载')
       }
-    }
+    },
   },
-  components: {
-      WhoCom,WhocubeCom
-  }
-};
+  components: { WhoCom, WhocubeCom },
+}
 </script>
 
-<style>
+<style scoped>
 #who {
-  background-color: rgb(0, 0, 0);
-  height: auto;
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
   flex-direction: column;
-}
-.hero {
-  width: 100%;
+  align-items: center;
+  min-height: 100vh;
   background: #000;
-  color: #fff;
-  overflow: hidden;
 }
 
-.hero-logo {
-  margin-right: 10px;
-  font-size: 20px;
-  color: #fff;
+.hero,
+.project,
+.project2 {
+  width: 100%;
 }
-.hero-link.active,
-.hero-link:hover {
-  color: #fff;
-}
+
 .hero-main {
   position: relative;
-  height: 85vh;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: min(85vh, 920px);
   background: #000;
   overflow: visible;
 }
+
 .hero-face {
   position: relative;
   z-index: 3;
@@ -173,158 +144,82 @@ export default {
   background-position: 40% 8px;
   background-size: auto 100%;
 }
+
 .hero-copy {
   position: absolute;
-  right: 25%;
   top: 50%;
+  right: 25%;
+  z-index: 1;
   transform: translateY(-50%);
   font-size: 22px;
   letter-spacing: 0.02em;
-  z-index: 1;
+  color: #fff;
 }
+
 .hero-arrow {
   position: absolute;
   top: 25%;
   left: 61%;
+  z-index: 1;
   font-size: 34px;
   color: rgba(255, 255, 255, 0.72);
-  z-index: 1;
 }
+
 .marquee {
   position: absolute;
-  left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
+  left: 0;
+  z-index: 4;
   overflow: hidden;
   background: rgba(0, 0, 0, 0);
-  z-index: 4;
 }
+
 .marquee-track {
+  color: rgb(255, 255, 255);
   display: flex;
   width: max-content;
-  white-space: nowrap;
   padding: 16px 0;
+  white-space: nowrap;
   font-size: clamp(54px, 8vw, 96px);
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0.01em;
 }
+
 .marquee-track span {
   padding-right: 56px;
 }
 
-.title {
-  display: block;
-  color: aliceblue;
-  justify-content: center;
-  align-items: center;
-  margin: 120px 0px 0px 0px;
-  font-size: 24px;
-  flex-wrap: wrap
-}
-.title>div{
-  margin-top: 8px;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.title2 {
-  display: block;
-  color: aliceblue;
-  justify-content: center;
-  align-items: center;
-  margin: 48px 0px 0px 0px;
-  font-size: 24px;
-  flex-wrap: wrap
-}
-
-#character {
-  display: flex;
-  margin: 60px 0px;
-}
-#character > div {
-  width: 280px;
-  height: 350px;
-  margin: 0 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#character > div > p {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-#a1 {
-  width: 280px;
-  height: 280px;
-  background-image: url('../assets/who/c1.png');
-  background-size: 300px 300px;
-  border-radius: 4px;
-}
-
-#a1:hover {
-  background-image: url('../assets/who/c1h.png');
-}
-
-#b1 {
-  width: 280px;
-  height: 280px;
-  background-image: url('../assets/who/c2.png');
-  background-size: 300px 300px;
-  border-radius: 4px;
-}
-
-#b1:hover {
-  background-image: url('../assets/who/c2h.png');
-}
-
-#c1 {
-  width: 280px;
-  height: 280px;
-  background-image: url('../assets/who/c3.png');
-  background-size: 300px 300px;
-  border-radius: 4px;
-}
-
-#c1:hover {
-  background-image: url('../assets/who/c3h.png');
-}
-
 .project {
-  width: 100%;
   background-image: url('../assets/who/bg.jpg');
   background-attachment: fixed;
-  background-size: cover;
   background-position: center center;
+  background-size: cover;
 }
 
 .project-n {
-  max-width: 1000px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1000px;
   margin: auto;
   padding: 64px 0;
 }
 
 .project2 {
-  width: 100%;
-  margin: 48px 0;
+  margin: 48px 0 0;
   padding: 48px 0;
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(26, 26, 26);
+  background: #1a1a1a;
 }
 
 .name {
   display: flex;
-  width: 894px;
-  height: 280px;
+  width: min(894px, calc(100% - 32px));
+  min-height: 280px;
   margin: auto;
-  background: #000000;
   border-radius: 8px;
+  background: #000;
 }
 
 .name:hover {
@@ -343,28 +238,28 @@ export default {
   position: relative;
   top: 50px;
   right: -60px;
-  font-weight: 700;
   font-size: 28px;
+  font-weight: 700;
   line-height: 34px;
   color: rgba(255, 255, 255, 0.9);
 }
 
 .t2 {
-  display: block;
   position: relative;
   top: 48px;
   right: -60px;
+  display: block;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.4);
 }
 
 .t3 {
+  position: relative;
   width: 150px;
   height: 150px;
-  position: relative;
   background-size: 150px 150px;
 }
 
@@ -386,9 +281,9 @@ export default {
   left: 130px;
   display: inline-block;
   margin-right: 167px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.4);
 }
@@ -424,13 +319,12 @@ export default {
 }
 
 #tedian {
+  display: flex;
   max-width: 1000px;
   margin: auto;
-  display: flex;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  padding: 64px 0 ;
 }
 
 .divline {
