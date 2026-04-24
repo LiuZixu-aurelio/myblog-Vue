@@ -55,17 +55,31 @@
     <WhoCom :Title="T4" :Text="t4" />
   </div>
 
-    <section class="brands" ref="brandsSection">
+    <section class="brands">
     <div class="brands__title">I worked with</div>
     <div class="brands__marquee">
       <div ref="brandTrackTop" class="brands__track brands__track--top">
-        <div v-for="(logo, index) in visibleBrandLoopTop" :key="`top-${logo.src}-${index}`" class="brands__item">
-          <img :src="logo.src" :alt="logo.alt" loading="lazy" decoding="async" />
+        <div v-for="(logo, index) in visibleBrandLoopTop" :key="`top-${index}`" class="brands__item">
+          <img
+            v-if="logo.src"
+            :src="logo.src"
+            :alt="logo.alt"
+            :loading="index < 4 ? 'eager' : 'lazy'"
+            :fetchpriority="index < 4 ? 'high' : 'auto'"
+            decoding="async"
+          />
         </div>
       </div>
       <div ref="brandTrackBottom" class="brands__track brands__track--bottom">
-        <div v-for="(logo, index) in visibleBrandLoopBottom" :key="`bottom-${logo.src}-${index}`" class="brands__item">
-          <img :src="logo.src" :alt="logo.alt" loading="lazy" decoding="async" />
+        <div v-for="(logo, index) in visibleBrandLoopBottom" :key="`bottom-${index}`" class="brands__item">
+          <img
+            v-if="logo.src"
+            :src="logo.src"
+            :alt="logo.alt"
+            :loading="index < 4 ? 'eager' : 'lazy'"
+            :fetchpriority="index < 4 ? 'high' : 'auto'"
+            decoding="async"
+          />
         </div>
       </div>
     </div>
@@ -73,11 +87,33 @@
 
   <section class="qr-section">
     <div class="qr-section__card">
-      <img class="qr-section__image" :src="qrWechat" alt="微信二维码" loading="lazy" decoding="async" />
+      <div class="qr-section__image">
+        <img
+          class="qr-section__image-inner"
+          :class="{ 'is-loaded': qrLoaded[0] }"
+          :src="qrWechat"
+          alt="微信二维码"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          @load="qrLoaded[0] = true"
+        />
+      </div>
       <div class="qr-section__label">微信</div>
     </div>
     <div class="qr-section__card">
-      <img class="qr-section__image" :src="qrOfficialAccount" alt="公众号二维码" loading="lazy" decoding="async" />
+      <div class="qr-section__image">
+        <img
+          class="qr-section__image-inner"
+          :class="{ 'is-loaded': qrLoaded[1] }"
+          :src="qrOfficialAccount"
+          alt="公众号二维码"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          @load="qrLoaded[1] = true"
+        />
+      </div>
       <div class="qr-section__label">公众号</div>
     </div>
   </section>
@@ -93,17 +129,16 @@ import { asset } from '../utils/asset.js'
 const qrWechat = asset('/src/assets/who/QR/841661751578_ 1.png')
 const qrOfficialAccount = asset('/src/assets/who/QR/qrcode_for_gh_748639402b9b_258 2.png')
 
+new Image().src = qrWechat
+new Image().src = qrOfficialAccount
+
 const brandLogoModules = import.meta.glob('../assets/who/logo/*', {
-  eager: true,
-  import: 'default',
+  eager: false,
 })
 
-const brandLogoFiles = Object.keys(brandLogoModules)
-  .map((path) => path.split('/').pop())
-  .filter(Boolean)
+const brandLogoSrcs = Object.keys(brandLogoModules)
   .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }))
-
-const brandLogoSrcs = brandLogoFiles.map((file) => asset(`/src/assets/who/logo/${file}`))
+  .map((path) => asset(path.replace('../assets', '/src/assets')))
 
 const shuffleBrandLogos = (items) => {
   const next = [...items]
@@ -125,16 +160,26 @@ export default {
     const topRow = shuffleBrandLogos(brandLogos)
     const bottomRow = shuffleBrandLogos(brandLogos)
 
-    this.visibleBrandLoopTop = [...topRow, ...topRow]
-    this.visibleBrandLoopBottom = [...bottomRow, ...bottomRow]
+    this.visibleBrandLoopTop = Array.from({ length: topRow.length }, () => ({ src: '', alt: '' }))
+    this.visibleBrandLoopBottom = Array.from({ length: bottomRow.length }, () => ({ src: '', alt: '' }))
+
+    const insertRowImages = (targetKey, row) => {
+      const eagerCount = 4
+      for (let i = 0; i < row.length; i += 1) {
+        if (i < eagerCount) {
+          this[targetKey].splice(i, 1, row[i])
+        } else {
+          setTimeout(() => {
+            this[targetKey].splice(i, 1, row[i])
+          }, (i - eagerCount + 1) * 90)
+        }
+      }
+    }
 
     const startBrands = () => {
-      if (this.brandsStarted) return
-      this.brandsStarted = true
-
       if (this.$refs.brandTrackTop) {
         gsap.to(this.$refs.brandTrackTop, {
-          xPercent: -20,
+          xPercent: -50,
           duration: 36,
           repeat: -1,
           ease: 'none',
@@ -143,55 +188,50 @@ export default {
 
       if (this.$refs.brandTrackBottom) {
         gsap.to(this.$refs.brandTrackBottom, {
-          xPercent: -20,
+          xPercent: -50,
           duration: 36,
           repeat: -1,
           ease: 'none',
         })
       }
+
+      requestAnimationFrame(() => {
+        insertRowImages('visibleBrandLoopTop', topRow)
+        insertRowImages('visibleBrandLoopBottom', bottomRow)
+      })
     }
 
-    if ('IntersectionObserver' in window && this.$refs.brandsSection) {
-      this.brandsObserver = new IntersectionObserver(
-        (entries) => {
-          if (entries.some((entry) => entry.isIntersecting)) {
-            startBrands()
-            this.brandsObserver?.disconnect()
-          }
-        },
-        { root: null, threshold: 0.15 },
-      )
-      this.brandsObserver.observe(this.$refs.brandsSection)
-    } else {
-      startBrands()
-    }
+    startBrands()
 
     this.animation = gsap.context(() => {
+      if (this.$refs.marqueeTrack) {
+        gsap.to(this.$refs.marqueeTrack, {
+          xPercent: -50,
+          duration: 10,
+          repeat: -1,
+          ease: 'none',
+        })
+      }
+
       const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
       tl.from(this.$refs.face, { y: 18, scale: 0.99, duration: 0.28 })
         .from(this.$refs.copy, { y: 10, duration: 0.18 }, '-=0.12')
         .from(this.$refs.arrow, { y: 8, duration: 0.14 }, '-=0.08')
-        .fromTo(this.$refs.marqueeTrack, { xPercent: 0 }, { xPercent: -50, duration: 10, repeat: -1, ease: 'none' }, '-=0.02')
-        .from(this.$refs.brandTrackTop, { x: 28, opacity: 0, duration: 0.24 }, '-=0.04')
-        .from(this.$refs.brandTrackBottom, { x: 28, opacity: 0, duration: 0.24 }, '-=0.18')
+        .from(this.$refs.brandTrackTop, { x: 28, opacity: 0, duration: 0.24 }, '-=0.02')
+        .from(this.$refs.brandTrackBottom, { x: 28, opacity: 0, duration: 0.24 }, '-=0.16')
         .from('.project-n .cube', { y: 14, stagger: 0.04, duration: 0.18 }, '-=0.02')
         .from('#tedian > *', { y: 12, stagger: 0.05, duration: 0.18 }, '-=0.03')
-
-      // brand tracks are started lazily when visible
     }, this.$el)
   },
+
   beforeUnmount() {
     if (this.animation) this.animation.revert()
-    if (this.brandsObserver) this.brandsObserver.disconnect()
   },
   data() {
     return {
-      cv: asset('/src/assets/who/cv.png'),
-      brandsStarted: false,
       visibleBrandLoopTop: [],
       visibleBrandLoopBottom: [],
-      brandLoopTop: [],
-      brandLoopBottom: [],
+      qrLoaded: [false, false],
       qrWechat,
       qrOfficialAccount,
       w1: '290px', url1: asset('/src/assets/who/p1.png'), link1: '/home/who',
@@ -211,20 +251,6 @@ export default {
       t4: ['Design: 交互、用户体验、设计策略', 'Pro: 工程化、图形化、Code', 'Characteristics: 探索、创新、逻辑'],
     }
   },
-  methods: {
-    dowm() {
-      window.onload = function () {
-        document.getElementById('left').focus()
-      }
-      const sWord = prompt('输入正确密码才能下载!')
-      if (sWord == 'liuzixu') {
-        window.open(this.cv)
-      }
-      if (sWord !== 'liuzixu') {
-        alert('取消下载')
-      }
-    },
-  },
   components: { WhoCom, WhocubeCom },
 }
 </script>
@@ -239,8 +265,7 @@ export default {
 }
 
 .hero,
-.project,
-.project2 {
+.project {
   width: 100%;
 }
 
@@ -466,116 +491,6 @@ export default {
   padding: 64px 0;
 }
 
-.project2 {
-  margin: 48px 0 0;
-  padding: 48px 0;
-  background: #1a1a1a;
-}
-
-.name {
-  display: flex;
-  width: min(894px, calc(100% - 32px));
-  min-height: 280px;
-  margin: auto;
-  border-radius: 8px;
-  background: #000;
-}
-
-.name:hover {
-  box-shadow: 0 0 24px rgba(255, 255, 255, 0.1);
-}
-
-.name > #left {
-  width: 50%;
-}
-
-.name > #right {
-  width: 500px;
-}
-
-.t1 {
-  position: relative;
-  top: 50px;
-  right: -60px;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 34px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.t2 {
-  position: relative;
-  top: 48px;
-  right: -60px;
-  display: block;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 32px;
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.t3 {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  background-size: 150px 150px;
-}
-
-.a {
-  top: 24px;
-  right: -70px;
-  background-image: url('../assets/who/wc.png');
-}
-
-.b {
-  top: -126px;
-  right: -270px;
-  background-image: url('../assets/who/wc2.png');
-}
-
-.t4 {
-  position: relative;
-  top: 105px;
-  left: 130px;
-  display: inline-block;
-  margin-right: 167px;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 32px;
-  color: rgba(255, 255, 255, 0.4);
-}
-
-:hover.t4 {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.t5 {
-  position: relative;
-  top: 70px;
-  right: -60px;
-  width: 100px;
-  height: 40px;
-  padding: 8px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 14px;
-}
-
-.t5:hover {
-  color: rgba(0, 0, 0, 0.9);
-  background-color: #fff;
-}
-
-.t6 {
-  position: relative;
-  top: 28px;
-  right: -160px;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 16px;
-}
 
 #tedian {
   display: flex;
@@ -586,16 +501,6 @@ export default {
   justify-content: center;
 }
 
-.divline {
-  width: 1px;
-  height: 10rem;
-  margin: 0;
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.tedian4 {
-  margin: 0 32px;
-}
 
 .qr-section {
   display: flex;
@@ -616,12 +521,27 @@ export default {
 }
 
 .qr-section__image {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 150px;
   height: 150px;
-  object-fit: cover;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: #111;
+  overflow: hidden;
+}
+
+.qr-section__image-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.qr-section__image-inner.is-loaded {
+  opacity: 1;
 }
 
 .qr-section__label {
