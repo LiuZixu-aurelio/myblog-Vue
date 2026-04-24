@@ -48,17 +48,6 @@
     </div>
   </div>
 
-  <section class="brands">
-    <div class="brands__title">I worked with</div>
-    <div class="brands__viewport">
-      <div ref="brandTrack" class="brands__track">
-        <div v-for="(logo, index) in brandLoop" :key="`${logo.src}-${index}`" class="brands__item">
-          <img :src="logo.src" :alt="logo.alt" />
-        </div>
-      </div>
-    </div>
-  </section>
-
   <div id="tedian">
     <WhoCom :Title="T1" :Text="t1" />
     <WhoCom :Title="T2" :Text="t2" />
@@ -66,21 +55,21 @@
     <WhoCom :Title="T4" :Text="t4" />
   </div>
 
-  <div class="project2">
-    <div class="name">
-      <div id="left">
-        <div class="t1">刘子煦</div>
-        <div class="t6">/ Liu Zixu</div>
-        <div class="t2">17621616651</div>
-        <div class="t2">liuziixuitalia@163.com</div>
-        <div class="t5" v-on:click="dowm()"><a>下载简历</a></div>
+    <section class="brands" ref="brandsSection">
+    <div class="brands__title">I worked with</div>
+    <div class="brands__marquee">
+      <div ref="brandTrackTop" class="brands__track brands__track--top">
+        <div v-for="(logo, index) in visibleBrandLoopTop" :key="`top-${logo.src}-${index}`" class="brands__item">
+          <img :src="logo.src" :alt="logo.alt" loading="lazy" decoding="async" />
+        </div>
       </div>
-      <div id="right">
-        <div class="t4"><a target="_blank" href="https://beian.miit.gov.cn">苏ICP备2023000172号-1</a></div>
-        <div class="t4">beian.miit.gov.cn</div>
+      <div ref="brandTrackBottom" class="brands__track brands__track--bottom">
+        <div v-for="(logo, index) in visibleBrandLoopBottom" :key="`bottom-${logo.src}-${index}`" class="brands__item">
+          <img :src="logo.src" :alt="logo.alt" loading="lazy" decoding="async" />
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 </template>
 
@@ -90,26 +79,105 @@ import WhoCom from '../components/whoCom.vue'
 import WhocubeCom from '../components/whocubeCom.vue'
 import { asset } from '../utils/asset.js'
 
+const brandLogoModules = import.meta.glob('../assets/who/logo/*', {
+  eager: true,
+  import: 'default',
+})
+
+const brandLogoFiles = Object.keys(brandLogoModules)
+  .map((path) => path.split('/').pop())
+  .filter(Boolean)
+  .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }))
+
+const brandLogoSrcs = brandLogoFiles.map((file) => asset(`/src/assets/who/logo/${file}`))
+
+const shuffleBrandLogos = (items) => {
+  const next = [...items]
+  for (let i = next.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[next[i], next[j]] = [next[j], next[i]]
+  }
+  return next
+}
+
 export default {
   name: 'whoView',
   mounted() {
+    const brandLogos = brandLogoSrcs.map((src) => ({
+      src,
+      alt: src.split('/').pop().replace('.png', ''),
+    }))
+
+    const topRow = shuffleBrandLogos(brandLogos)
+    const bottomRow = shuffleBrandLogos(brandLogos)
+
+    this.visibleBrandLoopTop = [...topRow, ...topRow]
+    this.visibleBrandLoopBottom = [...bottomRow, ...bottomRow]
+
+    const startBrands = () => {
+      if (this.brandsStarted) return
+      this.brandsStarted = true
+
+      if (this.$refs.brandTrackTop) {
+        gsap.to(this.$refs.brandTrackTop, {
+          xPercent: -20,
+          duration: 36,
+          repeat: -1,
+          ease: 'none',
+        })
+      }
+
+      if (this.$refs.brandTrackBottom) {
+        gsap.to(this.$refs.brandTrackBottom, {
+          xPercent: -20,
+          duration: 36,
+          repeat: -1,
+          ease: 'none',
+        })
+      }
+    }
+
+    if ('IntersectionObserver' in window && this.$refs.brandsSection) {
+      this.brandsObserver = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            startBrands()
+            this.brandsObserver?.disconnect()
+          }
+        },
+        { root: null, threshold: 0.15 },
+      )
+      this.brandsObserver.observe(this.$refs.brandsSection)
+    } else {
+      startBrands()
+    }
+
     this.animation = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
       tl.from(this.$refs.face, { y: 18, scale: 0.99, duration: 0.28 })
         .from(this.$refs.copy, { y: 10, duration: 0.18 }, '-=0.12')
         .from(this.$refs.arrow, { y: 8, duration: 0.14 }, '-=0.08')
         .fromTo(this.$refs.marqueeTrack, { xPercent: 0 }, { xPercent: -50, duration: 10, repeat: -1, ease: 'none' }, '-=0.02')
-        .from(this.$refs.brandTrack, { x: 24, opacity: 0, duration: 0.28 }, '-=0.04')
+        .from(this.$refs.brandTrackTop, { x: 28, opacity: 0, duration: 0.24 }, '-=0.04')
+        .from(this.$refs.brandTrackBottom, { x: 28, opacity: 0, duration: 0.24 }, '-=0.18')
         .from('.project-n .cube', { y: 14, stagger: 0.04, duration: 0.18 }, '-=0.02')
         .from('#tedian > *', { y: 12, stagger: 0.05, duration: 0.18 }, '-=0.03')
+
+      // brand tracks are started lazily when visible
     }, this.$el)
   },
   beforeUnmount() {
     if (this.animation) this.animation.revert()
+    if (this.brandsObserver) this.brandsObserver.disconnect()
   },
   data() {
     return {
       cv: asset('/src/assets/who/cv.png'),
+      brandsStarted: false,
+      visibleBrandLoopTop: [],
+      visibleBrandLoopBottom: [],
+      brandLoopTop: [],
+      brandLoopBottom: [],
       w1: '290px', url1: asset('/src/assets/who/p1.png'), link1: '/home/who',
       w2: '580px', url2: asset('/src/assets/who/p2.png'), link2: '/home/project/ZHIHU',
       w3: '435px', url3: asset('/src/assets/who/p3.png'), link3: '/home/project/plantlight',
@@ -317,6 +385,62 @@ export default {
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
+}
+
+.brands {
+  display: block;
+  width: 100%;
+  padding: 80px 0;
+  background: #000;
+}
+
+.brands__title {
+  width: 900px;
+  margin: 0 auto 40px;
+  color: rgba(255, 255, 255, 0.36);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.brands__marquee {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.brands__track {
+  display: flex;
+  width: max-content;
+  gap: 120px;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+
+.brands__track--bottom {
+  display: flex;
+  min-height: 120px;
+  padding-left: 120px;
+}
+
+.brands__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 2px;
+  background: #171717;
+  flex: 0 0 auto;
+}
+
+.brands__item img {
+  display: block;
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  filter: brightness(1.05);
 }
 
 .project-n {
