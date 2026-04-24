@@ -1,18 +1,40 @@
 <template>
 <div id="who">
-  <div class="hero">
+  <section class="hero">
     <div class="hero-main">
+      <div class="hero-left">
+        <div class="hero-left__line"></div>
+        <div class="hero-left__group">
+          <div class="hero-left__item">Product Design</div>
+          <div class="hero-left__item">UX/UI Design</div>
+          <div class="hero-left__item">Independent Developer</div>
+        </div>
+        <div class="hero-left__line hero-left__line--bottom"></div>
+        <a class="hero-left__caption" href="mailto:liuzixuitalia@163.com">How can i help ?</a>
+        <div class="hero-left__desc">
+          I’m an award winning product designer specialized in financial products. I work for Fintech, Banking, Crypto &amp; Web3
+        </div>
+        
+      </div>
+
       <div ref="face" class="hero-face"></div>
-      <div ref="copy" class="hero-copy">Designer &amp; Developer</div>
-      <div ref="arrow" class="hero-arrow">↘</div>
-      <div class="marquee">
+
+      <div class="hero-right">
+        <div ref="arrow" class="hero-arrow">↘</div>
+        <div class="hero-right__intro">Hi, there! this is</div>
+        <div ref="copy" class="hero-copy">Aurelio Liu</div>
+        <div class="hero-right__desc">
+          AI and robotics enthusiast building intelligent systems for tomorrow.
+        </div>
+      </div>
+            <div class="marquee">
         <div ref="marqueeTrack" class="marquee-track">
           <span>— Liu ZiXU — Aurelio Liu — Liu ZiXU — Aurelio Liu </span>
           <span>— Liu ZiXU — Aurelio Liu — Liu ZiXU — Aurelio Liu </span>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="project">
     <div class="project-n">
@@ -25,6 +47,17 @@
       <WhocubeCom :Wid="w7" :Url="url7" :Link="link7" />
     </div>
   </div>
+
+  <section class="brands">
+    <div class="brands__title">I worked with</div>
+    <div class="brands__viewport">
+      <div ref="brandTrack" class="brands__track">
+        <div v-for="(logo, index) in brandLoop" :key="`${logo.src}-${index}`" class="brands__item">
+          <img :src="logo.src" :alt="logo.alt" />
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div id="tedian">
     <WhoCom :Title="T1" :Text="t1" />
@@ -66,6 +99,7 @@ export default {
         .from(this.$refs.copy, { y: 10, duration: 0.18 }, '-=0.12')
         .from(this.$refs.arrow, { y: 8, duration: 0.14 }, '-=0.08')
         .fromTo(this.$refs.marqueeTrack, { xPercent: 0 }, { xPercent: -50, duration: 10, repeat: -1, ease: 'none' }, '-=0.02')
+        .from(this.$refs.brandTrack, { x: 24, opacity: 0, duration: 0.28 }, '-=0.04')
         .from('.project-n .cube', { y: 14, stagger: 0.04, duration: 0.18 }, '-=0.02')
         .from('#tedian > *', { y: 12, stagger: 0.05, duration: 0.18 }, '-=0.03')
     }, this.$el)
@@ -129,46 +163,133 @@ export default {
 .hero-main {
   position: relative;
   width: 100%;
-  height: min(85vh, 920px);
+  
+  height: 764px;
   background: #000;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .hero-face {
-  position: relative;
-  z-index: 3;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  left: 46%;
+  bottom: 0;
+  z-index: 2;
+  width: min(34vw, 450px);
+  height: min(72vw, 750px);
+  transform: translateX(-50%);
   background-image: url('../assets/aurelio.png');
   background-repeat: no-repeat;
-  background-position: 40% 8px;
-  background-size: auto 100%;
+  background-position: center bottom;
+  background-size: contain;
+}
+
+.hero-left {
+  position: absolute;
+  left: 8%;
+  top: 30%;
+  z-index: 3;
+  width: min(28vw, 280px);
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.hero-left__line {
+  width: 100%;
+  height: 1px;
+  margin-bottom: 18px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.hero-left__line--bottom {
+  margin: 18px 0;
+}
+
+.hero-left__group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 200;
+}
+
+.hero-left__item {
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.hero-left__caption {
+  display: inline-block;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hero-left__caption:hover {
+  text-decoration: underline;
+}
+
+.hero-left__desc {
+  position: absolute;
+  left: 0;
+  top: 170%;
+  width: min(22vw, 280px);
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.25;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  padding-bottom: 18px;
+}
+
+.hero-right {
+  position: absolute;
+  right: 6%;
+  top: 27%;
+  z-index: 3;
+  width: min(28vw, 320px);
+  color: #fff;
+  text-align: left;
+}
+
+.hero-right__intro {
+  margin-top: 110px;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 15px;
+  line-height: 1.4;
 }
 
 .hero-copy {
-  position: absolute;
-  top: 50%;
-  right: 25%;
-  z-index: 1;
-  transform: translateY(-50%);
-  font-size: 22px;
-  letter-spacing: 0.02em;
+  margin-top: 12px;
   color: #fff;
+  font-size: clamp(30px, 3vw, 44px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.hero-right__desc {
+  margin-top: 100px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding-top: 18px;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.3;
 }
 
 .hero-arrow {
   position: absolute;
-  top: 25%;
-  left: 61%;
-  z-index: 1;
-  font-size: 34px;
-  color: rgba(255, 255, 255, 0.72);
+  z-index: 3;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 30px;
+  font-weight: 100;
 }
 
 .marquee {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 24px;
   left: 0;
   z-index: 4;
   overflow: hidden;
@@ -176,14 +297,14 @@ export default {
 }
 
 .marquee-track {
-  color: rgb(255, 255, 255);
   display: flex;
   width: max-content;
   padding: 16px 0;
-  white-space: nowrap;
+  color: rgb(255, 255, 255);
   font-size: clamp(54px, 8vw, 96px);
   font-weight: 700;
   line-height: 1;
+  white-space: nowrap;
   letter-spacing: 0.01em;
 }
 
