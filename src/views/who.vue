@@ -179,7 +179,7 @@ export default {
     const startBrands = () => {
       if (this.$refs.brandTrackTop) {
         gsap.to(this.$refs.brandTrackTop, {
-          xPercent: -50,
+          xPercent: -20.5,
           duration: 36,
           repeat: -1,
           ease: 'none',
@@ -188,7 +188,7 @@ export default {
 
       if (this.$refs.brandTrackBottom) {
         gsap.to(this.$refs.brandTrackBottom, {
-          xPercent: -50,
+          xPercent: -20,
           duration: 36,
           repeat: -1,
           ease: 'none',
