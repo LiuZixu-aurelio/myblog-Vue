@@ -70,6 +70,17 @@
       </div>
     </div>
   </section>
+
+  <section class="qr-section">
+    <div class="qr-section__card">
+      <img class="qr-section__image" :src="qrWechat" alt="微信二维码" loading="lazy" decoding="async" />
+      <div class="qr-section__label">微信</div>
+    </div>
+    <div class="qr-section__card">
+      <img class="qr-section__image" :src="qrOfficialAccount" alt="公众号二维码" loading="lazy" decoding="async" />
+      <div class="qr-section__label">公众号</div>
+    </div>
+  </section>
 </div>
 </template>
 
@@ -78,6 +89,9 @@ import { gsap } from 'gsap'
 import WhoCom from '../components/whoCom.vue'
 import WhocubeCom from '../components/whocubeCom.vue'
 import { asset } from '../utils/asset.js'
+
+const qrWechat = asset('/src/assets/who/QR/841661751578_ 1.png')
+const qrOfficialAccount = asset('/src/assets/who/QR/qrcode_for_gh_748639402b9b_258 2.png')
 
 const brandLogoModules = import.meta.glob('../assets/who/logo/*', {
   eager: true,
@@ -178,6 +192,8 @@ export default {
       visibleBrandLoopBottom: [],
       brandLoopTop: [],
       brandLoopBottom: [],
+      qrWechat,
+      qrOfficialAccount,
       w1: '290px', url1: asset('/src/assets/who/p1.png'), link1: '/home/who',
       w2: '580px', url2: asset('/src/assets/who/p2.png'), link2: '/home/project/ZHIHU',
       w3: '435px', url3: asset('/src/assets/who/p3.png'), link3: '/home/project/plantlight',
@@ -415,12 +431,10 @@ export default {
   gap: 120px;
   will-change: transform;
   transform: translate3d(0, 0, 0);
+  min-height: 120px;
 }
 
-
 .brands__track--bottom {
-  display: flex;
-  min-height: 120px;
   padding-left: 120px;
 }
 
@@ -437,8 +451,8 @@ export default {
 
 .brands__item img {
   display: block;
-  width: 76px;
-  height: 76px;
+  width: 88px;
+  height: 88px;
   object-fit: contain;
   filter: brightness(1.05);
 }
@@ -566,7 +580,7 @@ export default {
 #tedian {
   display: flex;
   max-width: 1000px;
-  margin: auto;
+  margin: 80px 0;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -583,10 +597,37 @@ export default {
   margin: 0 32px;
 }
 
-#erweima {
+.qr-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 200px;
+  width: 100%;
+  padding: 48px 24px 72px;
+  background: #000;
+}
+
+.qr-section__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  min-width: 160px;
+}
+
+.qr-section__image {
+  display: block;
   width: 150px;
   height: 150px;
-  background-image: url('../assets/who/wc.png');
-  background-size: 150px 150px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #111;
+}
+
+.qr-section__label {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.04em;
 }
 </style>
