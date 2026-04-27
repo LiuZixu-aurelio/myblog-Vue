@@ -17,6 +17,9 @@ import { talkRule } from './talk-rule.js'
 import { talkResearch } from './talk-research.js'
 import { talkShadow } from './talk-shadow.js'
 import { signMaterialdesign } from './sign-MaterialDesign.js'
+import { labdog } from './lab-dog.js'
+import { labauduino } from './lab-auduino.js'   
+
 
 const registry = {}
 
@@ -63,8 +66,14 @@ registerGroup('sign', [
   signMaterialdesign,
 ])
 
+registerGroup('lab', [
+  labdog,
+  labauduino
+])
+
 export const works = Object.values(registry)
 export const projectCards = works.filter((item) => item.group === 'project')
 export const projectDetails = projectCards
 export const talkDetailRoutes = works.filter((item) => item.group === 'talk')
+export const labDetailRoutes = works.filter((item) => item.group === 'lab')
 export const signDetailRoutes = works.filter((item) => item.group === 'sign')

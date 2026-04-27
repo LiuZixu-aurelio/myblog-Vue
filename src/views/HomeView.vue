@@ -7,7 +7,7 @@
       <router-link to="/home/who" class="navkuaiu">我是谁</router-link>
       <router-link to="/home/project" class="navkuaiu">作品</router-link>
       <router-link to="/home/talk" class="navkuaiu">思考</router-link>
-      <router-link to="/home/sign" class="navkuaiu">笔记</router-link>
+      <router-link to="/home/lab" class="navkuaiu">实验室</router-link>
       <a href="https://liuzixu-aurelio.github.io/designcollection/" class="navkuaiu" target="_blank" rel="noreferrer">资料</a>
     </nav>
     <div class="home__content">

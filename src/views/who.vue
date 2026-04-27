@@ -438,7 +438,7 @@ export default {
 .brands__title {
   width: 900px;
   margin: 0 auto 40px;
-  color: rgba(255, 255, 255, 0.36);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;

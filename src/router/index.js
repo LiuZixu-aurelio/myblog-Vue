@@ -1,13 +1,14 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 import DetailCom from '../components/detailCom.vue'
-import { projectDetails, talkDetailRoutes, signDetailRoutes } from '../pages/works.js'
+import { projectDetails, talkDetailRoutes, labDetailRoutes, signDetailRoutes } from '../pages/works.js'
 
 const HomeView = () => import('../views/HomeView.vue')
 const whoView = () => import('../views/who.vue')
 const PreView = () => import('../views/PreView.vue')
 const ProjectView = () => import('../views/project.vue')
 const TalkView = () => import('../views/talk.vue')
+const LabView = () => import('../views/lab.vue')
 const SignView = () => import('../views/sign.vue')
 const Testq = () => import('../views/test.vue')
 
@@ -24,6 +25,10 @@ const projectDetailRoutes = projectDetails.map((item) =>
 
 const talkRoutes = talkDetailRoutes.map((item) =>
   createDetailRoute('talk', item.path.split('/').pop(), item.title, item.images),
+)
+
+const labRoutes = labDetailRoutes.map((item) =>
+  createDetailRoute('lab', item.path.split('/').pop(), item.title, item.images),
 )
 
 const signRoutes = signDetailRoutes.map((item) =>
@@ -44,6 +49,8 @@ const routes = [
       ...projectDetailRoutes,
       { path: 'talk', name: 'talk', component: TalkView },
       ...talkRoutes,
+      { path: 'lab', name: 'lab', component: LabView },
+      ...labRoutes,
       { path: 'sign', name: 'sign', component: SignView },
       ...signRoutes,
     ],

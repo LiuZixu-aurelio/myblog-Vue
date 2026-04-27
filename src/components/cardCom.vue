@@ -1,5 +1,18 @@
 <template>
-  <router-link :to="lnk" class="card-link" :aria-label="na">
+  <a
+    v-if="isExternal"
+    :href="lnk"
+    class="card-link"
+    :aria-label="na"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <div class="card" :style="ur">
+      <div class="card__footer">{{ na }}</div>
+    </div>
+  </a>
+
+  <router-link v-else :to="lnk" class="card-link" :aria-label="na">
     <div class="card" :style="ur">
       <div class="card__footer">{{ na }}</div>
     </div>
@@ -21,6 +34,11 @@ export default {
     lnk: {
       type: String,
       required: true,
+    },
+  },
+  computed: {
+    isExternal() {
+      return /^https?:\/\//.test(this.lnk)
     },
   },
 }
