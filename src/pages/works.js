@@ -19,6 +19,8 @@ import { talkShadow } from './talk-shadow.js'
 import { signMaterialdesign } from './sign-MaterialDesign.js'
 import { labdog } from './lab-dog.js'
 import { labauduino } from './lab-auduino.js'   
+import { SchAnalyzer } from './project-SchAnalyzer.js'   
+
 
 
 const registry = {}
@@ -39,6 +41,7 @@ const registerGroup = (group, items) => {
 }
 
 registerGroup('project', [
+  SchAnalyzer,
   zhihu,
   testhub,
   infor,
