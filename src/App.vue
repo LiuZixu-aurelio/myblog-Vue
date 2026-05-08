@@ -61,6 +61,12 @@ const leave = (el, done) => {
   cursor: url('/Frame9.svg'), auto;
 }
 
+@media (max-width: 768px) {
+  * {
+    cursor: auto;
+  }
+}
+
 html,
 body,
 #app {
@@ -132,17 +138,25 @@ body {
     z-index: 1;
     width: 100%;
     height: 67px;
-    line-height: 4px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    line-height: 1;
     background-color: rgba(0, 0, 0, 1);
     backdrop-filter: blur(12px);
 
     a {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      flex: 0 0 auto;
     }
 
     img {
       position: relative;
-      top: 12px;
+      top: 0;
     }
 
     .navkuaiu {
@@ -180,9 +194,9 @@ body {
     background-color: #fafcfd;
 
     .whocont {
-      width: 92%;
+      width: min(92%, 1200px);
       height: 90%;
-      margin-bottom:80px;
+      margin-bottom: 80px;
       text-align: center;
     }
 
@@ -199,7 +213,42 @@ body {
       position: relative;
       top: 32px;
       margin: auto;
+      max-width: 100%;
+      height: auto;
     }
   }
 }
+
+@media (max-width: 768px) {
+  .home {
+    .nav {
+      height: 56px;
+      padding: 0 8px;
+
+      .navkuaiu {
+        margin: 0 12px;
+        font-size: 14px;
+      }
+
+      .navkuaiu:hover {
+        font-size: 14px;
+      }
+
+      img {
+        height: 28px;
+        width: auto;
+      }
+    }
+
+    .whoheigt {
+      padding-top: 12px;
+
+      .whocont {
+        width: calc(100% - 24px);
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
 </style>

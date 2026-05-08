@@ -22,6 +22,9 @@
 
 <script>
 import { gsap } from 'gsap'
+import { asset } from '../utils/asset.js'
+
+const whoHeroImage = asset('/src/assets/aurelio.png')
 
 export default {
   name: 'PreView',
@@ -34,6 +37,11 @@ export default {
     }
   },
   mounted() {
+    const preloadWhoImage = new Image()
+    preloadWhoImage.decoding = 'async'
+    preloadWhoImage.fetchPriority = 'high'
+    preloadWhoImage.src = whoHeroImage
+
     gsap.fromTo(
       this.$refs.startBtn,
       { opacity: 0, y: 26, rotate: -8, scale: 0.82 },
@@ -120,7 +128,7 @@ export default {
   position: relative;
   z-index: 3;
   display: flex;
-  flex: 1 1 560px;
+  flex: -1 1 560px;
   flex-direction: column;
   align-items: flex-start;
   max-width: 70vw;

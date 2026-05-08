@@ -17,7 +17,7 @@
         
       </div>
 
-      <div ref="face" class="hero-face"></div>
+      <div ref="face" class="hero-face" :style="{ backgroundImage: `url(${whoHeroImage})` }"></div>
 
       <div class="hero-right">
         <div ref="arrow" class="hero-arrow">↘</div>
@@ -126,6 +126,7 @@ import WhoCom from '../components/whoCom.vue'
 import WhocubeCom from '../components/whocubeCom.vue'
 import { asset } from '../utils/asset.js'
 
+const whoHeroImage = asset('/src/assets/aurelio.png')
 const qrWechat = asset('/src/assets/who/QR/841661751578_ 1.png')
 const qrOfficialAccount = asset('/src/assets/who/QR/qrcode_for_gh_748639402b9b_258 2.png')
 
@@ -232,6 +233,7 @@ export default {
       visibleBrandLoopTop: [],
       visibleBrandLoopBottom: [],
       qrLoaded: [false, false],
+      whoHeroImage,
       qrWechat,
       qrOfficialAccount,
       w1: '290px', url1: asset('/src/assets/who/p1.png'), link1: '/home/who',
@@ -272,8 +274,8 @@ export default {
 .hero-main {
   position: relative;
   width: 100%;
-  
-  height: 764px;
+  height: 95vh;
+  max-height:920px;
   background: #000;
   overflow: hidden;
 }
@@ -286,7 +288,6 @@ export default {
   width: min(34vw, 450px);
   height: min(72vw, 750px);
   transform: translateX(-50%);
-  background-image: url('../assets/aurelio.png');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: contain;
@@ -549,5 +550,149 @@ export default {
   font-size: 14px;
   line-height: 1;
   letter-spacing: 0.04em;
+}
+@media (max-width: 768px) {
+  .hero-main {
+    height: auto;
+    min-height: 740px;
+    padding: 24px 16px 120px;
+  }
+
+  .hero-left,
+  .hero-right {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    width: 100%;
+  }
+
+  .hero-left {
+    margin-top: 8px;
+  }
+
+  .hero-left__desc {
+    position: static;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .hero-face {
+    position: relative;
+    left: 50%;
+    width: min(62vw, 320px);
+    height: min(110vw, 420px);
+    margin: 12px 0 0;
+  }
+
+  .hero-right__intro {
+    margin-top: 24px;
+  }
+
+  .hero-right__desc {
+    margin-top: 28px;
+  }
+
+  .marquee {
+    bottom: 0;
+  }
+
+  .marquee-track {
+    font-size: clamp(34px, 10vw, 56px);
+    padding: 10px 0;
+  }
+
+  .project {
+    background-attachment: scroll;
+  }
+
+  .project-n {
+    max-width: 100%;
+    padding: 28px 12px;
+  }
+
+  .brands {
+    padding: 40px 0;
+  }
+
+  .brands__title {
+    width: calc(100% - 32px);
+    margin-bottom: 24px;
+  }
+
+  .brands__track {
+    gap: 48px;
+    min-height: 84px;
+  }
+
+  .brands__track--bottom {
+    padding-left: 48px;
+  }
+
+  .brands__item {
+    width: 84px;
+    height: 84px;
+  }
+
+  .brands__item img {
+    width: 58px;
+    height: 58px;
+  }
+
+  #tedian {
+    max-width: 100%;
+    margin: 36px 0;
+    padding: 0 12px;
+  }
+
+  .qr-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 12px 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-main {
+    min-height: 620px;
+    padding: 20px 12px 96px;
+  }
+
+  .hero-left__group,
+  .hero-left__caption,
+  .hero-left__desc,
+  .hero-right__intro,
+  .hero-right__desc {
+    font-size: 12px;
+  }
+
+  .hero-copy {
+    font-size: clamp(24px, 8vw, 30px);
+  }
+
+  .hero-face {
+    width: min(70vw, 280px);
+    height: min(120vw, 360px);
+  }
+
+  .marquee-track {
+    font-size: clamp(28px, 11vw, 42px);
+    padding: 8px 0;
+  }
+
+  .project-n {
+    padding: 16px 8px;
+  }
+
+  #tedian {
+    margin: 24px 0;
+    padding: 0 8px;
+  }
+
+  .qr-section {
+    gap: 16px;
+    padding: 18px 8px 32px;
+  }
 }
 </style>
