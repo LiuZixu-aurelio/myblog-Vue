@@ -19,21 +19,19 @@ const createDetailRoute = (type, path, name, img) => ({
   component: DetailCom,
 })
 
-const projectDetailRoutes = projectDetails.map((item) =>
-  createDetailRoute('project', item.path.split('/').pop(), item.title, item.images),
-)
+const isInternalDetailPath = (path, type) =>
+  typeof path === 'string' && path.startsWith(`/home/${type}/`) && path.split('/').pop()
 
-const talkRoutes = talkDetailRoutes.map((item) =>
-  createDetailRoute('talk', item.path.split('/').pop(), item.title, item.images),
-)
+const buildDetailRoutes = (items, type) =>
+  items
+    .filter((item) => isInternalDetailPath(item.path, type))
+    .map((item) => createDetailRoute(type, item.path.split('/').pop(), item.title, item.images))
 
-const labRoutes = labDetailRoutes.map((item) =>
-  createDetailRoute('lab', item.path.split('/').pop(), item.title, item.images),
-)
-
-const signRoutes = signDetailRoutes.map((item) =>
-  createDetailRoute('sign', item.path.split('/').pop(), item.title, item.images),
-)
+const projectDetailItems = projectDetails.filter((item) => item.path?.startsWith('/home/project/'))
+const projectRoutes = buildDetailRoutes(projectDetailItems, 'project')
+const talkRoutes = buildDetailRoutes(talkDetailRoutes, 'talk')
+const labRoutes = buildDetailRoutes(labDetailRoutes, 'lab')
+const signRoutes = buildDetailRoutes(signDetailRoutes, 'sign')
 
 const routes = [
   { path: '/', redirect: '/pre' },
@@ -46,7 +44,7 @@ const routes = [
     children: [
       { path: 'who', name: 'homewho', component: whoView },
       { path: 'project', name: 'project', component: ProjectView },
-      ...projectDetailRoutes,
+      ...projectRoutes,
       { path: 'talk', name: 'talk', component: TalkView },
       ...talkRoutes,
       { path: 'lab', name: 'lab', component: LabView },

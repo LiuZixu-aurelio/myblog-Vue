@@ -19,7 +19,9 @@ import { talkShadow } from './talk-shadow.js'
 import { signMaterialdesign } from './sign-MaterialDesign.js'
 import { labdog } from './lab-dog.js'
 import { labauduino } from './lab-auduino.js'   
-import { SchAnalyzer } from './project-SchAnalyzer.js'   
+import { labbazi } from './lab-bazi.js'
+import { SchAnalyzer } from './project-SchAnalyzer.js'
+
 
 
 
@@ -71,7 +73,8 @@ registerGroup('sign', [
 
 registerGroup('lab', [
   labdog,
-  labauduino
+  labauduino,
+  labbazi
 ])
 
 export const works = Object.values(registry)
