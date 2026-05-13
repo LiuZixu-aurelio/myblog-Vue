@@ -117,6 +117,17 @@
       <div class="qr-section__label">公众号</div>
     </div>
   </section>
+
+  <div class="beian">
+    <a
+      class="beian__link"
+      href="https://beian.miit.gov.cn/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      苏ICP备2026001620号
+    </a>
+  </div>
 </div>
 </template>
 
@@ -550,6 +561,23 @@ export default {
   font-size: 14px;
   line-height: 1;
   letter-spacing: 0.04em;
+}
+
+.beian {
+  width: 100%;
+  padding: 0 24px 28px;
+  text-align: center;
+  background: #000;
+}
+
+.beian__link {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.beian__link:hover {
+  text-decoration: underline;
 }
 @media (max-width: 768px) {
   .hero-main {
