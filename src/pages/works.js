@@ -5,7 +5,6 @@ import { pPlant } from './project-plant.js'
 import { pConfig } from './project-config.js'
 import { data } from './project-data.js'
 import { pChristie } from './project-christie.js'
-import { projectOther } from './project-other.js'
 import { talkUx } from './talk-ux.js'
 import { cButton } from './c-button.js'
 import { signProduct } from './sign-product.js'
@@ -45,13 +44,12 @@ const registerGroup = (group, items) => {
 registerGroup('project', [
   SchAnalyzer,
   zhihu,
+  pChristie,
+  data,
   testhub,
   infor,
   pPlant,
   pConfig,
-  data,
-  pChristie,
-  projectOther,
 ])
 
 registerGroup('talk', [

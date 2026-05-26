@@ -12,7 +12,7 @@
         <div class="hero-left__line hero-left__line--bottom"></div>
         <a class="hero-left__caption" href="mailto:liuzixuitalia@163.com">How can i help ?</a>
         <div class="hero-left__desc">
-          I’m an award winning product designer specialized in financial products. I work for Fintech, Banking, Crypto &amp; Web3
+          I’m an award-winning product designer specialized in AI and smart hardware. I work for Artificial Intelligence, IoT, Robotics & Consumer Electronics.
         </div>
         
       </div>

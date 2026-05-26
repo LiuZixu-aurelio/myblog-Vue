@@ -52,7 +52,7 @@ export default {
 
 .card {
   width: min(496px, calc(100vw - 48px));
-  aspect-ratio: 496 / 279;
+  aspect-ratio: 496 / 280;
   height: auto;
   overflow: hidden;
   border-radius: 8px;

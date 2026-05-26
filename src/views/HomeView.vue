@@ -21,7 +21,7 @@
         <router-link to="/home/project" class="navkuaiu" @click="closeMenu">作品</router-link>
         <router-link to="/home/talk" class="navkuaiu" @click="closeMenu">思考</router-link>
         <router-link to="/home/lab" class="navkuaiu" @click="closeMenu">实验室</router-link>
-        <a href="https://liuzixu-aurelio.github.io/designcollection/" class="navkuaiu" target="_blank" rel="noreferrer" @click="closeMenu">资料</a>
+        <a href="https://liuzixu-aurelio.github.io/designcollection/" class="navkuaiu" target="_blank" rel="noreferrer" @click="closeMenu">资源</a>
       </div>
     </nav>
     <div class="home__content">
