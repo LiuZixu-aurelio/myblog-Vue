@@ -20,6 +20,7 @@ import { labdog } from './lab-dog.js'
 import { labauduino } from './lab-auduino.js'   
 import { labbazi } from './lab-bazi.js'
 import { SchAnalyzer } from './project-SchAnalyzer.js'
+import { glooly } from './project-glooly.js'
 
 
 
@@ -38,11 +39,15 @@ const registerWork = (id, group, { title, cover, path, images }) => {
 }
 
 const registerGroup = (group, items) => {
-  items.forEach((item) => registerWork(item.id, group, item))
+  items.forEach((item) => {
+    if (!item || !item.id) return
+    registerWork(item.id, group, item)
+  })
 }
 
 registerGroup('project', [
   SchAnalyzer,
+  glooly,
   zhihu,
   pChristie,
   data,

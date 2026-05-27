@@ -8,7 +8,7 @@
     rel="noopener noreferrer"
   >
     <div class="card" :style="ur">
-      <div v-if="false" class="card__footer">{{ na }}</div>
+      <div class="card__footer">{{ na }}</div>
     </div>
   </a>
 
