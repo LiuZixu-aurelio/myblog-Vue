@@ -2,7 +2,7 @@ import { asset } from '../utils/asset.js'
 
 const imageBase = '/src/assets/project/glooly/glooly'
 
-const imageModules = import.meta.glob('/src/assets/project/glooly/*.{png,jpg,jpeg,webp,gif,svg,mp4,mov}', {
+const imageModules = import.meta.glob('/src/assets/project/glooly/*.{png,jpg,jpeg,webm,gif,svg,mp4,mov}', {
   eager: true,
   import: 'default',
 })

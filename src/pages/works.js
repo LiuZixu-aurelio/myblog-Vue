@@ -21,6 +21,7 @@ import { labauduino } from './lab-auduino.js'
 import { labbazi } from './lab-bazi.js'
 import { SchAnalyzer } from './project-SchAnalyzer.js'
 import { glooly } from './project-glooly.js'
+import { shiseidoAnalyzer } from './project-shiseidoAnalyzer.js'
 
 
 
@@ -49,6 +50,7 @@ registerGroup('project', [
   SchAnalyzer,
   glooly,
   zhihu,
+  shiseidoAnalyzer,
   pChristie,
   data,
   testhub,
