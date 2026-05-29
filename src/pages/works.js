@@ -22,8 +22,11 @@ import { labbazi } from './lab-bazi.js'
 import { SchAnalyzer } from './project-SchAnalyzer.js'
 import { glooly } from './project-glooly.js'
 import { shiseidoAnalyzer } from './project-shiseidoAnalyzer.js'
-
-
+import { AIAgentExpeience } from './talk-AIAgentExpeience.js'
+import { AIworkflow } from './talk-AIworkflow.js'
+import { AINativeProduct } from './talk-AINativeProduct.js'
+import { AIHardware } from './talk-AIHardware.js'
+import { AIbusiness } from './talk-AIbusiness.js'
 
 
 const registry = {}
@@ -60,6 +63,11 @@ registerGroup('project', [
 ])
 
 registerGroup('talk', [
+  AIAgentExpeience,
+  AIworkflow,
+  AINativeProduct,
+  AIHardware,
+  AIbusiness,
   talkUx,
   cButton,
   talkResponsive,
