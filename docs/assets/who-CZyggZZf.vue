@@ -118,7 +118,7 @@
     </div>
   </section>
 
-  <div class="beian">
+  <div class="beian" aria-label="备案信息">
     <a
       class="beian__link"
       href="https://beian.miit.gov.cn/"
@@ -126,6 +126,16 @@
       rel="noopener noreferrer"
     >
       苏ICP备2026001620号
+    </a>
+    <span class="beian__sep" aria-hidden="true">|</span>
+    <a
+      class="beian__link beian__link--police"
+      href="https://beian.mps.gov.cn/#/query/webSearch?code=31011302009251"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img class="beian__icon" src="/src/assets/common/beian.png" alt="" aria-hidden="true">
+      <span>沪公网安备31011302009251号</span>
     </a>
   </div>
 </div>
@@ -568,16 +578,48 @@ export default {
   padding: 0 24px 28px;
   text-align: center;
   background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .beian__link {
   color: rgba(255, 255, 255, 0.58);
   font-size: 12px;
   text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.beian__link--police {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.beian__icon {
+  width: 14px;
+  height: 14px;
+  display: block;
+  flex: 0 0 auto;
 }
 
 .beian__link:hover {
+  color: rgba(255, 255, 255, 0.86);
   text-decoration: underline;
+}
+
+.beian__link:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.45);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.beian__sep {
+  color: rgba(255, 255, 255, 0.28);
+  font-size: 12px;
+  user-select: none;
 }
 @media (max-width: 768px) {
   .hero-main {
