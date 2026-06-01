@@ -1,5 +1,5 @@
 <template>
-  <div class="whoheigt">
+  <div class="whoheigt color2">
     <div class="whocont">
       <h2>作品</h2>
       <div class="list">

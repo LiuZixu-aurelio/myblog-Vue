@@ -27,3 +27,22 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.whocont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.whocont > h2 {
+  width: 100%;
+}
+
+.whocont::after {
+  content: '';
+  flex: 1 1 496px;
+  max-width: 496px;
+  margin: 24px;
+}
+</style>

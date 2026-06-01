@@ -50,6 +50,10 @@ export default {
   margin: 24px;
 }
 
+.card-link:last-child:nth-child(odd) {
+  margin-right: auto;
+}
+
 .card {
   width: min(496px, calc(100vw - 48px));
   aspect-ratio: 496 / 280;
