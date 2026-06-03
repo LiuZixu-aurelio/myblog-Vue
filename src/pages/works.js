@@ -27,6 +27,7 @@ import { AIworkflow } from './talk-AIworkflow.js'
 import { AINativeProduct } from './talk-AINativeProduct.js'
 import { AIHardware } from './talk-AIHardware.js'
 import { AIbusiness } from './talk-AIbusiness.js'
+import { ABCwebsite } from './project-ABCwebsite.js'
 
 
 const registry = {}
@@ -53,6 +54,7 @@ registerGroup('project', [
   SchAnalyzer,
   glooly,
   zhihu,
+  ABCwebsite,
   shiseidoAnalyzer,
   pChristie,
   data,
