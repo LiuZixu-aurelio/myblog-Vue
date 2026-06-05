@@ -261,7 +261,7 @@ export default {
       w2: '580px', url2: asset('/src/assets/who/p2.png'), link2: '/home/project/ZHIHU',
       w3: '435px', url3: asset('/src/assets/who/p3.png'), link3: '/home/project/SchwarzkopfAnalyzer',
       w4: '435px', url4: asset('/src/assets/who/p4.jpg'), link4: '/home/project/glooly',
-      w5: '580px', url5: asset('/src/assets/who/p5.png'), link5: '/home/project/infor',
+      w5: '580px', url5: asset('/src/assets/who/p5.jpg'), link5: '/home/project/ABCwebsite',
       w6: '290px', url6: asset('/src/assets/who/p6.png'), link6: '/home/project/christie',
       w7: '894px', url7: asset('/src/assets/who/p7.png'), link7: '/home/project/data',
       T1: 'Design',
