@@ -28,6 +28,7 @@ import { AINativeProduct } from './talk-AINativeProduct.js'
 import { AIHardware } from './talk-AIHardware.js'
 import { AIbusiness } from './talk-AIbusiness.js'
 import { ABCwebsite } from './project-ABCwebsite.js'
+import { chatbot } from './lab-chatbot.js'
 
 
 const registry = {}
@@ -89,7 +90,9 @@ registerGroup('sign', [
 registerGroup('lab', [
   labdog,
   labauduino,
-  labbazi
+  chatbot,
+  labbazi,
+  
 ])
 
 export const works = Object.values(registry)
