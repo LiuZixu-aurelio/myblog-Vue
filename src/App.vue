@@ -195,7 +195,6 @@ body {
 
     .whocont {
       width: min(92%, 1200px);
-      height: 90%;
       margin-bottom: 80px;
       text-align: center;
     }
@@ -210,11 +209,10 @@ body {
     }
 
     img {
-      position: relative;
-      top: 32px;
       margin: auto;
       max-width: 100%;
       height: auto;
+      display: block;
     }
   }
 }

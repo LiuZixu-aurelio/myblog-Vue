@@ -3,17 +3,23 @@
     <div class="whocont">
       <h2>{{ na }}</h2>
       <div class="detail-images">
-        <div v-for="(item, index) in im" :key="index" class="detail-media-wrap">
-          <video
-            v-if="isVideo(item)"
-            class="detail-media detail-video"
-            controls
-            playsinline
-            preload="metadata"
-          >
-            <source :src="item" :type="videoMime(item)">
-            当前浏览器不支持该视频格式
-          </video>
+        <div
+          v-for="(item, index) in im"
+          :key="index"
+          class="detail-media-wrap"
+          :class="{ 'detail-media-wrap--video': isVideo(item) }"
+        >
+          <div v-if="isVideo(item)" class="detail-video-box">
+            <video
+              class="detail-media detail-video"
+              controls
+              playsinline
+              preload="metadata"
+            >
+              <source :src="item" :type="videoMime(item)">
+              当前浏览器不支持该视频格式
+            </video>
+          </div>
           <img
             v-else
             :src="item"
@@ -48,6 +54,7 @@ export default {
     isAnalyzer09(src) {
       return typeof src === 'string' && src.includes('SchwarzkopfAnalyzer09')
     },
+
   },
 }
 </script>
@@ -60,11 +67,24 @@ export default {
 .detail-media-wrap {
   width: min(1000px, 100%);
   margin: 0 auto;
-  line-height: 0;
 }
 
 .detail-media-wrap + .detail-media-wrap {
   margin-top: 0;
+}
+
+.detail-media-wrap--video {
+  overflow: hidden;
+  border-radius: 6px;
+  background: #000;
+}
+
+.detail-video-box {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  background: #000;
 }
 
 .detail-media {
@@ -75,10 +95,12 @@ export default {
 }
 
 .detail-video {
-  height: auto;
-  background: #000;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
   object-fit: contain;
-  vertical-align: top;
 }
 
 .detail-video::-webkit-media-controls {
