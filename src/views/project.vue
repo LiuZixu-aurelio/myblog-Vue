@@ -39,7 +39,7 @@ export default {
 
 .whocont > h2 {
   width: 100%;
-  padding-bottom: 16px;
+
 }
 
 .whocont::after {
