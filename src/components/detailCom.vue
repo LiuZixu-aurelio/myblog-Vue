@@ -1,7 +1,7 @@
 <template>
   <div class="whoheigt color2">
     <div class="whocont">
-      <h2>{{ na }}</h2>
+      <h2 class="detailh2">{{ na }}</h2>
       <div class="detail-images">
         <div
           v-for="(item, index) in im"
@@ -62,6 +62,9 @@ export default {
 <style scoped>
 .detail-images {
   width: 100%;
+}
+.detailh2{
+  height: 40px;
 }
 
 .detail-media-wrap {

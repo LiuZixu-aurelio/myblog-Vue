@@ -29,6 +29,7 @@ import { AIHardware } from './talk-AIHardware.js'
 import { AIbusiness } from './talk-AIbusiness.js'
 import { ABCwebsite } from './project-ABCwebsite.js'
 import { chatbot } from './lab-chatbot.js'
+import { HairShpere } from './lab-HairShpere.js'
 
 
 const registry = {}
@@ -89,9 +90,11 @@ registerGroup('sign', [
 
 registerGroup('lab', [
   labdog,
+  HairShpere,
   labauduino,
   chatbot,
   labbazi,
+  
   
 ])
 
