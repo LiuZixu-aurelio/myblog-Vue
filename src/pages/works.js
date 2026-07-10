@@ -30,7 +30,7 @@ import { AIbusiness } from './talk-AIbusiness.js'
 import { ABCwebsite } from './project-ABCwebsite.js'
 import { chatbot } from './lab-chatbot.js'
 import { HairShpere } from './lab-HairShpere.js'
-
+import { ChameleonAnInteractiveDigital } from './lab-ChameleonAnInteractiveDigital.js'
 
 const registry = {}
 
@@ -91,6 +91,7 @@ registerGroup('sign', [
 registerGroup('lab', [
   labdog,
   HairShpere,
+  ChameleonAnInteractiveDigital,
   labauduino,
   chatbot,
   labbazi,
