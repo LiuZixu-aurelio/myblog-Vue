@@ -2,6 +2,7 @@
 <div id="who">
   <section class="hero">
     <div class="hero-main">
+      <!-- 左侧简介区：用于快速传达身份、擅长方向与联系入口。 -->
       <div class="hero-left">
         <div class="hero-left__line"></div>
         <div class="hero-left__group">
@@ -14,11 +15,35 @@
         <div class="hero-left__desc">
           I’m an award-winning product designer specialized in AI and smart hardware. I work for Artificial Intelligence, IoT, Robotics & Consumer Electronics.
         </div>
-        
       </div>
 
-      <div ref="face" class="hero-face" :style="{ backgroundImage: `url(${whoHeroImage})` }"></div>
+      <!--
+        头像区采用双层叠加：
+        1) `whoHeroImage` 作为底图，始终完整显示；
+        2) `whoHeroRevealImage` 作为上层图，通过圆形遮罩透出。
+        遮罩中心跟随鼠标移动，从而形成“探索式揭示”的交互效果。
+      -->
+      <div ref="face" class="hero-face">
+        <img class="hero-face__base" :src="whoHeroImage" alt="Aurelio" loading="eager" fetchpriority="high" decoding="async" />
+        <div
+          v-if="isFaceHovered"
+          class="hero-face__reveal"
+          :style="{
+            maskImage: faceMask,
+            WebkitMaskImage: faceMask,
+            maskRepeat: 'no-repeat',
+            WebkitMaskRepeat: 'no-repeat',
+            maskPosition: `${cursor.x}px ${cursor.y}px`,
+            WebkitMaskPosition: `${cursor.x-240}px ${cursor.y-360}px`, 
+            backgroundImage: `url(${whoHeroRevealImage})`,
+            backgroundPosition: 'calc(50% + 20px) calc(50% - 30px)',
+          }"
+        ></div>
+        <!-- 柔和光斑，增强遮罩移动时的视觉层次感。 -->
+        <div v-if="isFaceHovered" class="hero-face__glow" :style="{ left: `${cursor.x}px`, top: `${cursor.y}px` }"></div>
+      </div>
 
+      <!-- 右侧标题区：强化人物名称与一句话定位。 -->
       <div class="hero-right">
         <div ref="arrow" class="hero-arrow">↘</div>
         <div class="hero-right__intro">Hi, there! this is</div>
@@ -27,7 +52,9 @@
           AI and robotics enthusiast building intelligent systems for tomorrow.
         </div>
       </div>
-            <div class="marquee">
+
+      <!-- 底部滚动文案：用于补充品牌感和页面节奏。 -->
+      <div class="marquee">
         <div ref="marqueeTrack" class="marquee-track">
           <span>— Liu ZiXU — Aurelio Liu — Liu ZiXU — Aurelio Liu </span>
           <span>— Liu ZiXU — Aurelio Liu — Liu ZiXU — Aurelio Liu </span>
@@ -36,6 +63,7 @@
     </div>
   </section>
 
+    <!-- 项目卡片区：展示一组代表性作品入口。 -->
   <div class="project">
     <div class="project-n">
       <WhocubeCom :Wid="w1" :Url="url1" :Link="link1" />
@@ -48,6 +76,7 @@
     </div>
   </div>
 
+  <!-- 个人能力/特征区：用结构化文案补充主页信息密度。 -->
   <div id="tedian">
     <WhoCom :Title="T1" :Text="t1" />
     <WhoCom :Title="T2" :Text="t2" />
@@ -55,7 +84,8 @@
     <WhoCom :Title="T4" :Text="t4" />
   </div>
 
-    <section class="brands">
+  <!-- 品牌 Logo 跑马灯：增加页面动势与合作背书。 -->
+  <section class="brands">
     <div class="brands__title">I worked with</div>
     <div class="brands__marquee">
       <div ref="brandTrackTop" class="brands__track brands__track--top">
@@ -85,6 +115,7 @@
     </div>
   </section>
 
+  <!-- 二维码区：提供微信与公众号的关注入口。 -->
   <section class="qr-section">
     <div class="qr-section__card">
       <div class="qr-section__image">
@@ -147,13 +178,18 @@ import WhoCom from '../components/whoCom.vue'
 import WhocubeCom from '../components/whocubeCom.vue'
 import { asset } from '../utils/asset.js'
 
+// 头像底图：始终完整可见的基础层。
 const whoHeroImage = asset('/src/assets/aurelio.png')
+// 头像揭示层：通过圆形遮罩与鼠标位置联动透出。
+const whoHeroRevealImage = asset('/src/assets/aurelio2.png')
+// 二维码资源：进入页面即预加载，减少闪烁。
 const qrWechat = asset('/src/assets/who/QR/841661751578_ 1.png')
 const qrOfficialAccount = asset('/src/assets/who/QR/qrcode_for_gh_748639402b9b_258 2.png')
 
 new Image().src = qrWechat
 new Image().src = qrOfficialAccount
 
+// 批量收集合作品牌 Logo，后续会打乱顺序并做跑马灯展示。
 const brandLogoModules = import.meta.glob('../assets/who/logo/*', {
   eager: false,
 })
@@ -174,10 +210,38 @@ const shuffleBrandLogos = (items) => {
 export default {
   name: 'whoView',
   mounted() {
+    // 品牌 Logo 数据先转换成可渲染结构，方便后续逐步插入图片。
     const brandLogos = brandLogoSrcs.map((src) => ({
       src,
       alt: src.split('/').pop().replace('.png', ''),
     }))
+
+    // 鼠标移动时更新遮罩中心点。
+    this.onPointerMove = (event) => {
+      const el = this.$refs.face
+      if (!el) return
+      const rect = el.getBoundingClientRect()
+      const expand = 80
+      const insideOrNear =
+        event.clientX >= rect.left - expand &&
+        event.clientX <= rect.right + expand &&
+        event.clientY >= rect.top - expand &&
+        event.clientY <= rect.bottom + expand
+
+      const x = Math.max(0, Math.min(rect.width, event.clientX - rect.left))
+      const y = Math.max(0, Math.min(rect.height, event.clientY - rect.top))
+      this.cursor = { x, y }
+      this.isFaceHovered = insideOrNear
+    }
+
+    // 鼠标离开时，将遮罩回到中心，避免视觉上“卡住”。
+    this.onPointerLeave = () => {
+      this.isFaceHovered = false
+    }
+
+    window.addEventListener('pointermove', this.onPointerMove)
+    this.$refs.face?.addEventListener('pointerleave', this.onPointerLeave)
+    this.onPointerLeave()
 
     const topRow = shuffleBrandLogos(brandLogos)
     const bottomRow = shuffleBrandLogos(brandLogos)
@@ -185,6 +249,7 @@ export default {
     this.visibleBrandLoopTop = Array.from({ length: topRow.length }, () => ({ src: '', alt: '' }))
     this.visibleBrandLoopBottom = Array.from({ length: bottomRow.length }, () => ({ src: '', alt: '' }))
 
+    // 逐批插入图片，既能保持首屏轻量，也能让品牌图逐渐“出现”。
     const insertRowImages = (targetKey, row) => {
       const eagerCount = 4
       for (let i = 0; i < row.length; i += 1) {
@@ -225,6 +290,7 @@ export default {
 
     startBrands()
 
+    // 页面主体入场动画：控制头像、标题、品牌区等模块的节奏。
     this.animation = gsap.context(() => {
       if (this.$refs.marqueeTrack) {
         gsap.to(this.$refs.marqueeTrack, {
@@ -247,6 +313,13 @@ export default {
   },
 
   beforeUnmount() {
+    // 组件卸载时清理事件监听，避免页面切换后继续响应鼠标事件。
+    if (this.onPointerMove) {
+      window.removeEventListener('pointermove', this.onPointerMove)
+    }
+    if (this.$refs.face && this.onPointerLeave) {
+      this.$refs.face.removeEventListener('pointerleave', this.onPointerLeave)
+    }
     if (this.animation) this.animation.revert()
   },
   data() {
@@ -255,6 +328,11 @@ export default {
       visibleBrandLoopBottom: [],
       qrLoaded: [false, false],
       whoHeroImage,
+      whoHeroRevealImage,
+      faceMask: 'radial-gradient(circle 240px at center, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 58%, rgba(0, 0, 0, 0.92) 68%, rgba(0, 0, 0, 0.1) 86%, rgba(0, 0, 0, 0) 100%)',
+      // 鼠标在头像区域内的实时坐标，用于驱动遮罩中心点和光斑位置。
+      cursor: { x: 0, y: 0 },
+      isFaceHovered: false,
       qrWechat,
       qrOfficialAccount,
       w1: '290px', url1: asset('/src/assets/who/p1.png'), link1: '/home/who',
@@ -309,9 +387,44 @@ export default {
   width: min(34vw, 450px);
   height: min(72vw, 750px);
   transform: translateX(-50%);
+  overflow: hidden;
+}
+
+.hero-face__base,
+.hero-face__reveal {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  pointer-events: none;
+}
+
+.hero-face__base {
+  filter: saturate(0.95) contrast(1.02);
+}
+
+.hero-face__reveal {
   background-repeat: no-repeat;
-  background-position: center bottom;
   background-size: contain;
+  opacity: 0.98;
+  transform: translate3d(var(--reveal-x, 0px), var(--reveal-y, 0px), 0);
+  will-change: transform;
+}
+
+.hero-face__glow {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  margin-left: -120px;
+  margin-top: -120px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.14) 24%, rgba(255,255,255,0.05) 48%, rgba(255,255,255,0) 72%);
+  filter: blur(10px);
+  mix-blend-mode: screen;
+  opacity: 0.9;
 }
 
 .hero-left {
