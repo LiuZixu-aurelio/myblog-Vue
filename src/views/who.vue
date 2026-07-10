@@ -228,8 +228,8 @@ export default {
         event.clientY >= rect.top - expand &&
         event.clientY <= rect.bottom + expand
 
-      const x = Math.max(0, Math.min(rect.width, event.clientX - rect.left))
-      const y = Math.max(0, Math.min(rect.height, event.clientY - rect.top))
+      const x = event.clientX - rect.left
+      const y = event.clientY - rect.top
       this.cursor = { x, y }
       this.isFaceHovered = insideOrNear
     }
