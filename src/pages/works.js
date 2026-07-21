@@ -31,6 +31,7 @@ import { ABCwebsite } from './project-ABCwebsite.js'
 import { chatbot } from './lab-chatbot.js'
 import { HairShpere } from './lab-HairShpere.js'
 import { ChameleonAnInteractiveDigital } from './lab-ChameleonAnInteractiveDigital.js'
+import { ciot } from './project-ciot.js'
 
 const registry = {}
 
@@ -56,6 +57,7 @@ registerGroup('project', [
   SchAnalyzer,
   glooly,
   zhihu,
+  ciot,
   ABCwebsite,
   shiseidoAnalyzer,
   pChristie,
