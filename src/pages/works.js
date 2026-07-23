@@ -32,6 +32,7 @@ import { chatbot } from './lab-chatbot.js'
 import { HairShpere } from './lab-HairShpere.js'
 import { ChameleonAnInteractiveDigital } from './lab-ChameleonAnInteractiveDigital.js'
 import { ciot } from './project-ciot.js'
+import { PPPdashboard } from './project-PPPdashboard.js'
 
 const registry = {}
 
@@ -56,16 +57,17 @@ const registerGroup = (group, items) => {
 
 // category: 'b2b' | 'b2c' — 业务场景，用于作品列表筛选
 registerGroup('project', [
-  { ...SchAnalyzer, category: 'b2b' },
+  { ...SchAnalyzer, category: 'b2c' },
   { ...glooly, category: 'b2c' },
   { ...zhihu, category: 'b2c' },
   { ...ciot, category: 'b2b' },
-  { ...ABCwebsite, category: 'b2b' },
-  { ...shiseidoAnalyzer, category: 'b2b' },
+  { ...ABCwebsite, category: 'b2c' },
+  { ...PPPdashboard, category: 'b2b' },
+  { ...shiseidoAnalyzer, category: 'b2c' },
   { ...pChristie, category: 'b2c' },
+  { ...infor, category: 'b2b' },
   { ...data, category: 'b2b' },
   { ...testhub, category: 'b2b' },
-  { ...infor, category: 'b2b' },
   { ...pPlant, category: 'b2c' },
   { ...pConfig, category: 'b2b' },
 ])
