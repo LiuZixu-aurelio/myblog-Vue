@@ -5,7 +5,7 @@
     </div>
     <router-view v-slot="{ Component, route }">
       <transition mode="out-in" :css="false" @leave="leave" @enter="enter">
-        <component :is="Component" :key="route.fullPath" />
+        <component :is="Component" :key="route.path" />
       </transition>
     </router-view>
   </div>

@@ -14,6 +14,7 @@ const images = Object.entries(imageModules)
 export const infor = {
   id: 'infor',
   title: '数据看板',
+  category: 'b2b',
   cover: {
     backgroundImage: `url(${asset(`${imageBase}.png`)})`,
   },

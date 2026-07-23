@@ -14,6 +14,7 @@ const images = Object.entries(imageModules)
 export const ciot = {
   id: 'ciot',
   title: 'ciot',
+  category: 'b2b',
   cover: {
     backgroundImage: `url(${asset(`${imageBase}.jpg`)})`,
   },

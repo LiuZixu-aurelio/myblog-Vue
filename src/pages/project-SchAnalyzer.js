@@ -14,6 +14,7 @@ const images = Object.entries(imageModules)
 export const SchAnalyzer = {
   id: 'SchAnalyzer',
   title: '施华蔻头皮检测仪',
+  category: 'b2c',
   cover: {
     backgroundImage: `url(${asset(`${imageBase}.jpg`)})`,
   },

@@ -3,6 +3,7 @@ import { asset } from '../utils/asset.js'
 export const zhihu = {
   id: 'zhihu',
   title: '知乎直播升级 - 2021',
+  category: 'b2c',
   cover: {
     backgroundImage: `url(${asset('/src/assets/project/zhihu/zhihu.png')})`,
   },

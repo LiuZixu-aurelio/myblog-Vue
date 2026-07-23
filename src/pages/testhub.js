@@ -3,6 +3,7 @@ import { asset } from '../utils/asset.js'
 export const testhub = {
   id: 'testhub',
   title: 'B端 - 0到1的测试平台',
+  category: 'b2b',
   cover: {
     backgroundImage: `url(${asset('/src/assets/project/test/test0.png')})`,
   },

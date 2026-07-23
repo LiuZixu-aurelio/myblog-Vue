@@ -3,6 +3,7 @@ import { asset } from '../utils/asset.js'
 export const pPlant = {
   id: 'plantlight',
   title: '植物灯控制器',
+  category: 'b2b',
   cover: {
     backgroundImage: `url(${asset('/src/assets/project/plantlight/plantlight0.png')})`,
   },

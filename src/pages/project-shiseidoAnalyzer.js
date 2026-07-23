@@ -14,6 +14,7 @@ const images = Object.entries(imageModules)
 export const shiseidoAnalyzer = {
   id: 'shiseidoAnalyzer',
   title: 'shiseidoAnalyzer',
+  category: 'b2c',
   cover: {
     backgroundImage: `url(${asset(`${imageBase}.jpg`)})`,
   },

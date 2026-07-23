@@ -35,10 +35,11 @@ import { ciot } from './project-ciot.js'
 
 const registry = {}
 
-const registerWork = (id, group, { title, cover, path, images }) => {
+const registerWork = (id, group, { title, cover, path, images, category = 'b2b' }) => {
   registry[id] = {
     id,
     group,
+    category,
     title,
     cover,
     path: path ?? `/home/${group}/${id}`,
@@ -53,19 +54,20 @@ const registerGroup = (group, items) => {
   })
 }
 
+// category: 'b2b' | 'b2c' — 业务场景，用于作品列表筛选
 registerGroup('project', [
-  SchAnalyzer,
-  glooly,
-  zhihu,
-  ciot,
-  ABCwebsite,
-  shiseidoAnalyzer,
-  pChristie,
-  data,
-  testhub,
-  infor,
-  pPlant,
-  pConfig,
+  { ...SchAnalyzer, category: 'b2b' },
+  { ...glooly, category: 'b2c' },
+  { ...zhihu, category: 'b2c' },
+  { ...ciot, category: 'b2b' },
+  { ...ABCwebsite, category: 'b2b' },
+  { ...shiseidoAnalyzer, category: 'b2b' },
+  { ...pChristie, category: 'b2c' },
+  { ...data, category: 'b2b' },
+  { ...testhub, category: 'b2b' },
+  { ...infor, category: 'b2b' },
+  { ...pPlant, category: 'b2c' },
+  { ...pConfig, category: 'b2b' },
 ])
 
 registerGroup('talk', [
@@ -103,6 +105,11 @@ registerGroup('lab', [
 
 export const works = Object.values(registry)
 export const projectCards = works.filter((item) => item.group === 'project')
+export const projectCategories = [
+  { label: '全部', value: 'all' },
+  { label: 'B2B企业产品', value: 'b2b' },
+  { label: 'B2C消费产品', value: 'b2c' },
+]
 export const projectDetails = projectCards
 export const talkDetailRoutes = works.filter((item) => item.group === 'talk')
 export const labDetailRoutes = works.filter((item) => item.group === 'lab')

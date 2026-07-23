@@ -37,6 +37,7 @@ export default {
 
 .whocont > h2 {
   width: 100%;
+  font-size: 20px;
 }
 
 .whocont::after {

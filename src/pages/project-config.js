@@ -3,6 +3,7 @@ import { asset } from '../utils/asset.js'
 export const pConfig = {
   id: 'configtool',
   title: '配置工具',
+  category: 'b2b',
   cover: {
     backgroundImage: `url(${asset('/src/assets/project/config/config0.png')})`,
   },

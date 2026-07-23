@@ -3,6 +3,7 @@ import { asset } from '../utils/asset.js'
 export const pChristie = {
   id: 'christie',
   title: '智能家居',
+  category: 'b2b',
   cover: {
     backgroundImage: `url(${asset('/src/assets/project/christie/chritie0.png')})`,
   },

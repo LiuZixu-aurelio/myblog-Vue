@@ -3,6 +3,7 @@ import { asset } from '../utils/asset.js'
 export const data = {
   id: 'data',
   title: '可视化大屏',
+  category: 'b2b',
   cover: {
     backgroundImage: `url(${asset('/src/assets/project/data/data0.png')})`,
   },
