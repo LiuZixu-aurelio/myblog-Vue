@@ -68,7 +68,7 @@ export default {
 }
 
 .detail-media-wrap {
-  width: min(1000px, 100%);
+  width: min(1200px, 100%);
   margin: 0 auto;
 }
 
