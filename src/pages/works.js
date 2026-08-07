@@ -33,6 +33,7 @@ import { HairShpere } from './lab-HairShpere.js'
 import { ChameleonAnInteractiveDigital } from './lab-ChameleonAnInteractiveDigital.js'
 import { ciot } from './project-ciot.js'
 import { PPPdashboard } from './project-PPPdashboard.js'
+import { AdhesivesShop } from './project-AdhesivesShop.js'
 
 const registry = {}
 
@@ -59,11 +60,12 @@ const registerGroup = (group, items) => {
 registerGroup('project', [
   { ...SchAnalyzer, category: 'b2c' },
   { ...glooly, category: 'b2c' },
-  { ...zhihu, category: 'b2c' },
   { ...ciot, category: 'b2b' },
+  { ...AdhesivesShop, category: 'b2c' },
   { ...ABCwebsite, category: 'b2c' },
   { ...PPPdashboard, category: 'b2b' },
   { ...shiseidoAnalyzer, category: 'b2c' },
+  { ...zhihu, category: 'b2c' },
   { ...pChristie, category: 'b2c' },
   { ...infor, category: 'b2b' },
   { ...data, category: 'b2b' },
