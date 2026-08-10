@@ -34,6 +34,7 @@ import { ChameleonAnInteractiveDigital } from './lab-ChameleonAnInteractiveDigit
 import { ciot } from './project-ciot.js'
 import { PPPdashboard } from './project-PPPdashboard.js'
 import { AdhesivesShop } from './project-AdhesivesShop.js'
+import { lito } from './lab-lito.js'
 
 const registry = {}
 
@@ -98,6 +99,7 @@ registerGroup('sign', [
 
 registerGroup('lab', [
   labdog,
+  lito,
   HairShpere,
   ChameleonAnInteractiveDigital,
   labauduino,
