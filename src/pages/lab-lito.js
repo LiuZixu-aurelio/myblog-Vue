@@ -12,8 +12,8 @@ const images = Object.entries(imageModules)
   .map(([, imageUrl]) => imageUrl)
 
 export const lito = {
-  id: 'lito',
-  title: 'lito',
+  id: '具身陪伴机器人',
+  title: '具身陪伴机器人',
   cover: {
     backgroundImage: `url(${asset(`${imageBase}.jpg`)})`,
   },
