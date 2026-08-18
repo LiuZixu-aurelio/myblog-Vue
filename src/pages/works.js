@@ -35,6 +35,8 @@ import { ciot } from './project-ciot.js'
 import { PPPdashboard } from './project-PPPdashboard.js'
 import { AdhesivesShop } from './project-AdhesivesShop.js'
 import { lito } from './lab-lito.js'
+import { SchwarzkopfAnalyzerEn } from './project-SchAnalyzerEn.js'
+import { eAcademy } from './project-eAcademy.js'
 
 const registry = {}
 
@@ -63,9 +65,11 @@ registerGroup('project', [
   { ...glooly, category: 'b2c' },
   { ...ciot, category: 'b2b' },
   { ...AdhesivesShop, category: 'b2c' },
+  { ...eAcademy, category: 'b2c' },
   { ...ABCwebsite, category: 'b2c' },
   { ...PPPdashboard, category: 'b2b' },
   { ...shiseidoAnalyzer, category: 'b2c' },
+  { ...SchwarzkopfAnalyzerEn, category: 'b2c' },
   { ...zhihu, category: 'b2c' },
   { ...pChristie, category: 'b2c' },
   { ...infor, category: 'b2b' },
